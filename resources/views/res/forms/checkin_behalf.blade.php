@@ -69,11 +69,11 @@
     </div>
     <div class="col-lg-6 col-6">
         <select class="form-control" name="year">
-            <option>2019</option>
-            <option>2020</option>
             <option>2021</option>
             <option>2022</option>
             <option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
         </select>
     </div>
 </div>
@@ -82,22 +82,7 @@
     <div class="col-lg-12">
         <label>Pendaftar akan bermigrasi ke negeri... <br> <span><i>Registree will migrate to the state of...</i></span></label>
         <select class="form-control" name="state">
-            <option value="Johor">Johor</option>
-            <option value="Kedah">Kedah</option>
-            <option value="Kelantan">Kelantan</option>
-            <option value="Kuala Lumpur">Kuala Lumpur</option>
-            <option value="Labuan">Labuan</option>
-            <option value="Malacca">Malacca</option>
-            <option value="Negeri Sembilan">Negeri Sembilan</option>
-            <option value="Pahang">Pahang</option>
-            <option value="Perak">Perak</option>
-            <option value="Perlis">Perlis</option>
-            <option value="Penang">Penang</option>
-            <option value="Putrajaya">Putrajaya</option>
-            <option value="Sabah">Sabah</option>
-            <option value="Sarawak">Sarawak</option>
-            <option value="Selangor">Selangor</option>
-            <option value="Terengganu">Terengganu</option>
+            @include("res.options.states")
         </select>
     </div>
 </div>
