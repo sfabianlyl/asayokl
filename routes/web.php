@@ -25,7 +25,6 @@ Route::get('/teens', function () { return view('contents.teens'); })->name("teen
 Route::get('/young-adult', function () { return view('contents.youngadult'); })->name("young.adult");
 Route::get('/youth-campus', function () { return view('contents.youthcampus'); })->name("youth.campus");
 
-
 //rog
 Route::get('/reachout', function () { return view('contents.home'); });
 Route::get('/rog-admin', function () { return view('contents.home'); });
