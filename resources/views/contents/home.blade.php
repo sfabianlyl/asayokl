@@ -1,7 +1,7 @@
 @extends("layouts.master")
 
 @section("hero",asset("Images/asayokl.png"))
-
+@section("hero-size","hero-logo")
 
 @section("content")
     <div class="bm" style="display:none;">

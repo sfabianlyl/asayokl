@@ -4,3 +4,4 @@
 <script src="{{asset("js/toastr.min.js")}}"></script>
 <script src="{{asset("js/js.cookie.min.js")}}"></script>
 <script src="{{asset("js/nav.js")}}"></script>
+<script src="{{asset("js/menu.js")}}"></script>

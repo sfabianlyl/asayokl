@@ -15,15 +15,13 @@
 </head>
 <body>
     @include("layouts.nav")
-
-    @hasSection("hero")
-        <div class="hero-banner">
+    <div class="hero-banner">
+        @hasSection("hero")
             <div class="@yield("hero-size","hero-logo hero-logo-full")">
                 <img src="@yield("hero")"/>
             </div>
-        </div>
-    @endif
-
+        @endif
+    </div>
 
     <div class="container">
         <div style="height:40px;" class="w-100"></div>
