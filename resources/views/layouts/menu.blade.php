@@ -20,7 +20,7 @@
         <a href="young-adult">Butiran <i>(Details)</i></a>
         <a href="checkin">Check In</a>
         <a href="hangout#youngAdult">Hangout: Young Adult</a>
-        <a href="yan">Young Adults Network</a>
+        <a href="cyan">Catholic Young Adults Network</a>
         <a href="s2s">Sinners 2 Saints</a>
     </div>
     <div class="col-12 col-lg-6 mb-4">
