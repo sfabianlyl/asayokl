@@ -27,9 +27,31 @@
         <div style="height:40px;" class="w-100"></div>
         @yield("content")
 
-    </div>  
-
+    </div>
     @include("layouts.footer")
+      
+    @if(session('modal'))
+        <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">{!! session("modal") !!}</p>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#notificationModal").modal("show");
+            });
+        </script>
+    @endif
     
     @yield("js")
 </html>

@@ -33,7 +33,8 @@ Route::get('/rog-user', function () { return view('contents.home'); });
 //forms
 Route::get('/checkin', function () { return view('contents.checkin'); })->name("checkin");
 Route::get('/ciptass', function () { return view('contents.home'); });
-Route::get('/hangout', function () { return view('contents.home'); });
+Route::get('/hangout', function () { return view('contents.forms.hangout'); })->name("hangout.registration.form");
+Route::post('/hangout',"App\Http\Controllers\RegistrationController@hangout")->name("hangout.registration.submit);
 Route::get('/kamikudus', function () { return view('contents.home'); });
 Route::get('/lnl', function () { return view('contents.home'); });
 Route::get('/s2s', function () { return view('contents.home'); });

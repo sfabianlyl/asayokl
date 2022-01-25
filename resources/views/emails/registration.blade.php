@@ -4,7 +4,9 @@
 @section("email")
 
     <h3>{!! $main_heading ?? "Thank You for Registering!" !!}</h3>
-
+    @if($meets)
+        @include("emails.meets")
+    @endif
     <p>{!! $intro_message !!}</p>
 
     @if(isset($content))
