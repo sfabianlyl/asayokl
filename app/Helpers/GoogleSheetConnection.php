@@ -2,9 +2,9 @@
 
 namespace App\Helpers;
 
-use Google_Client;
-use Google_Service_Sheets;
-use Google_Service_Sheets_ValueRange;
+use Google\Client;
+use Google\Service\Sheets;
+use Google\Service\Sheets\ValueRange;
 
 class GoogleSheetConnection{
     private $client;
@@ -14,12 +14,12 @@ class GoogleSheetConnection{
     private $range;
     
     public function __construct(){
-        $this->client= new Google_Client();
+        $this->client= new Client();
         $this->client->setApplicationName('My PHP App');
-        $this->client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
+        $this->client->setScopes([Sheets::SPREADSHEETS]);
         $this->client->setAccessType('offline');
-        $this->client->setAuthConfig('../cdac4de75d4e/asayokldb-cdac4de75d4e.json');
-        $this->sheets = new \Google_Service_Sheets($client);    
+        $this->client->setAuthConfig(storage_path('cdac4de75d4e/asayokldb-cdac4de75d4e.json'));
+        $this->sheets = new Sheets($client);    
     }
     public function connect($id, $sheet, $range="A1:Z"){
         $this->id=$id;
@@ -36,7 +36,7 @@ class GoogleSheetConnection{
         if($timestamp) $data[]=date("jS F Y, g:i a");
         
         $values=array($data);
-        $body = new Google_Service_Sheets_ValueRange([
+        $body = new ValueRange([
             'values' => $values
         ]);
         $result = $this->sheets->spreadsheets_values->append($this->id, $this->range, $body,['valueInputOption' => 'RAW']);
