@@ -25,7 +25,7 @@ class RegistrationController extends BaseController
             $parts=explode(" ",$language);
             $date=array_pop($parts);
             $lang=implode(" ",$parts);
-            $conn->connect("id", $lang);
+            $conn->connect("1_3eQTaT0dk4oDxn_gmT0V5Es2MHdrHi1pkm0s11fK3U", $lang);
             $conn->add([
                 $date,
                 $request->nationality,
