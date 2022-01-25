@@ -93,6 +93,68 @@
 @stop
 
 @section("js")
+    <script>
+        $(function($) {
+
+            var _oldShow = $.fn.show;
+
+            $.fn.show = function(speed, oldCallback) {
+            return $(this).each(function() {
+                var obj         = $(this),
+                    newCallback = function() {
+                    if ($.isFunction(oldCallback)) {
+                        oldCallback.apply(obj);
+                    }
+                    obj.trigger('afterShow');
+                    };
+
+                // you can trigger a before show if you want
+                obj.trigger('beforeShow');
+
+                // now use the old function to show the element passing the new callback
+                _oldShow.apply(obj, [speed, newCallback]);
+            });
+            }
+        });
+        $(".hangout-radio").on("click",function(){
+            if($(this).val()=="IRL"){
+                var offset="#hangout-disclaimer";
+            }else{
+                var offset="#hangout-registration-form";
+            }
+            if($("#hangout-registration-form:visible").length > 0){
+                scrollTo(offset);
+            }else{
+                $("#hangout-registration-form").one("afterShow",function(){
+                    if($(".hangout-radio:checked").val()=="IRL"){
+                        var offset="#hangout-disclaimer";
+                    }else{
+                        var offset="#hangout-registration-form";
+                    }
+                    scrollTo(offset);
+                });
+            }
+            
+            
+            
+
+            if($(this).val()=="IRL"){
+                $("#hangout-registration-form").hide("slow");
+                $("#hangout-disclaimer").show("slow");
+                return;
+            }
+            $("#hangout-disclaimer").hide("slow");
+            $("#hangout-registration-form").show("slow");
+        });
+        $("input[type='radio'][name='program']").on("change",function(){
+            $("#KLNDates, #PetalingDates").css("display","none");
+            $("input[type='radio'][name='language']").attr("disabled","");
+            var idDates="#"+$(this).val()+"Dates";
+            var idInput=idDates+" input";
+            $(idDates).css("display","block");
+            $(idInput).removeAttr("disabled");
+        });
+    </script>
 @stop
 
 @section("css")

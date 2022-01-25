@@ -53,7 +53,7 @@ Route::get('/confirm', function () {
 });
 
 //redirects
-Route::get('/easter', function () { return redirect("https://www.youtube.com/playlist?list=PL1GEZHjLaCL2Z01gOjPk4B_5ZqhAyNv_M"); });
-Route::get('/kamiberdoa', function () { return redirect('https://www.youtube.com/playlist?list=PL1GEZHjLaCL3wnDiZkXS-WbzCbEP-4t2A'); });
-Route::get('/quiz', function () { return redirect("https://docs.google.com/forms/d/e/1FAIpQLScBe6BS4kf0Do74gGKliJHWHcOOIlPtxXex3oDuTb8GSBXp4g/viewform?usp=sf_link"); });
-Route::get('/quiz1', function () { return redirect('https://docs.google.com/forms/d/e/1FAIpQLSe5_f3CvQypw7UTBo1YL6jWjzumkl5lHpX_yprkDq7FuKXbbw/viewform?usp=sf_link'); });
+// Route::get('/easter', function () { return redirect("https://www.youtube.com/playlist?list=PL1GEZHjLaCL2Z01gOjPk4B_5ZqhAyNv_M"); });
+// Route::get('/kamiberdoa', function () { return redirect('https://www.youtube.com/playlist?list=PL1GEZHjLaCL3wnDiZkXS-WbzCbEP-4t2A'); });
+// Route::get('/quiz', function () { return redirect("https://docs.google.com/forms/d/e/1FAIpQLScBe6BS4kf0Do74gGKliJHWHcOOIlPtxXex3oDuTb8GSBXp4g/viewform?usp=sf_link"); });
+// Route::get('/quiz1', function () { return redirect('https://docs.google.com/forms/d/e/1FAIpQLSe5_f3CvQypw7UTBo1YL6jWjzumkl5lHpX_yprkDq7FuKXbbw/viewform?usp=sf_link'); });
