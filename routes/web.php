@@ -32,13 +32,19 @@ Route::get('/rog-user', function () { return view('contents.home'); });
 
 //forms
 Route::get('/checkin', function () { return view('contents.checkin'); })->name("checkin");
-Route::get('/ciptass', function () { return view('contents.home'); });
+Route::get('/kamikudus', function () { return redirect()->route("home"); });
+
+Route::get('/ciptass', function () { return view('forms.ciptass'); })->name("ciptass.registration.form");
 Route::get('/hangout', function () { return view('forms.hangout'); })->name("hangout.registration.form");
+Route::get('/lnl', function () { return view('forms.lnl'); })->name("lnl.registration.form");;
+Route::get('/s2s', function () { return view('forms.s2s'); })->name("s2s.registration.form");;
+Route::get('/cyan', function () { return view('forms.cyan'); })->name("cyan.registration.form");;
+
+Route::post('/ciptass',"App\Http\Controllers\RegistrationController@ciptass")->name("ciptass.registration.submit");
 Route::post('/hangout',"App\Http\Controllers\RegistrationController@hangout")->name("hangout.registration.submit");
-Route::get('/kamikudus', function () { return view('contents.home'); });
-Route::get('/lnl', function () { return view('contents.home'); });
-Route::get('/s2s', function () { return view('contents.home'); });
-Route::get('/yan', function () { return view('contents.home'); });
+Route::post('/lnl',"App\Http\Controllers\RegistrationController@lnl")->name("lnl.registration.submit");
+Route::post('/s2s',"App\Http\Controllers\RegistrationController@s2s")->name("s2s.registration.submit");
+Route::post('/cyan',"App\Http\Controllers\RegistrationController@cyan")->name("cyan.registration.submit");
 
 
 //processes
