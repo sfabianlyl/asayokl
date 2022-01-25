@@ -30,7 +30,7 @@
 
 <div class="row justify-content-center">
     <div class="col-lg-8 col-12">
-        <form action="{{ route('hangout.registration.submit') }}" id="myform" method="POST">
+        <form action="{{ route('ciptass.registration.submit') }}" id="myform" method="POST">
             @csrf
             <div class="row mb-5 align-items-center">
                 <div class="col-12">
