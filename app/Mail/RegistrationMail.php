@@ -37,6 +37,6 @@ class RegistrationMail extends Mailable
     {
         return $this->from("noreply@catholicyouth.my", "ASAYO Kuala Lumpur")
                 ->subject($this->subject)
-                ->view('email.registration');
+                ->view('emails.registration');
     }
 }
