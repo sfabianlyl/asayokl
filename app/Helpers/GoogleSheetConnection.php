@@ -19,7 +19,7 @@ class GoogleSheetConnection{
         $this->client->setScopes([Sheets::SPREADSHEETS]);
         $this->client->setAccessType('offline');
         $this->client->setAuthConfig(storage_path('cdac4de75d4e/asayokldb-cdac4de75d4e.json'));
-        $this->sheets = new Sheets($client);    
+        $this->sheets = new Sheets($this->client);    
     }
     public function connect($id, $sheet, $range="A1:Z"){
         $this->id=$id;
