@@ -12,20 +12,23 @@ class RegistrationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $main_message, $intro_message, $content, $outro_message, $subject;
+    public $main_message, $intro_message, $content, $outro_message, $subject, $meets;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($subject, $main_message, $intro_message, $content, $outro_message)
+    public function __construct($subject, $main_message, $intro_message, $content, $outro_message="", $meets=true)
     {
         $this->subject=$subject;
         $this->main_message=$main_message;
+        $this->meets=$meets;
         $this->intro_message=$intro_message;
         $this->content=$content;
         $this->outro_message=$outro_message;
+        $this->meets=$meets;
+        
     }
 
     /**
