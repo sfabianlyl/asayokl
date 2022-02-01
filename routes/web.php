@@ -32,6 +32,8 @@ Route::get('/rog-user', function () { return view('contents.home'); });
 
 //forms
 Route::get('/checkin', function () { return view('forms.checkin'); })->name("checkin");
+Route::post('/checkin', "App\Http\Controllers\CheckinController@checkin_self")->name("checkin.self.submit");
+Route::post('/checkin-behalf', "App\Http\Controllers\CheckinController@checkin_behalf")->name("checkin.behalf.submit");
 Route::get('/kamikudus', function () { return redirect()->route("home"); });
 
 Route::get('/ciptass', function () { return view('forms.ciptass'); })->name("ciptass.registration.form");
