@@ -31,7 +31,7 @@ Route::get('/rog-admin', function () { return view('contents.home'); });
 Route::get('/rog-user', function () { return view('contents.home'); });
 
 //forms
-Route::get('/checkin', function () { return view('contents.checkin'); })->name("checkin");
+Route::get('/checkin', function () { return view('forms.checkin'); })->name("checkin");
 Route::get('/kamikudus', function () { return redirect()->route("home"); });
 
 Route::get('/ciptass', function () { return view('forms.ciptass'); })->name("ciptass.registration.form");

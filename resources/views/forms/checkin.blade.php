@@ -362,6 +362,15 @@
                     break;
                 }
             });
+
+            $("#self-confirm, #behalf-confirm").on("click",function(){
+                var target="#" + $(this).attr("id").split("-").reverse().join("-");
+                var openModal=$(this).closest(".modal");
+                openModal.modal("hide");
+                setTimeout(() => {
+                    $(target).modal('show');
+                }, 700);
+            });
         })
     </script>
 @stop
