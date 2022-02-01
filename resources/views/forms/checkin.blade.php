@@ -125,7 +125,10 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="container-fluid">
-                        @include("res.forms.checkin_self")
+                        <form action="{{route("checkin.self.submit")}}" id="self-form" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @include("res.forms.checkin_self")
+                        </form>
                     </div>
                 </div>
 
@@ -154,7 +157,10 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="container-fluid">
-                        @include("res.forms.checkin_behalf")
+                        <form action="{{route("checkin.behalf.submit")}}" id="behalf-form" method="POST">
+                            @csrf
+                            @include("res.forms.checkin_behalf")
+                        </form>
                     </div>
                 </div>
 
@@ -170,7 +176,7 @@
 
     <div class="modal fade" id="confirm-self">
         <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
-            <form action="{{route("checkin.self.submit")}}" method="POST" enctype="multipart/form-data">
+            
                 <div class="modal-content">
 
                     <!-- Modal Header -->
@@ -264,17 +270,16 @@
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-success">HANTAR</button>
+                        <button type="button" class="btn btn-success" data-target="#self-form" id="self-submit">HANTAR</button>
                     </div>
 
                 </div>
-            </form>
         </div>
     </div>
 
     <div class="modal fade" id="confirm-behalf">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <form action="{{route("checkin.behalf.submit")}}" method="POST">
+            
                 <div class="modal-content">
 
                     <!-- Modal Header -->
@@ -332,11 +337,10 @@
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-success">HANTAR</button>
+                        <button type="button" class="btn btn-success" data-target="#behalf-form" id="behalf-submit">HANTAR</button>
                     </div>
 
                 </div>
-            </form>
         </div>
     </div>
 @stop
@@ -382,6 +386,10 @@
                 setTimeout(() => {
                     $(target).modal('show');
                 }, 700);
+            });
+            $("#self-submit , #behalf-submit").on("click",function(){
+                var form=$(this).attr("data-target");
+                form.submit();
             });
         })
     </script>

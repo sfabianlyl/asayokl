@@ -97,7 +97,7 @@
         <label>Negeri Asal:<br>
             <span><i>State of origin</i></span>
         </label>
-        <select class="form-control" name="originState[]">
+        <select class="form-control editable" data-target="self-originState" name="originState[]">
             @include("res.options.states")
         </select>
     </div>
