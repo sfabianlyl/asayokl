@@ -361,7 +361,7 @@
                         $(".edited[data-source='"+target+"']").html(input.val());
                     break;
                 }
-            });
+            }).trigger("change");
 
             $("#self-confirm, #behalf-confirm").on("click",function(){
                 var target="#" + $(this).attr("id").split("-").reverse().join("-");
