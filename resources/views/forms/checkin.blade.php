@@ -332,7 +332,7 @@
 @stop
 
 @section("js")
-    <script src="{{asset("checkin.js")}}"></script>
+    <script src="{{asset("js/checkin.js")}}"></script>
     <script>
         $(document).ready(function(){
             $(".editable").on("change",function(){
