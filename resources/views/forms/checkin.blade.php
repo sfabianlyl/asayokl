@@ -175,7 +175,7 @@
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Sila Mengesahkan Maklumat / Kindly Confirm the Information Below</h4>
+                        <h4 class="modal-title">Sila Mengesahkan Maklumat <br> Kindly Confirm the Information Below</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -183,31 +183,31 @@
                     <div class="modal-body">
                         <div class="container-fluid">
                             <div class="mb-3">
-                                <h4>Warganegara / <i>Nationality</i> </h4>
+                                <h6>Warganegara / <i>Nationality</i> </h6>
                                 <p><span class="edited" data-source="self-nationality"></span>, <span class="edited" data-source="self-originCountry"></span></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Umur / <i>Age</i></h4>
+                                <h6>Umur / <i>Age</i></h6>
                                 <p class="edited" data-source="self-age"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Nama / <i>Name</i></h4>
+                                <h6>Nama / <i>Name</i></h6>
                                 <p class="edited" data-source="self-name"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Nombor MyKad / Passport / <i>MyKad / Passport Number</i></h4>
+                                <h6>Nombor MyKad / Passport / <i>MyKad / Passport Number</i></h6>
                                 <p class="edited" data-source="self-IC"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Nombor Telefon / <i>Mobile Number</i></h4>
+                                <h6>Nombor Telefon / <i>Mobile Number</i></h6>
                                 <p class="edited" data-source="self-mobile"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Emel / <i>Email</i></h4>
+                                <h6>Emel / <i>Email</i></h6>
                                 <p class="edited" data-source="self-email"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Sakramen / <i>Sacrament</i>:</h4>
+                                <h6>Sakramen / <i>Sacrament</i>:</h6>
                                 <ul>
                                     <li>Pembaptisan (Baptism): <span class="edited" data-source="self-baptism"></span></li>
                                     <li>Penguatan (Confirmation): <span class="edited" data-source="self-confirmation"></span></li>
@@ -215,48 +215,48 @@
                                 </ul>
                             </div>
                             <div class="mb-3">
-                                <h4>Negeri Asal / <i>State of origin</i></h4>
+                                <h6>Negeri Asal / <i>State of origin</i></h6>
                                 <p class="edited" data-source="self-originState"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Keuskupan Asal / <i>Diocese of origin</i></h4>
+                                <h6>Keuskupan Asal / <i>Diocese of origin</i></h6>
                                 <p class="edited" data-source="self-originDiocese"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Nama Paroki / <i>Name of Parish / Church / Chapel</i></h4>
+                                <h6>Nama Paroki / <i>Name of Parish / Church / Chapel</i></h6>
                                 <p class="edited" data-source="self-originParish"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Ke Negara / <i>Destination Country</i></h4>
+                                <h6>Ke Negara / <i>Destination Country</i></h6>
                                 <p class="edited" data-source="self-migrateCountry"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Ke Negeri / <i>Destination State</i></h4>
+                                <h6>Ke Negeri / <i>Destination State</i></h6>
                                 <p class="edited" data-source="self-migrateState"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Keuskupan / <i>Diocese</i></h4>
+                                <h6>Keuskupan / <i>Diocese</i></h6>
                                 <p class="edited" data-source="self-migrateDiocese"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Tujuan bermigrasi / <i>Purpose of migrating</i></h4>
+                                <h6>Tujuan bermigrasi / <i>Purpose of migrating</i></h6>
                                 <p class="edited" data-source="self-purpose"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Syarikat/Kampus / <i>Organisation/Campus</i></h4>
+                                <h6>Syarikat/Kampus / <i>Organisation/Campus</i></h6>
                                 <p><span class="edited" data-source="self-campus"></span><span class="edited" data-source="self-organisation"></span></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Bidang / <i>Field</i></h4>
+                                <h6>Bidang / <i>Field</i></h6>
                                 <p><span class="edited" data-source="self-field"></span><span class="edited" data-source="self-occupation"></span></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Status</h4>
+                                <h6>Status</h6>
                                 <p class="edited" data-source="self-status"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Bantuan / <i>Assistance</i></h4>
-                                <ul class="self-assist"></ul>
+                                <h6>Bantuan / <i>Assistance</i></h6>
+                                <ul class="editable" data-source="self-assist"></ul>
                             </div>
                         </div>
                     </div>
@@ -287,34 +287,44 @@
                     <div class="modal-body">
                         <div class="container-fluid">
                             <div class="mb-3">
-                                <h4>Nama yang akan bermigrasi / <i>Name which will be migrating</i>: <span class="edited" data-source="behalf-name"></span></h4>
+                                <h6>Nama yang akan bermigrasi / <i>Name which will be migrating</i></h6>
+                                <p class="edited" data-source="behalf-name"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Nombor Telefon / <i>Contact Number</i>: <span class="edited" data-source="behalf-mobile"></span></h4>
+                                <h6>Nombor Telefon / <i>Contact Number</i></h6>
+                                <p class="edited" data-source="behalf-mobile"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Emel / <i>Email</i>: <span class="edited" data-source="behalf-email"></span></h4>
+                                <h6>Emel / <i>Email</i></h6>
+                                <p class="edited" data-source="behalf-email"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Hubungan dengan pendaftar / <i>Relation to registree</i>: <span class="edited" data-source="behalf-relation"></span></h4>
+                                <h6>Hubungan dengan pendaftar / <i>Relation to registree</i></h6>
+                                <p class="edited" data-source="behalf-relation"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Nama Pendaftar / <i>Name of registree</i>: <span class="edited" data-source="behalf-name-registree"></span></h4>
+                                <h6>Nama Pendaftar / <i>Name of registree</i></h6>
+                                <p class="edited" data-source="behalf-name-registree"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Nombor Telefon / <i>Contact Number</i>: <span class="edited" data-source="behalf-mobile-registree"></span></h4>
+                                <h6>Nombor Telefon / <i>Contact Number</i></h6>
+                                <p class="edited" data-source="behalf-mobile-registree"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Emel / <i>Email</i>: <span class="edited" data-source="behalf-email-registree"></span></h4>
+                                <h6>Emel / <i>Email</i></h6>
+                                <p class="edited" data-source="behalf-email-registree"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Bulan dan tahun pendaftar bermigrasi / <i>Month and year the registree will migrate</i>: <span class="edited" data-source="behalf-month"></span>, <span class="edited" data-source="behalf-year"></span> </h4>
+                                <h6>Bulan dan tahun pendaftar bermigrasi / <i>Month and year the registree will migrate</i></h6>
+                                <p><span class="edited" data-source="behalf-month"></span>, <span class="edited" data-source="behalf-year"></span></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Pendaftar akan bermigrasi ke negeri... / <i>Registree will migrate to the state of...</i>: <span class="edited" data-source="behalf-state"></span></h4>
+                                <h6>Pendaftar akan bermigrasi ke negeri... / <i>Registree will migrate to the state of...</i></h6>
+                                <p class="edited" data-source="behalf-state"></p>
                             </div>
                             <div class="mb-3">
-                                <h4>Nama Kampus/Syarikat / <i>Name of Campus/Company</i>: <span class="edited" data-source="behalf-campus"></span></h4>
+                                <h6>Nama Kampus/Syarikat / <i>Name of Campus/Company</i></h6>
+                                <p class="edited" data-source="behalf-campus"></p>
                             </div>
                         </div>
                     </div>
@@ -341,25 +351,27 @@
                 switch(input.prop("tagName")){
                     case "INPUT": 
                         switch(input.attr("type")){
-                            case "text": $(".edited[data-source='"+target+"']").html(input.val()); break;
                             case "checkbox": 
                                 if(input.attr("name")=="assist[]"){
                                     var checked=$("[name='assist[]']:checked");
                                     var list=$(".editable[data-source='self-assist']");
                                     list.html("");
                                     $.each(checked,function(index,item){
-                                        list.append(checked.prop("value"));
+                                        list.append($("<li></li>").html($(item).prop("value")));
                                     });
                                 }else{
                                     if(input.is("checked")) $(".edited[data-source='"+target+"']").html("Yes");
                                     else $(".edited[data-source='"+target+"']").html("No");
                                 }
                             break;
+                            default: $(".edited[data-source='"+target+"']").html(input.val());
                         }
                     break;
                     case "SELECT": 
                         $(".edited[data-source='"+target+"']").html(input.val());
                     break;
+
+                    default: $(".edited[data-source='"+target+"']").html(input.val());
                 }
             }).trigger("change");
 
