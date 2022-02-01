@@ -360,7 +360,7 @@
                                         list.append($("<li></li>").html($(item).prop("value")));
                                     });
                                 }else{
-                                    if(input.is("checked")) $(".edited[data-source='"+target+"']").html("Yes");
+                                    if(input.is(":checked")) $(".edited[data-source='"+target+"']").html("Yes");
                                     else $(".edited[data-source='"+target+"']").html("No");
                                 }
                             break;
