@@ -76,36 +76,36 @@ class CheckinController extends BaseController
         ], $timestamp=false);
         
         $content=[
-            "Nationality"=>$request->nationaility,
-            "Nama"=>$request->name,
-            "Identification No"=>$request->IC,
+            "Nationality"=>$request->input("nationality","Malaysian Citizen"),
+            "Nama"=>$request->input("name",""),
+            "Identification No"=>$request->input("IC",""),
             "Mobile No"=>$phone,
-            "Email"=>$request->email,
-            "Baptism"=>,
-            "Confirmation"=>,
-            "Eucharist"=>,
-            "From Country"=>,
-            "From State"=>,
-            "From Diocese"=>,
-            "From Parish"=>,
-            "Migrate Country"=>,
-            "Migrate State"=>,
-            "Migrate Diocese"=>,
-            "Migrate District"=>,
-            "Migrate Parish"=>,
+            "Email"=>$request->input("email",""),
+            "Baptism"=> $request->input("baptism",false)? "Yes":"No",
+            "Confirmation"=> $request->input("confirmation",false)? "Yes":"No",
+            "Eucharist"=> $request->input("eucharist",false)? "Yes":"No",
+            "From Country"=> $request->input("originCountry","Malaysia"),
+            "From State"=> $request->input("originState.0","Undefined"),
+            "From Diocese"=> $request->input("originDiocese.0","Undefined"),
+            "From Parish"=> $request->input("originParish.0","Undefined"),
+            "Migrate Country"=> $request->input("migrateCountry","Malaysia"),
+            "Migrate State"=> $request->input("migrateState.0","Undefined"),
+            "Migrate Diocese"=> $request->input("migrateDiocese.0","Keuskupan Agung Kuala Lumpur"),
+            "Migrate District"=> $migrateDistrict,
+            "Migrate Parish"=> $request->input("migrateParish.0",""),
             
         ];
-        if(){
-            $content["Institution"]=;
-            $content["Field of Study"]=;
+        if( $request->input("campus","")){
+            $content["Institution"]= $request->input("campus","");
+            $content["Field of Study"]= $request->input("field","");
         }
         else{
-            $content["Organization"]=;
-            $content["Occupation"]=;
+            $content["Organization"]= $request->input("organisation","");
+            $content["Occupation"]= $request->input("occupation","");
         }
         
-        $content["Marital Status"]=;
-        $content["Assistance Required"]=;
+        $content["Marital Status"]= $request->input("status","");
+        $content["Assistance Required"]= implode(", ",$request->input("assist",[]));
         
         
         Mail::to($request->email)->send(new CheckinMail($content));
