@@ -74,23 +74,44 @@ class CheckinController extends BaseController
             implode(", ",$request->input("assist",[])),
 
         ], $timestamp=false);
-            
-        $subject="New Census Form"; 
-        $header="Thank You for Registering!";
-        $main_message="Terima kasih atas pendaftaran anda. Kami akan menghubungi anda melalui e-mel atau telefon (Whatsapp) untuk kod mesyuarat **2 jam sebelum kita mulakan. Dalam masa yang sama, anda boleh:";
-        $main_message.="<br>[Thank you for your registration. We will contact you via email or phone (Whatsapp) for meeting code **2 hours before we start. In the meantime, you can]:<";
         
         $content=[
-            "Sesi (Session)"=>$sessions,
-            "Nama (Name)"=>$request->name,
-            "No. Telefon (Mobile No.)"=>$phone,
-            "E-mel (Email)"=>$request->email
+            "Nationality"=>$request->nationaility,
+            "Nama"=>$request->name,
+            "Identification No"=>$request->IC,
+            "Mobile No"=>$phone,
+            "Email"=>$request->email,
+            "Baptism"=>,
+            "Confirmation"=>,
+            "Eucharist"=>,
+            "From Country"=>,
+            "From State"=>,
+            "From Diocese"=>,
+            "From Parish"=>,
+            "Migrate Country"=>,
+            "Migrate State"=>,
+            "Migrate Diocese"=>,
+            "Migrate District"=>,
+            "Migrate Parish"=>,
+            
         ];
+        if(){
+            $content["Institution"]=;
+            $content["Field of Study"]=;
+        }
+        else{
+            $content["Organization"]=;
+            $content["Occupation"]=;
+        }
         
-        Mail::to($request->email)->send(new RegistrationMail($subject, $header, $main_message, $content));
+        $content["Marital Status"]=;
+        $content["Assistance Required"]=;
+        
+        
+        Mail::to($request->email)->send(new CheckinMail($content));
 
         return redirect()->route("hangout.registration.form")->with([
-            'modal'    => "Your registration is successful. Please check your email for further instructions.",
+            'modal'    => "Your registration is successful. We will reach out to you soon.",
             'title'    => "Successful!"
         ]);
     }
