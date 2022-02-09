@@ -110,7 +110,7 @@ class CheckinController extends BaseController
         
         Mail::to($request->email)->send(new CheckinMail($content));
 
-        return redirect()->route("hangout.registration.form")->with([
+        return redirect()->route("checkin")->with([
             'modal'    => "Your registration is successful. We will reach out to you soon.",
             'title'    => "Successful!"
         ]);
