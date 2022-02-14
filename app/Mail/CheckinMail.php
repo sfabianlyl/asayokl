@@ -12,17 +12,20 @@ class CheckinMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $content;
+    public $content,$baptismImg,$confirmationImg,$eucharistImg;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($content)
+    public function __construct($content,$baptismImg,$confirmationImg,$eucharistImg)
     {
         
         $this->content=$content;
+        $this->baptismImg=$baptismImg;
+        $this->confirmationImg=$confirmationImg;
+        $this->eucharistImg=$eucharistImg;
     }
 
     /**
@@ -32,8 +35,15 @@ class CheckinMail extends Mailable
      */
     public function build()
     {
-        return $this->from("noreply@catholicyouth.my", "ASAYO Kuala Lumpur")
+        $email=$this->from("noreply@catholicyouth.my", "ASAYO Kuala Lumpur")
                 ->subject("New Census Form")
                 ->view('emails.checkin');
+                
+        if($this->baptismImg) $email->attach($this->baptismImg);
+        if($this->confirmationImg) $email->attach($this->confirmationImg);
+        if($this->eucharistImg) $email->attach($this->eucharistImg);
+        
+        
+        return $email;
     }
 }

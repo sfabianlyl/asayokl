@@ -107,8 +107,93 @@ class CheckinController extends BaseController
         $content["Marital Status"]= $request->input("status","");
         $content["Assistance Required"]= implode(", ",$request->input("assist",[]));
         
+        switch($diocese){
+        case 'Keuskupan Agung Kuala Lumpur': 
+            $mail->addAddress('josephine@asayokl.my'); 
+            break;
+
+        case 'Keuskupan Pulau Pinang': 
+            $mail->addAddress('pdyn@pgdiocese.org'); 
+            $mail->addAddress('cmo.penang.diocese@gmail.com'); 
+            break;
+
+        case 'Keuskupan Agung Kuching': 
+            $mail->addAddress('kchadyouth.office@gmail.com'); 
+            break;
+
+        case 'Keuskupan Agung Kota Kinabalu': 
+            $mail->addAddress('dypt2007@gmail.com'); 
+            break;
+
+        case 'Keuskupan Melaka-Johor': 
+            $mail->addAddress('daryltan@majodi.org'); 
+            $mail->addAddress('mattwee@majodi.org'); 
+            $mail->addAddress('malaccajohorecc@gmail.com'); 
+            break;
+
+        case 'Keuskupan Miri': 
+            $mail->addAddress('genie.maylynn@gmail.com'); 
+            break;
+
+        case 'Keuskupan Sibu': 
+            $mail->addAddress('sibudioceseyouth@gmail.com'); 
+            break;
+
+        case 'Keuskupan Keningau': 
+            $mail->addAddress('kbkkgau@gmail.com'); 
+            break;
+
+        case 'Keuskupan Sandakan': 
+            $mail->addAddress('dyasdkn@gmail.com'); 
+            break;
+
+        default: break;
+    }
+    
+    switch($migrateDiocese){
+        case 'Keuskupan Agung Kuala Lumpur': 
+            $mail->addAddress('josephine@asayokl.my'); 
+            break;
+
+        case 'Keuskupan Pulau Pinang': 
+            $mail->addAddress('pdyn@pgdiocese.org'); 
+            $mail->addAddress('cmo.penang.diocese@gmail.com'); 
+            break;
+
+        case 'Keuskupan Agung Kuching': 
+            $mail->addAddress('kchadyouth.office@gmail.com'); 
+            break;
+
+        case 'Keuskupan Agung Kota Kinabalu': 
+            $mail->addAddress('dypt2007@gmail.com'); 
+            break;
+
+        case 'Keuskupan Melaka-Johor': 
+            $mail->addAddress('daryltan@majodi.org'); 
+            $mail->addAddress('mattwee@majodi.org'); 
+            $mail->addAddress('malaccajohorecc@gmail.com'); 
+            break;
+
+        case 'Keuskupan Miri': 
+            $mail->addAddress('genie.maylynn@gmail.com'); 
+            break;
+
+        case 'Keuskupan Sibu': 
+            $mail->addAddress('sibudioceseyouth@gmail.com'); 
+            break;
+
+        case 'Keuskupan Keningau': 
+            $mail->addAddress('kbkkgau@gmail.com'); 
+            break;
+
+        case 'Keuskupan Sandakan': 
+            $mail->addAddress('dyasdkn@gmail.com'); 
+            break;
+
+        default: break;
+    }
         
-        Mail::to($request->email)->send(new CheckinMail($content));
+        Mail::to($request->email)->to($email1)->to($email2)->send(new CheckinMail($content,$baptismImg,$confirmationImg,$eucharistImg));
 
         return redirect()->route("checkin")->with([
             'modal'    => "Your registration is successful. We will reach out to you soon.",
