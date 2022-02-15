@@ -115,7 +115,7 @@ class CheckinController extends BaseController
         
         $mail=Mail::cc("fabian@asayokl.my")->cc("josephine@asayokl.my");
         
-        switch($request->input("originDiocese.0","Undefined")){
+    switch($request->input("originDiocese.0","Undefined")){
         case 'Keuskupan Agung Kuala Lumpur': 
             $mail=$mail->to('josephine@asayokl.my'); 
             break;

@@ -39,9 +39,9 @@ class CheckinMail extends Mailable
                 ->subject("New Census Form")
                 ->view('emails.checkin');
                 
-        if($this->baptismImg) $email->attach($this->baptismImg);
-        if($this->confirmationImg) $email->attach($this->confirmationImg);
-        if($this->eucharistImg) $email->attach($this->eucharistImg);
+        if($this->baptismImg!==false) $email->attach($this->baptismImg);
+        if($this->confirmationImg!==false) $email->attach($this->confirmationImg);
+        if($this->eucharistImg!==false) $email->attach($this->eucharistImg);
         
         
         return $email;
