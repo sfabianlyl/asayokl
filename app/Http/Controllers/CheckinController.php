@@ -18,6 +18,12 @@ class CheckinController extends BaseController
     public function phone($phone){
         return ($phone[0]=="+")? $phone: "+6$phone";
     }
+    public function strposa($str, $needs){
+        foreach($needs as $need){
+            if(strpos($str, $need)!==false) return true;
+        }
+        return false;
+    }
 
     public function checkin_self(Request $request){
         $conn=new GoogleSheetConnection();
@@ -107,93 +113,115 @@ class CheckinController extends BaseController
         $content["Marital Status"]= $request->input("status","");
         $content["Assistance Required"]= implode(", ",$request->input("assist",[]));
         
-        switch($diocese){
+        $mail=Mail::cc("fabian@asayokl.my")->cc("josephine@asayokl.my");
+        
+        switch($request->input("originDiocese.0","Undefined")){
         case 'Keuskupan Agung Kuala Lumpur': 
-            $mail->addAddress('josephine@asayokl.my'); 
+            $mail=$mail->to('josephine@asayokl.my'); 
             break;
 
         case 'Keuskupan Pulau Pinang': 
-            $mail->addAddress('pdyn@pgdiocese.org'); 
-            $mail->addAddress('cmo.penang.diocese@gmail.com'); 
+            $mail=$mail->to('pdyn@pgdiocese.org'); 
+            $mail=$mail->to('cmo.penang.diocese@gmail.com'); 
             break;
 
         case 'Keuskupan Agung Kuching': 
-            $mail->addAddress('kchadyouth.office@gmail.com'); 
+            $mail=$mail->to('kchadyouth.office@gmail.com'); 
             break;
 
         case 'Keuskupan Agung Kota Kinabalu': 
-            $mail->addAddress('dypt2007@gmail.com'); 
+            $mail=$mail->to('dypt2007@gmail.com'); 
             break;
 
         case 'Keuskupan Melaka-Johor': 
-            $mail->addAddress('daryltan@majodi.org'); 
-            $mail->addAddress('mattwee@majodi.org'); 
-            $mail->addAddress('malaccajohorecc@gmail.com'); 
+            $mail=$mail->to('daryltan@majodi.org'); 
+            $mail=$mail->to('mattwee@majodi.org'); 
+            $mail=$mail->to('malaccajohorecc@gmail.com'); 
             break;
 
         case 'Keuskupan Miri': 
-            $mail->addAddress('genie.maylynn@gmail.com'); 
+            $mail=$mail->to('genie.maylynn@gmail.com'); 
             break;
 
         case 'Keuskupan Sibu': 
-            $mail->addAddress('sibudioceseyouth@gmail.com'); 
+            $mail=$mail->to('sibudioceseyouth@gmail.com'); 
             break;
 
         case 'Keuskupan Keningau': 
-            $mail->addAddress('kbkkgau@gmail.com'); 
+            $mail=$mail->to('kbkkgau@gmail.com'); 
             break;
 
         case 'Keuskupan Sandakan': 
-            $mail->addAddress('dyasdkn@gmail.com'); 
+            $mail=$mail->to('dyasdkn@gmail.com'); 
             break;
 
         default: break;
     }
     
-    switch($migrateDiocese){
+    switch($request->input("migrateDiocese.0","Keuskupan Agung Kuala Lumpur")){
         case 'Keuskupan Agung Kuala Lumpur': 
-            $mail->addAddress('josephine@asayokl.my'); 
+            $mail=$mail->to('josephine@asayokl.my'); 
             break;
 
         case 'Keuskupan Pulau Pinang': 
-            $mail->addAddress('pdyn@pgdiocese.org'); 
-            $mail->addAddress('cmo.penang.diocese@gmail.com'); 
+            $mail=$mail->to('pdyn@pgdiocese.org'); 
+            $mail=$mail->to('cmo.penang.diocese@gmail.com'); 
             break;
 
         case 'Keuskupan Agung Kuching': 
-            $mail->addAddress('kchadyouth.office@gmail.com'); 
+            $mail=$mail->to('kchadyouth.office@gmail.com'); 
             break;
 
         case 'Keuskupan Agung Kota Kinabalu': 
-            $mail->addAddress('dypt2007@gmail.com'); 
+            $mail=$mail->to('dypt2007@gmail.com'); 
             break;
 
         case 'Keuskupan Melaka-Johor': 
-            $mail->addAddress('daryltan@majodi.org'); 
-            $mail->addAddress('mattwee@majodi.org'); 
-            $mail->addAddress('malaccajohorecc@gmail.com'); 
+            $mail=$mail->to('daryltan@majodi.org'); 
+            $mail=$mail->to('mattwee@majodi.org'); 
+            $mail=$mail->to('malaccajohorecc@gmail.com'); 
             break;
 
         case 'Keuskupan Miri': 
-            $mail->addAddress('genie.maylynn@gmail.com'); 
+            $mail=$mail->to('genie.maylynn@gmail.com'); 
             break;
 
         case 'Keuskupan Sibu': 
-            $mail->addAddress('sibudioceseyouth@gmail.com'); 
+            $mail=$mail->to('sibudioceseyouth@gmail.com'); 
             break;
 
         case 'Keuskupan Keningau': 
-            $mail->addAddress('kbkkgau@gmail.com'); 
+            $mail=$mail->to('kbkkgau@gmail.com'); 
             break;
 
         case 'Keuskupan Sandakan': 
-            $mail->addAddress('dyasdkn@gmail.com'); 
+            $mail=$mail->to('dyasdkn@gmail.com'); 
             break;
 
         default: break;
     }
         
-        Mail::to($request->email)->to($email1)->to($email2)->send(new CheckinMail($content,$baptismImg,$confirmationImg,$eucharistImg));
+        $baptismImg=false;
+        $confirmationImg=false;
+        $eucharistImg=false;
+    
+        if($request->hasFile("baptismImg")) 
+        if($request->baptismImg->isValid()) 
+        if(strposa($request->baptismImg->extension(),"jpg")!==false)
+        $baptismImg=$request->baptismImg->storeAs("checkin-uploads",$request->name."-baptism".".".$request->baptismImg->extension());
+        
+        if($request->hasFile("confirmationImg")) 
+        if($request->confirmationImg->isValid()) 
+        if(strposa($request->confirmationImg->extension(),"jpg")!==false)
+        $confirmationImg=$request->confirmationImg->storeAs("checkin-uploads",$request->name."-confirmation".".".$request->confirmationImg->extension());
+        
+        if($request->hasFile("eucharistImg")) 
+        if($request->eucharistImg->isValid()) 
+        if(strposa($request->eucharistImg->extension(),"jpg")!==false)
+        $eucharistImg=$request->eucharistImg->storeAs("checkin-uploads",$request->name."-eucharist".".".$request->eucharistImg->extension());
+        
+        
+        $mail->send(new CheckinMail($content,$baptismImg,$confirmationImg,$eucharistImg));
 
         return redirect()->route("checkin")->with([
             'modal'    => "Your registration is successful. We will reach out to you soon.",
