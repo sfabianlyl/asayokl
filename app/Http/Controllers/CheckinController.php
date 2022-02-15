@@ -204,20 +204,23 @@ class CheckinController extends BaseController
         $baptismImg=false;
         $confirmationImg=false;
         $eucharistImg=false;
+        $imgExt=["jpg","tiff","png","raw","pdf","jpeg","gif","heic"];
+        
+        foreach($imgExt as $ext) $imgExt[]=strtoupper($ext);
     
         if($request->hasFile("baptismImg")) 
         if($request->baptismImg->isValid()) 
-        if(strposa($request->baptismImg->extension(),"jpg")!==false)
+        if(strposa($request->baptismImg->extension(),$imgExt)!==false)
         $baptismImg=$request->baptismImg->storeAs("checkin-uploads",$request->name."-baptism".".".$request->baptismImg->extension());
         
         if($request->hasFile("confirmationImg")) 
         if($request->confirmationImg->isValid()) 
-        if(strposa($request->confirmationImg->extension(),"jpg")!==false)
+        if(strposa($request->confirmationImg->extension(),$imgExt)!==false)
         $confirmationImg=$request->confirmationImg->storeAs("checkin-uploads",$request->name."-confirmation".".".$request->confirmationImg->extension());
         
         if($request->hasFile("eucharistImg")) 
         if($request->eucharistImg->isValid()) 
-        if(strposa($request->eucharistImg->extension(),"jpg")!==false)
+        if(strposa($request->eucharistImg->extension(),$imgExt)!==false)
         $eucharistImg=$request->eucharistImg->storeAs("checkin-uploads",$request->name."-eucharist".".".$request->eucharistImg->extension());
         
         
