@@ -19,7 +19,7 @@ class CheckinMail extends Mailable
      *
      * @return void
      */
-    public function __construct($content,$baptismImg,$confirmationImg,$eucharistImg)
+    public function __construct($content,$baptismImg=false,$confirmationImg=false,$eucharistImg=false)
     {
         
         $this->content=$content;

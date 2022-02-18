@@ -115,91 +115,91 @@ class CheckinController extends BaseController
         
         $emails=["fabian@asayokl.my","josephine@asayokl.my"];
         
-    switch($request->input("originDiocese.0","Undefined")){
-        case 'Keuskupan Agung Kuala Lumpur': 
-            $emails[]="josephine@asayokl.my";
-            break;
+        switch($request->input("originDiocese.0","Undefined")){
+            case 'Keuskupan Agung Kuala Lumpur': 
+                $emails[]="josephine@asayokl.my";
+                break;
 
-        case 'Keuskupan Pulau Pinang': 
-            $emails[]='pdyn@pgdiocese.org'; 
-            $emails[]='cmo.penang.diocese@gmail.com'; 
-            break;
+            case 'Keuskupan Pulau Pinang': 
+                $emails[]='pdyn@pgdiocese.org'; 
+                $emails[]='cmo.penang.diocese@gmail.com'; 
+                break;
 
-        case 'Keuskupan Agung Kuching': 
-            $emails[]='kchadyouth.office@gmail.com'; 
-            break;
+            case 'Keuskupan Agung Kuching': 
+                $emails[]='kchadyouth.office@gmail.com'; 
+                break;
 
-        case 'Keuskupan Agung Kota Kinabalu': 
-            $emails[]='dypt2007@gmail.com'; 
-            break;
+            case 'Keuskupan Agung Kota Kinabalu': 
+                $emails[]='dypt2007@gmail.com'; 
+                break;
 
-        case 'Keuskupan Melaka-Johor': 
-            $emails[]='daryltan@majodi.org'; 
-            $emails[]='mattwee@majodi.org'; 
-            $emails[]='malaccajohorecc@gmail.com'; 
-            break;
+            case 'Keuskupan Melaka-Johor': 
+                $emails[]='daryltan@majodi.org'; 
+                $emails[]='mattwee@majodi.org'; 
+                $emails[]='malaccajohorecc@gmail.com'; 
+                break;
 
-        case 'Keuskupan Miri': 
-            $emails[]='genie.maylynn@gmail.com'; 
-            break;
+            case 'Keuskupan Miri': 
+                $emails[]='genie.maylynn@gmail.com'; 
+                break;
 
-        case 'Keuskupan Sibu': 
-            $emails[]='sibudioceseyouth@gmail.com'; 
-            break;
+            case 'Keuskupan Sibu': 
+                $emails[]='sibudioceseyouth@gmail.com'; 
+                break;
 
-        case 'Keuskupan Keningau': 
-            $emails[]='kbkkgau@gmail.com'; 
-            break;
+            case 'Keuskupan Keningau': 
+                $emails[]='kbkkgau@gmail.com'; 
+                break;
 
-        case 'Keuskupan Sandakan': 
-            $emails[]='dyasdkn@gmail.com'; 
-            break;
+            case 'Keuskupan Sandakan': 
+                $emails[]='dyasdkn@gmail.com'; 
+                break;
 
-        default: break;
-    }
-    
-    switch($request->input("migrateDiocese.0","Keuskupan Agung Kuala Lumpur")){
-        case 'Keuskupan Agung Kuala Lumpur': 
-            $emails[]='josephine@asayokl.my'; 
-            break;
+            default: break;
+        }
+        
+        switch($request->input("migrateDiocese.0","Keuskupan Agung Kuala Lumpur")){
+            case 'Keuskupan Agung Kuala Lumpur': 
+                $emails[]='josephine@asayokl.my'; 
+                break;
 
-        case 'Keuskupan Pulau Pinang': 
-            $emails[]='pdyn@pgdiocese.org'; 
-            $emails[]='cmo.penang.diocese@gmail.com'; 
-            break;
+            case 'Keuskupan Pulau Pinang': 
+                $emails[]='pdyn@pgdiocese.org'; 
+                $emails[]='cmo.penang.diocese@gmail.com'; 
+                break;
 
-        case 'Keuskupan Agung Kuching': 
-            $emails[]='kchadyouth.office@gmail.com'; 
-            break;
+            case 'Keuskupan Agung Kuching': 
+                $emails[]='kchadyouth.office@gmail.com'; 
+                break;
 
-        case 'Keuskupan Agung Kota Kinabalu': 
-            $emails[]='dypt2007@gmail.com'; 
-            break;
+            case 'Keuskupan Agung Kota Kinabalu': 
+                $emails[]='dypt2007@gmail.com'; 
+                break;
 
-        case 'Keuskupan Melaka-Johor': 
-            $emails[]='daryltan@majodi.org'; 
-            $emails[]='mattwee@majodi.org'; 
-            $emails[]='malaccajohorecc@gmail.com'; 
-            break;
+            case 'Keuskupan Melaka-Johor': 
+                $emails[]='daryltan@majodi.org'; 
+                $emails[]='mattwee@majodi.org'; 
+                $emails[]='malaccajohorecc@gmail.com'; 
+                break;
 
-        case 'Keuskupan Miri': 
-            $emails[]='genie.maylynn@gmail.com'; 
-            break;
+            case 'Keuskupan Miri': 
+                $emails[]='genie.maylynn@gmail.com'; 
+                break;
 
-        case 'Keuskupan Sibu': 
-            $emails[]='sibudioceseyouth@gmail.com'; 
-            break;
+            case 'Keuskupan Sibu': 
+                $emails[]='sibudioceseyouth@gmail.com'; 
+                break;
 
-        case 'Keuskupan Keningau': 
-            $emails[]='kbkkgau@gmail.com'; 
-            break;
+            case 'Keuskupan Keningau': 
+                $emails[]='kbkkgau@gmail.com'; 
+                break;
 
-        case 'Keuskupan Sandakan': 
-            $emails[]='dyasdkn@gmail.com'; 
-            break;
+            case 'Keuskupan Sandakan': 
+                $emails[]='dyasdkn@gmail.com'; 
+                break;
 
-        default: break;
-    }
+            default: break;
+        }
         
         $baptismImg=false;
         $confirmationImg=false;
@@ -232,7 +232,59 @@ class CheckinController extends BaseController
         ]);
     }
     
+    public function checkin_behalf(Request $request){
+        $conn=new GoogleSheetConnection();
+        
+        
+        $timestamp=date("d/m/Y h:i:s A");
+        $conn->connect("1eylKPAyc6WR43Fqgq1xWK0oi0sl1ptxVmgMk8XuzLwU");
+
+        
+        $conn->add([
+            $request->input("nameChild",""),
+            $this->phone($request->input("phoneChild","")),
+            $request->input("emailChild",""),
+            $request->input("relation",""),
+            $request->input("name",""),
+            $this->phone($request->input("phone","")),
+            $request->input("email",""),
+            $request->input("month",""),
+            $request->input("year",""),
+            $request->input("state",""),
+            $timestamp,
+            $request->input("campus",""),
+        ], $timestamp=false);
+
+        
     
+    
+        $content=[
+            "Type"=>"On Behalf",
+            "Nationality"=>$request->input("nationality","Malaysian Citizen"),
+            "Name"=>$request->input("nameChild",""),
+            "Mobile No"=>$request->input("phoneChild",""),
+            "Email"=>$request->input("emailChild",""),
+            "Relation"=>$request->input("relation",""),
+            "Child Name"=>$request->input("name",""),
+            "Mobile No"=>$request->input("phone",""),
+            "Email"=>$request->input("email",""),
+            "Year of Migrating"=>$request->input("year",""),
+            "Month of Migrating"=>$request->input("month",""),
+            "Migrating to"=>$request->input("state",""),
+            "Campus/Company"=>$request->input("campus",""),
+        ];
+        
+        $emails=["checkin@asayokl.my","josephine@asayokl.my"];
+        
+        
+        
+        Mail::to($emails)->send(new CheckinMail($content));
+
+        return redirect()->route("checkin")->with([
+            'modal'    => "Your registration is successful. We will reach out to you soon.",
+            'title'    => "Successful!"
+        ]);
+    }
 
    
 }
