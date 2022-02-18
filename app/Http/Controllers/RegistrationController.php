@@ -16,6 +16,7 @@ class RegistrationController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function phone($phone){
+        if(!$phone) return ""; 
         return ($phone[0]=="+")? $phone: "+6$phone";
     }
     
