@@ -113,46 +113,46 @@ class CheckinController extends BaseController
         $content["Marital Status"]= $request->input("status","");
         $content["Assistance Required"]= implode(", ",$request->input("assist",[]));
         
-        $mail=Mail::to("fabian@asayokl.my")->to("josephine@asayokl.my");
+        $emails=["fabian@asayokl.my","josephine@asayokl.my"];
         
     switch($request->input("originDiocese.0","Undefined")){
         case 'Keuskupan Agung Kuala Lumpur': 
-            $mail=$mail->to('josephine@asayokl.my'); 
+            $emails[]="josephine@asayokl.my";
             break;
 
         case 'Keuskupan Pulau Pinang': 
-            $mail=$mail->to('pdyn@pgdiocese.org'); 
-            $mail=$mail->to('cmo.penang.diocese@gmail.com'); 
+            $emails[]='pdyn@pgdiocese.org'; 
+            $emails[]='cmo.penang.diocese@gmail.com'; 
             break;
 
         case 'Keuskupan Agung Kuching': 
-            $mail=$mail->to('kchadyouth.office@gmail.com'); 
+            $emails[]='kchadyouth.office@gmail.com'; 
             break;
 
         case 'Keuskupan Agung Kota Kinabalu': 
-            $mail=$mail->to('dypt2007@gmail.com'); 
+            $emails[]='dypt2007@gmail.com'; 
             break;
 
         case 'Keuskupan Melaka-Johor': 
-            $mail=$mail->to('daryltan@majodi.org'); 
-            $mail=$mail->to('mattwee@majodi.org'); 
-            $mail=$mail->to('malaccajohorecc@gmail.com'); 
+            $emails[]=('daryltan@majodi.org'; 
+            $emails[]=('mattwee@majodi.org'; 
+            $emails[]='malaccajohorecc@gmail.com'; 
             break;
 
         case 'Keuskupan Miri': 
-            $mail=$mail->to('genie.maylynn@gmail.com'); 
+            $emails[]='genie.maylynn@gmail.com'; 
             break;
 
         case 'Keuskupan Sibu': 
-            $mail=$mail->to('sibudioceseyouth@gmail.com'); 
+            $emails[]='sibudioceseyouth@gmail.com'; 
             break;
 
         case 'Keuskupan Keningau': 
-            $mail=$mail->to('kbkkgau@gmail.com'); 
+            $emails[]='kbkkgau@gmail.com'; 
             break;
 
         case 'Keuskupan Sandakan': 
-            $mail=$mail->to('dyasdkn@gmail.com'); 
+            $emails[]='dyasdkn@gmail.com'; 
             break;
 
         default: break;
@@ -160,42 +160,42 @@ class CheckinController extends BaseController
     
     switch($request->input("migrateDiocese.0","Keuskupan Agung Kuala Lumpur")){
         case 'Keuskupan Agung Kuala Lumpur': 
-            $mail=$mail->to('josephine@asayokl.my'); 
+            $emails[]='josephine@asayokl.my'; 
             break;
 
         case 'Keuskupan Pulau Pinang': 
-            $mail=$mail->to('pdyn@pgdiocese.org'); 
-            $mail=$mail->to('cmo.penang.diocese@gmail.com'); 
+            $emails[]='pdyn@pgdiocese.org'; 
+            $emails[]='cmo.penang.diocese@gmail.com'; 
             break;
 
         case 'Keuskupan Agung Kuching': 
-            $mail=$mail->to('kchadyouth.office@gmail.com'); 
+            $emails[]='kchadyouth.office@gmail.com'; 
             break;
 
         case 'Keuskupan Agung Kota Kinabalu': 
-            $mail=$mail->to('dypt2007@gmail.com'); 
+            $emails[]='dypt2007@gmail.com'; 
             break;
 
         case 'Keuskupan Melaka-Johor': 
-            $mail=$mail->to('daryltan@majodi.org'); 
-            $mail=$mail->to('mattwee@majodi.org'); 
-            $mail=$mail->to('malaccajohorecc@gmail.com'); 
+            $emails[]='daryltan@majodi.org'; 
+            $emails[]='mattwee@majodi.org'; 
+            $emails[]='malaccajohorecc@gmail.com'; 
             break;
 
         case 'Keuskupan Miri': 
-            $mail=$mail->to('genie.maylynn@gmail.com'); 
+            $emails[]='genie.maylynn@gmail.com'; 
             break;
 
         case 'Keuskupan Sibu': 
-            $mail=$mail->to('sibudioceseyouth@gmail.com'); 
+            $emails[]='sibudioceseyouth@gmail.com'; 
             break;
 
         case 'Keuskupan Keningau': 
-            $mail=$mail->to('kbkkgau@gmail.com'); 
+            $emails[]='kbkkgau@gmail.com'; 
             break;
 
         case 'Keuskupan Sandakan': 
-            $mail=$mail->to('dyasdkn@gmail.com'); 
+            $emails[]='dyasdkn@gmail.com'; 
             break;
 
         default: break;
@@ -224,7 +224,7 @@ class CheckinController extends BaseController
         $eucharistImg=$request->eucharistImg->storeAs("checkin-uploads",$request->name."-eucharist".".".$request->eucharistImg->extension());
         
         
-        $mail->send(new CheckinMail($content,$baptismImg,$confirmationImg,$eucharistImg));
+        Mail::to(array_unique($emails))->send(new CheckinMail($content,$baptismImg,$confirmationImg,$eucharistImg));
 
         return redirect()->route("checkin")->with([
             'modal'    => "Your registration is successful. We will reach out to you soon.",
