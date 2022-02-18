@@ -29,7 +29,7 @@ class CheckinController extends BaseController
         $conn=new GoogleSheetConnection();
         
         
-        $phone=phone($request->mobile);
+        $phone$this->phone($request->mobile);
         $timestamp=date("d/m/Y h:i:s A");
         $conn->connect("13QAI_yr0k7R_ZJv-Ak9bgf4VANvkMMhHkCXXcsTUYQ0", $lang);
 
@@ -210,17 +210,17 @@ class CheckinController extends BaseController
     
         if($request->hasFile("baptismImg")) 
         if($request->baptismImg->isValid()) 
-        if(strposa($request->baptismImg->extension(),$imgExt)!==false)
+        if($this->strposa($request->baptismImg->extension(),$imgExt)!==false)
         $baptismImg=$request->baptismImg->storeAs("checkin-uploads",$request->name."-baptism".".".$request->baptismImg->extension());
         
         if($request->hasFile("confirmationImg")) 
         if($request->confirmationImg->isValid()) 
-        if(strposa($request->confirmationImg->extension(),$imgExt)!==false)
+        if($this->strposa($request->confirmationImg->extension(),$imgExt)!==false)
         $confirmationImg=$request->confirmationImg->storeAs("checkin-uploads",$request->name."-confirmation".".".$request->confirmationImg->extension());
         
         if($request->hasFile("eucharistImg")) 
         if($request->eucharistImg->isValid()) 
-        if(strposa($request->eucharistImg->extension(),$imgExt)!==false)
+        if($this->strposa($request->eucharistImg->extension(),$imgExt)!==false)
         $eucharistImg=$request->eucharistImg->storeAs("checkin-uploads",$request->name."-eucharist".".".$request->eucharistImg->extension());
         
         
