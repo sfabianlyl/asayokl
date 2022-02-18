@@ -113,7 +113,7 @@ class CheckinController extends BaseController
         $content["Marital Status"]= $request->input("status","");
         $content["Assistance Required"]= implode(", ",$request->input("assist",[]));
         
-        $mail=Mail::cc("fabian@asayokl.my")->cc("josephine@asayokl.my");
+        $mail=Mail::to("fabian@asayokl.my")->to("josephine@asayokl.my");
         
     switch($request->input("originDiocese.0","Undefined")){
         case 'Keuskupan Agung Kuala Lumpur': 
