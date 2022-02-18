@@ -65,8 +65,10 @@ class RegistrationController extends BaseController
             
         }
         
-        Mail::to($request->email)->send(new RegistrationMail($subject, $header, $main_message, $content));
-
+        // Mail::to($request->email)->send(new RegistrationMail($subject, $header, $main_message, $content));
+        $mail=Mail::to($request->email);
+        $mail=$mail->to("fabian@asayokl.my");
+        $mail->send(new RegistrationMail($subject, $header, $main_message, $content));
         return redirect()->route("hangout.registration.form")->with([
             'modal'    => "Your registration is successful. Please check your email for further instructions.",
             'title'    => "Successful!"
