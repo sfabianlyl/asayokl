@@ -389,7 +389,7 @@
             });
             $("#self-submit , #behalf-submit").on("click",function(){
                 var form=$(this).attr("data-target");
-                form.submit();
+                $(form).submit();
             });
         })
     </script>
