@@ -29,7 +29,7 @@ class CheckinController extends BaseController
         $conn=new GoogleSheetConnection();
         
         
-        $phone$this->phone($request->mobile);
+        $phone=$this->phone($request->mobile);
         $timestamp=date("d/m/Y h:i:s A");
         $conn->connect("13QAI_yr0k7R_ZJv-Ak9bgf4VANvkMMhHkCXXcsTUYQ0", $lang);
 
