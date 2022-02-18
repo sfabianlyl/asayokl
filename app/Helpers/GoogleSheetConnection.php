@@ -36,6 +36,10 @@ class GoogleSheetConnection{
         if($count) array_unshift($data, $this->count_rows() );
         if($timestamp) $data[]=date("jS F Y, g:i a");
         
+        foreach($data as $key=>$value){
+            if(!$data[$key]) $data[$key]="";
+        }
+        
         $values=array(array_values($data));
         $body = new ValueRange([
             'values' => $values

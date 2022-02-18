@@ -77,7 +77,7 @@ class CheckinController extends BaseController
             $request->input("occupation",""),
             $request->input("status",""),
             $timestamp,
-            implode(", ",$request->input("assist",[])),
+            implode(", ",$request->input("assist",[]))
 
         ], $timestamp=false);
         
