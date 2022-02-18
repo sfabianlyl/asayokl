@@ -134,8 +134,8 @@ class CheckinController extends BaseController
             break;
 
         case 'Keuskupan Melaka-Johor': 
-            $emails[]=('daryltan@majodi.org'; 
-            $emails[]=('mattwee@majodi.org'; 
+            $emails[]='daryltan@majodi.org'; 
+            $emails[]='mattwee@majodi.org'; 
             $emails[]='malaccajohorecc@gmail.com'; 
             break;
 
