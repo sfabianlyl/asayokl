@@ -21,9 +21,10 @@ class GoogleSheetConnection{
         $this->client->setAuthConfig(storage_path('cdac4de75d4e/asayokldb-cdac4de75d4e.json'));
         $this->sheets = new Sheets($this->client);    
     }
-    public function connect($id, $sheet, $range="A1:Z"){
+    public function connect($id, $sheet="Sheet1", $range="A1:Z"){
         $this->id=$id;
-        $this->range="$sheet!$range";
+        if($sheet=="Sheet1") $this->range=$range;
+        else $this->range="$sheet!$range";
     }
     
     public function count_rows(){
