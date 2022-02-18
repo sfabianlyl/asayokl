@@ -23,7 +23,7 @@ class RegistrationController extends BaseController
         $conn=new GoogleSheetConnection();
         
         $languages=$request->language;
-        $phone=phone($request->phone);
+        $phone=$this->phone($request->phone);
         foreach($languages as $language){
             
             $parts=explode(" ",$language);
@@ -93,7 +93,7 @@ class RegistrationController extends BaseController
             $request->name,
             $request->age,
             $request->gender,
-            phone($request->phone),
+            $this->phone($request->phone),
             $request->email,
             $request->homeState,
             $request->uniState,
@@ -161,7 +161,7 @@ class RegistrationController extends BaseController
             $request->gender,
             $request->nationality,
             $request->email,
-            phone($request->phone),
+            $this->phone($request->phone),
             $request->parishes,
             $request->talents
         ]);
@@ -178,7 +178,7 @@ class RegistrationController extends BaseController
             "Tahun Lahir (Year of Birth): "=>$request->age,
             "Jantina (Gender): "=>$request->gender,
             "Kewarganegaraan (Nationality): "=>$request->nationality,
-            "No. Telefon (Mobile No.): "=> phone($request->phone),
+            "No. Telefon (Mobile No.): "=> $this->phone($request->phone),
             "E-mel (Email): "=>$request->email,
         ];
 
@@ -229,7 +229,7 @@ class RegistrationController extends BaseController
             "Umur (Age): "=>$request->age,
             "Jantina (Gender): "=>$request->gender,
             "Kewarganegaraan (Nationality): "=>$request->nationality,
-            "No. Telefon (Mobile No.): "=> phone($request->phone),
+            "No. Telefon (Mobile No.): "=> $this->phone($request->phone),
             "E-mel (Email): "=>$request->email,
         ];
 
@@ -262,7 +262,7 @@ class RegistrationController extends BaseController
             $request->gender,
             $request->nationality,
             $request->email,
-            phone($request->phone),
+            $this->phone($request->phone),
             $request->parish,
             $request->diocese
         ]);
@@ -278,7 +278,7 @@ class RegistrationController extends BaseController
             "Umur (Age): "=>$request->age,
             "Jantina (Gender): "=>$request->gender,
             "Kewarganegaraan (Nationality): "=>$request->nationality,
-            "No. Telefon (Mobile No.): "=> phone($request->phone),
+            "No. Telefon (Mobile No.): "=> $this->phone($request->phone),
             "E-mel (Email): "=>$request->email,
         ];
 
