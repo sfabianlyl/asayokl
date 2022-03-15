@@ -30,11 +30,16 @@ Route::get('/reachout', function () { return view('contents.home'); });
 Route::get('/rog-admin', function () { return view('contents.home'); });
 Route::get('/rog-user', function () { return view('contents.home'); });
 
+//kami
+Route::group(['prefix' => 'kami'], function () {
+    Route::get("/kudus", function(){return view('forms.kami.kudus');} )->name('kami.kudus.registration.form');
+    Route::post('/kudus',"App\Http\Controllers\RegistrationController@kamikudus")->name("kami.kudus.registration.submit");
+});
+
 //forms
 Route::get('/checkin', function () { return view('forms.checkin'); })->name("checkin");
 Route::post('/checkin', "App\Http\Controllers\CheckinController@checkin_self")->name("checkin.self.submit");
 Route::post('/checkin-behalf', "App\Http\Controllers\CheckinController@checkin_behalf")->name("checkin.behalf.submit");
-Route::get('/kamikudus', function () { return redirect()->route("home"); });
 
 Route::get('/ciptass', function () { return view('forms.ciptass'); })->name("ciptass.registration.form");
 Route::get('/hangout', function () { return view('forms.hangout'); })->name("hangout.registration.form");
@@ -49,16 +54,7 @@ Route::post('/s2s',"App\Http\Controllers\RegistrationController@s2s")->name("s2s
 Route::post('/cyan',"App\Http\Controllers\RegistrationController@cyan")->name("cyan.registration.submit");
 
 
-//processes
-Route::get('/submit', function () {
-    return view('contents.home');
-});
-Route::get('/submitBehalf', function () {
-    return view('contents.home');
-});
-Route::get('/confirm', function () {
-    return view('contents.home');
-});
+
 
 //redirects
 // Route::get('/easter', function () { return redirect("https://www.youtube.com/playlist?list=PL1GEZHjLaCL2Z01gOjPk4B_5ZqhAyNv_M"); });
