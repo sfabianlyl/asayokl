@@ -39,9 +39,12 @@
                        
                     </div>
                 </div>
-                @include("res.forms.basic_info")
-                @include("res.forms.proof_of_payment")
-                @include("res.forms.vaccination_status")
+                @include("res.forms.basic_info", [
+                    "includes" => [
+                        "res.forms.proof_of_payment",
+                        "res.forms.vaccination_status"
+                    ]
+                ])
             </div>
         </form>
     </div>
