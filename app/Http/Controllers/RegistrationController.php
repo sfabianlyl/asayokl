@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrationMail;
 use App\Helpers\GoogleSheetConnection;
+use App\Helpers\GoogleDriveConnection;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -214,7 +215,7 @@ class RegistrationController extends BaseController
             $request->gender,
             $request->nationality,
             $request->email,
-            phone($request->phone),
+            $this->phone($request->phone),
             $request->parish,
             $request->diocese
         ]);
@@ -297,5 +298,45 @@ class RegistrationController extends BaseController
             ]),
             'title'    => "Successful!"
         ]);
+    }
+
+    public function kamikudus(Request $request){
+        $sheet=new GoogleSheetConnection();
+        $sheet_id="1tap9FsnY7SljTH0ppzwG9RPAkuKVtVkY49GdSvlBWLM";
+        
+        $sheet->connect($sheet_id,"Registration");
+        $sheet->add([
+            $request->lnlDate,
+            $request->name,
+            $request->age,
+            $request->gender,
+            $request->nationality,
+            $request->email,
+            $this->phone($request->phone),
+            $request->parish,
+            $request->diocese
+        ]);
+
+
+        $imgExt=["jpg","tiff","png","raw","pdf","jpeg","gif","heic"];
+        foreach($imgExt as $ext) $imgExt[]=strtoupper($ext);
+        if($request->hasFile("payment")) 
+        if($request->payment->isValid()) 
+        if($this->strposa($request->payment->extension(),$imgExt)!==false)
+        $payment_filename="Kami_KUDUS".$request->name."-payment".".".$request->payment->extension();
+        $payment_file=$request->payment->storeAs("payments",$payment_filename);
+
+        if($request->hasFile("vaccination")) 
+        if($request->vaccination->isValid()) 
+        if($this->strposa($request->vaccination->extension(),$imgExt)!==false)
+        $vaccination_filename="Kami_KUDUS".$request->name."-vaccination".".".$request->vaccination->extension();
+        $vaccination_file=$request->vaccination->storeAs("vaccinations",$vaccination_filename);
+
+        $drive=new GoogleDriveConnection();
+        $drive_id="16J5i0PWbHgON2c1siZSXBN2QEUPIF2Um";
+        $drive->upload($drive_id,$payment_filename,$payment_file);
+
+        $drive_id="16J5i0PWbHgON2c1siZSXBN2QEUPIF2Um";
+        $drive->upload($drive_id,$vaccination_filename,$vaccination_file);
     }
 }

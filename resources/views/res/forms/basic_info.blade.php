@@ -1,3 +1,10 @@
+@php
+    $event=Programme::where("url", Request::path())->first();
+@endphp
+@if($event)
+    <input type="hidden" name="event_id" value="{{$event->id}}">
+@endif
+
 @include("res.forms.nationality")
 @include("res.forms.name")
 @include("res.forms.age")

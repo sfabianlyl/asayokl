@@ -31,8 +31,6 @@
                                     <label><input type="radio" name="language[]" value="Tamil"> Tamil, 14th - 15th May 2022 </label><br>
                                     <label><input type="radio" name="language[]" value="Mandarin"> Mandarin, 28th - 29th May 2022 </label><br>
                                     <label><input type="radio" name="language[]" value="English"> English, 11th - 12th June 2022 </label><br>
-
-            
                                 </div>
                             </div>
                         </div>
