@@ -31,10 +31,9 @@ Route::get('/rog-admin', function () { return view('contents.home'); });
 Route::get('/rog-user', function () { return view('contents.home'); });
 
 //kami
-Route::group(['prefix' => 'kami'], function () {
-    Route::get("/kudus", function(){return view('forms.kami.kudus');} )->name('kami.kudus.registration.form');
-    Route::post('/kudus',"App\Http\Controllers\RegistrationController@kamikudus")->name("kami.kudus.registration.submit");
-});
+    //kamikudus
+    Route::get("/kamikudus", function(){return view('forms.kami.kudus');} )->name('kami.kudus.registration.form');
+    Route::post('/kamikudus',"App\Http\Controllers\RegistrationController@kamikudus")->name("kami.kudus.registration.submit");
 
 //forms
 Route::get('/checkin', function () { return view('forms.checkin'); })->name("checkin");
