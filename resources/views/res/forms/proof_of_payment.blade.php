@@ -50,11 +50,20 @@
     function timer_start(){
         var timer=$("#timer");
         var time=10*60;
+        var ongoing=true;
         setInterval(() => {
-            time--;
-            var min=time/60;
-            var secs=time%60;
-            timer.html(min+":"+secs);
+            if(ongoing){
+                time--;
+                
+                var min=Math.floor(time/60);
+                var secs=time%60;
+                timer.html(min+":"+secs);
+                if(!time){
+                    ongoing=false;
+                    location.reload();
+                }
+            }
+            
         }, 1000);
     }
     $(document).ready(function(){
