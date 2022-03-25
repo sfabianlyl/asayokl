@@ -15,7 +15,11 @@
                     
             </div>
         </div>
+        <div class="mb-3">
+            Time left to complete payment and submit: <span id="timer">10:00</span> 
+        </div>
         <div id="payment-details-section">
+            
             <div class="mb-3">
             
                 <p>
@@ -43,6 +47,16 @@
 </div>
 
 <script>
+    function timer_start(){
+        var timer=$("#timer");
+        var time=10*60;
+        setInterval(() => {
+            time--;
+            var min=time/60;
+            var secs=time%60;
+            timer.html(min+":"+secs);
+        }, 1000);
+    }
     $(document).ready(function(){
         var sect=$("#payment-details-section");
         var but=$("#payment-details-button");
@@ -51,6 +65,7 @@
         but.on("click",function(){
             sect.show("fast");
             but.hide();
+            timer_start();
         });
     })
 </script>
