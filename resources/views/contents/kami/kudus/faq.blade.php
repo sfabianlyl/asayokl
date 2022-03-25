@@ -89,10 +89,10 @@
             <ul>
                 <li>Updated MySejahtera's COVID-19 Risk Status & Vaccination Status
                     <div class="row">
-                        <div class="col-12 col-lg-6 mb-3 order-lg-2">
+                        <div class="col-12 col-lg-3 mb-3 order-lg-2">
                             <img src="{{asset("Images/vaccination_status_sample.jpg")}}" alt="" class="w-100">
                         </div>
-                        <div class="col-12 col-lg-6 mb-3 order-lg-1">
+                        <div class="col-12 col-lg-9 mb-3 order-lg-1">
                             <ul>
                                 <li>Only MySejahtera's COVID-19 Risk Status with <b>Risiko Rendah (Low Risk - <span class="blue">blue</span>)</b> or <b>Kontak kasual (Casual contact - <span class="yellow">yellow</span>)</b> are allowed to join the programme and enter the premises on that day.</li>
                                 <li>As long as your MySejahtera Status shows "<b>fully vaccinated</b>", you are allowed to participate in the programme.</li>
@@ -103,13 +103,13 @@
                 </li>
                 <li>
                     <div class="row">
-                        <div class="col-12 col-lg-6 mb-3">
+                        <div class="col-12 col-lg-9 mb-3">
                             RTK test results 
                             <ul>
                                 <li>You will be required to upload a photo of your RTK Self test results (not more than 48 hours prior to arrival). **It is one of the SOP requirements by the MBS Recreation and Training Centre. </li>
                             </ul>
                         </div>
-                        <div class="col-12 col-lg-6 mb-3">
+                        <div class="col-12 col-lg-3 mb-3">
                             <img src="{{asset("Images/rtk-test.jpg")}}" alt="" class="w-100">
                         </div>
                     </div>
