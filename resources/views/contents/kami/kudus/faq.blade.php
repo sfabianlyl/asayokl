@@ -6,6 +6,12 @@
 
 
 @section("content")
+    <div class="row justify-content-end">
+        <div class="col-6 col-lg-3">
+            <img src="{{asset("Images/kamikudus-logo.png")}}" alt="" class="w-100">
+        </div>
+    </div>
+
     <h2>FAQ</h2>
 
     <h4>General Info:</h4>
@@ -84,7 +90,7 @@
                 <li>Updated MySejahtera's COVID-19 Risk Status & Vaccination Status
                     <div class="row">
                         <div class="col-12 col-lg-6 mb-3 order-lg-2">
-                            <img src="{{asset("Images/mysejahtera.jpg")}}" alt="">
+                            <img src="{{asset("Images/vaccination_status_sample.jpg")}}" alt="" class="w-100">
                         </div>
                         <div class="col-12 col-lg-6 mb-3 order-lg-1">
                             <ul>
@@ -104,7 +110,7 @@
                             </ul>
                         </div>
                         <div class="col-12 col-lg-6 mb-3">
-                            <img src="{{asset("Images/rtk-test.jpg")}}" alt="">
+                            <img src="{{asset("Images/rtk-test.jpg")}}" alt="" class="w-100">
                         </div>
                     </div>
                     
