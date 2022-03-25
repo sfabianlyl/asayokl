@@ -18,7 +18,7 @@
         <form action="{{ route('kami.kudus.registration.submit') }}" id="myform" method="POST">
             @csrf
 
-            <div id="hangout-registration-form" style="display:none;">
+            <div id="hangout-registration-form">
                 <div class="row mb-5">
                     <div class="col-3 col-lg-4">Sesi (Session)</div>
                     <div class="col-9 col-lg-8">
