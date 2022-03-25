@@ -174,5 +174,11 @@
         .container :is(p,h2,h4,ul li, ol li, span, a){
             font-family:Montserrat !important;
         }
+        ol>li{
+            margin-bottom:1rem;
+        }
+        :is(ol,ul)>li>ul>li{
+            margin-bottom:.2rem;
+        }
     </style>
 @stop
