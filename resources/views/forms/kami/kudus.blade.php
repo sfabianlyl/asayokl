@@ -45,7 +45,7 @@
                         "res.forms.payment_terms"
                     ],
                     "context" => [
-                        "payment_details"=>"<p>RM75 per person (with transportation) <br>RM55 per person (without transportation)</p>"
+                        "payment_details"=>"<p>RM65 per person (with transportation) <br>RM55 per person (own transportation)</p>"
                     ]
                 ])
 
