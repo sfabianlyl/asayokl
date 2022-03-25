@@ -9,9 +9,10 @@
                 </i>
             </p>
             <div class="mb-3">
-                
-                    <button class="btn-primary btn w-100" type="button" id="payment-details-button">Proceed with Payment</button>
-                
+                <div class="d-flex justify-content-center">
+                    <button class="btn-primary btn" type="button" id="payment-details-button">Proceed with Payment</button>
+                </div>
+                    
             </div>
         </div>
         <div id="payment-details-section">
