@@ -2,10 +2,10 @@
     <div class="col-12">
         <div class="mb-3">
             <p class="mb-3">
-                Pendaftaran tidak lengkap sehingga pihak ASAYOKL menerima sumbangan lengkap.
+                Pendaftaran anda akan lengkap selepas pihak ASAYOKL menerima sumbangan lengkap.
                 <br>
                 <i>
-                    (Registration is not complete until ASAYOKL receives the full contribution.)
+                    (Registration will be completed after ASAYOKL receives the full contribution.)
                 </i>
             </p>
             <p>
@@ -13,7 +13,7 @@
                 ASAYO (Archdiocesan Single Adults and Youth Office)<br>
                 Public Bank: 3180569004
             </p>
-            <p></p>
+            <div>{!! $payment??"" !!}</div>
         </div>
         <div class="mb-3">
             <p>

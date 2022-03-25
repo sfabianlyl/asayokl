@@ -13,9 +13,14 @@
 @include("res.forms.phone")
 @include("res.forms.diocese")
 @include("res.forms.parish-full")
+@php 
+    $context=$context ?? [];
+@endphp
 @if(isset($includes))
     @foreach($includes as $include)
-        @include($include)
+        
+        @include($include,$context)
+        
     @endforeach
 @endif
 @include("res.forms.submit")
