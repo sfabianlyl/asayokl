@@ -13,7 +13,7 @@
                 ASAYO (Archdiocesan Single Adults and Youth Office)<br>
                 Public Bank: 3180569004
             </p>
-            <div>{!! $payment_details ?? "nope" !!}</div>
+            <div>{!! $payment_details ?? "" !!}</div>
         </div>
         <div class="mb-3">
             <p>
