@@ -25,8 +25,7 @@
                         
                         <div>
                             <div class="row">
-                                <div class="col-4">KL North</div>
-                                <div class="col-8">
+                                <div class="col-12">
                                     <label><input type="radio" name="language[]" value="BM"> BM, 30th April 2022 - 1st May 2022 </label><br>
                                     <label><input type="radio" name="language[]" value="Tamil"> Tamil, 14th - 15th May 2022 </label><br>
                                     <label><input type="radio" name="language[]" value="Mandarin"> Mandarin, 28th - 29th May 2022 </label><br>
