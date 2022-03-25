@@ -24,7 +24,7 @@ Route::get('/resources', function (Request $request) { return view('contents.res
 Route::get('/teens', function () { return view('contents.teens'); })->name("teens");
 Route::get('/young-adult', function () { return view('contents.youngadult'); })->name("young.adult");
 Route::get('/youth-campus', function () { return view('contents.youthcampus'); })->name("youth.campus");
-
+Route::get("/kamikudusfaq", function() { return view("contents.kami.kudus.faq"); })->name("kami.kudus.faq");
 //rog
 Route::get('/reachout', function () { return view('contents.home'); });
 Route::get('/rog-admin', function () { return view('contents.home'); });
