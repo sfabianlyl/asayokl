@@ -3,6 +3,7 @@
     <div class="col-8">
         <input type="text" name="parish" id="parishOthers" class="form-control" style="display:none;" disabled>
         <select id="parishKL" class="form-control" name="parish" required>
+            <option disabled selected value> -- Select A Parish -- </option>
             @include("res.options.klparishes")
         </select>
     </div>
