@@ -44,6 +44,9 @@
                         "res.forms.health_declaration",
                         "res.forms.proof_of_payment",
                         "res.forms.payment_terms"
+                    ],
+                    "context" => [
+                        "payment_details"=>"<p>RM75 per person (with transportation) <br>RM55 per person (without transportation)</p>"
                     ]
                 ])
 
