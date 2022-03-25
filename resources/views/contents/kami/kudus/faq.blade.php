@@ -155,7 +155,7 @@
 
 @section("css")
     <style>
-        body{
+        body .container{
             background-color:#F9F5E5 !important;
             color:black !important;
         }
