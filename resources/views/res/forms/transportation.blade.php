@@ -5,8 +5,8 @@
             <br><i>**(pick-up and drop-off at Archdiocesan Pastoral Center)</i>
         </div>
         <div class="mb-3">
-            <div><label class="d-flex"><input type="radio" name="transportation" value="Yes" class="form-control"> <span>Yes</span></label></div>
-            <div><label class="d-flex"><input type="radio" name="transportation" value="No" class="form-control"> <span>No</span></label></div>
+            <div><label class="d-flex align-items-center"><input type="radio" name="transportation" value="Yes"> <span class="mx-3">Yes</span></label></div>
+            <div><label class="d-flex align-items-center"><input type="radio" name="transportation" value="No"> <span class="mx-3">No</span></label></div>
         </div>
     </div>
 </div>
