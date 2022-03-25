@@ -178,7 +178,7 @@
             margin-bottom:1rem;
         }
         :is(ol,ul)>li>ul>li{
-            margin-bottom:.2rem;
+            margin-bottom:0;
         }
     </style>
 @stop
