@@ -155,9 +155,14 @@
 
 @section("css")
     <style>
-        body .container{
+        body{
             background-color:#F9F5E5 !important;
+        }
+        .container{    
             color:black !important;
+        }
+        .container a{
+            color:rgb(0, 0, 131) !important;
         }
         .yellow{
             color: #f1c232!important;
