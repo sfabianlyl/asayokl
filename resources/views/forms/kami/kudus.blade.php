@@ -4,7 +4,7 @@
 
 @section("content")
 
-    <div class="row mb-3">
+    <div class="row justify-content-centermb-3">
         <div class="col-lg-5 col-11">
             <img src="{{asset("Images/kamikudus-poster.png")}}" alt="" class="w-100">
         </div>
