@@ -302,7 +302,7 @@ class RegistrationController extends BaseController
 
     public function kamikudus(Request $request){
         $sheet=new GoogleSheetConnection();
-        $sheet_id="1tap9FsnY7SljTH0ppzwG9RPAkuKVtVkY49GdSvlBWLM";
+        $sheet_id="1-oomA98ZyKrjoXB4PhqLhLCntycUXEm7ZqkidmgjtTU";
         
         $sheet->connect($sheet_id,$request->language);
         
@@ -314,7 +314,7 @@ class RegistrationController extends BaseController
         if($request->payment->isValid()) 
         if($this->strposa($request->payment->extension(),$imgExt)!==false)
         $payment_filename="Kami_KUDUS".$request->name."-payment".".".$request->payment->extension();
-        $payment_file=$request->payment->storeAs("payments",$payment_filename);
+        $payment_file=$request->payment->store("payments");
 
         $sheet->add([
             $request->name,
@@ -344,7 +344,7 @@ class RegistrationController extends BaseController
             "phone"=> $this->phone($request->phone),
             "diocese"=>$request->diocese,
             "parish"=>$request->parish,
-            "payment"=>$request->payment,
+            "payment"=>$payment_file,
             "vaccination"=>$request->vaccination,
             "other_details"=>json_encode([
                 "transportation"=>$request->transportation,
