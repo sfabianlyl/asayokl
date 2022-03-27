@@ -329,7 +329,7 @@ class RegistrationController extends BaseController
             $request->transportation,
             $request->input("allergy","N/A"),
             $request->vaccination_status,
-            $payment_file
+            asset("storage/$payment_file"),
         ]);
 
         $event_id=Event::where("name", "K.A.M.I Kudus ".$request->language)->first()->id;
