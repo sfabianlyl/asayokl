@@ -20,6 +20,13 @@ class RegistrationController extends BaseController
         if(!$phone) return ""; 
         return ($phone[0]=="+")? $phone: "+6$phone";
     }
+
+    public function strposa($str, $needs){
+        foreach($needs as $need){
+            if(strpos($str, $need)!==false) return true;
+        }
+        return false;
+    }
     
     public function hangout(Request $request){
         $conn=new GoogleSheetConnection();
