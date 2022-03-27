@@ -6,7 +6,7 @@
 
     <div class="row justify-content-center mb-3">
         <div class="col-lg-5 col-11">
-            <img src="{{asset("Images/kamikudus-poster.png")}}" alt="" class="w-100">
+            <img src="{{asset("Images/kamikudus-logo.png")}}" alt="" class="w-100">
         </div>
     </div>
     <div class="mb-5">
@@ -100,8 +100,29 @@
 @section("css")
     <style>
         body{
-            background-color:;
-            color:;
+            background-color:#F9F5E5 !important;
+        }
+        .container{    
+            color:black !important;
+        }
+        .container a{
+            color:rgb(0, 0, 131) !important;
+        }
+        .yellow{
+            color: #f1c232!important;
+        }
+        .blue{
+            color: #4a86e8!important;
+        }
+
+        .container :is(p,h2,h4,ul li, ol li, span, a){
+            font-family:Montserrat !important;
+        }
+        ol>li{
+            margin-bottom:1rem;
+        }
+        :is(ol,ul)>li>ul>li{
+            margin-bottom:0;
         }
     </style>
 @stop
