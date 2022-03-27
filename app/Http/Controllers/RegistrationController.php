@@ -323,7 +323,7 @@ class RegistrationController extends BaseController
         if($request->payment->isValid()) 
         if($this->strposa($request->payment->extension(),$imgExt)!==false)
         $payment_filename="Kami_KUDUS".$request->name."-payment".".".$request->payment->extension();
-        $payment_file=$request->payment->store("payments");
+        $payment_file=$request->payment->store("payments","public");
 
         $sheet->add([
             $request->name,
