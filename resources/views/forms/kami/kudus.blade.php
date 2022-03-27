@@ -23,10 +23,10 @@
                             <div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <label><input type="radio" name="language[]" value="BM"> BM, 30th April 2022 - 1st May 2022 </label><br>
-                                        <label><input type="radio" name="language[]" value="Tamil"> Tamil, 14th - 15th May 2022 </label><br>
-                                        <label><input type="radio" name="language[]" value="Mandarin"> Mandarin, 28th - 29th May 2022 </label><br>
-                                        <label><input type="radio" name="language[]" value="English"> English, 11th - 12th June 2022 </label><br>
+                                        <label><input type="radio" name="language" value="BM"> BM, 30th April 2022 - 1st May 2022 </label><br>
+                                        <label><input type="radio" name="language" value="Tamil"> Tamil, 14th - 15th May 2022 </label><br>
+                                        <label><input type="radio" name="language" value="Mandarin"> Mandarin, 28th - 29th May 2022 </label><br>
+                                        <label><input type="radio" name="language" value="English"> English, 11th - 12th June 2022 </label><br>
                                     </div>
                                 </div>
                             </div>
@@ -36,6 +36,7 @@
                     @include("res.forms.basic_info", [
                         "includes" => [
                             "res.forms.transportation",
+                            "res.forms.allergy",
                             "res.forms.vaccination_status",
                             "res.forms.health_declaration",
                             "res.forms.proof_of_payment",

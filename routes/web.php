@@ -32,7 +32,7 @@ Route::get('/rog-user', function () { return view('contents.home'); });
 
 //kami
     //kamikudus
-    Route::get("/kamikudus", function(){return view('forms.kami.kudus');} )->name('kami.kudus.registration.form');
+    Route::get("/kamikudus", "App\Http\Controllers\ViewController@kamikudus" )->name('kami.kudus.registration.form');
     Route::post('/kamikudus',"App\Http\Controllers\RegistrationController@kamikudus")->name("kami.kudus.registration.submit");
 
 //forms

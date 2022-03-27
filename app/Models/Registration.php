@@ -6,6 +6,7 @@
     class Registration extends Model
     {
         protected $fillable = [
+            'event_id',
             'name',
             'age',
             'gender',
@@ -15,7 +16,8 @@
             'diocese',
             'parish',
             'payment',
-            'vaccination'
+            'vaccination',
+            "other_details"
         ];
 
         public function event()

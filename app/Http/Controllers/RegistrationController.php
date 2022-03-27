@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrationMail;
 use App\Helpers\GoogleSheetConnection;
-use App\Helpers\GoogleDriveConnection;
+// use App\Helpers\GoogleDriveConnection;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -304,18 +304,8 @@ class RegistrationController extends BaseController
         $sheet=new GoogleSheetConnection();
         $sheet_id="1tap9FsnY7SljTH0ppzwG9RPAkuKVtVkY49GdSvlBWLM";
         
-        $sheet->connect($sheet_id,"Registration");
-        $sheet->add([
-            $request->lnlDate,
-            $request->name,
-            $request->age,
-            $request->gender,
-            $request->nationality,
-            $request->email,
-            $this->phone($request->phone),
-            $request->parish,
-            $request->diocese
-        ]);
+        $sheet->connect($sheet_id,$request->language);
+        
 
 
         $imgExt=["jpg","tiff","png","raw","pdf","jpeg","gif","heic"];
@@ -326,17 +316,75 @@ class RegistrationController extends BaseController
         $payment_filename="Kami_KUDUS".$request->name."-payment".".".$request->payment->extension();
         $payment_file=$request->payment->storeAs("payments",$payment_filename);
 
-        if($request->hasFile("vaccination")) 
-        if($request->vaccination->isValid()) 
-        if($this->strposa($request->vaccination->extension(),$imgExt)!==false)
-        $vaccination_filename="Kami_KUDUS".$request->name."-vaccination".".".$request->vaccination->extension();
-        $vaccination_file=$request->vaccination->storeAs("vaccinations",$vaccination_filename);
+        $sheet->add([
+            $request->name,
+            $request->ic,
+            $request->age,
+            $request->gender,
+            $request->nationality,
+            $request->email,
+            $this->phone($request->phone),
+            $request->parish,
+            $request->diocese,
+            $request->transportation,
+            $request->input("allergy","N/A"),
+            $request->vaccination_status,
+            $payment_file
+        ]);
 
-        $drive=new GoogleDriveConnection();
-        $drive_id="16J5i0PWbHgON2c1siZSXBN2QEUPIF2Um";
-        $drive->upload($drive_id,$payment_filename,$payment_file);
+        $event_id=Event::where("name", "K.A.M.I Kudus ".$request->language)->first()->id;
 
-        $drive_id="16J5i0PWbHgON2c1siZSXBN2QEUPIF2Um";
-        $drive->upload($drive_id,$vaccination_filename,$vaccination_file);
+        $registration=Registration::create([
+            "event_id"=>$event_id,
+            "name"=>$request->name,
+            "age"=>$request->age,
+            "gender"=>$request->gender,
+            "nationality"=>$request->nationality,
+            "email"=>$request->email,
+            "phone"=> $this->phone($request->phone),
+            "diocese"=>$request->diocese,
+            "parish"=>$request->parish,
+            "payment"=>$request->payment,
+            "vaccination"=>$request->vaccination,
+            "other_details"=>json_encode([
+                "transportation"=>$request->transportation,
+                "allergy"=>$request->input("allergy","N/A"),
+                "identification"=>$request->ic
+            ]),
+
+        ]);
+
+        $header="Thank You for Registering!";
+
+        $main_message=implode("",[
+            "<p>Hooray! You have completed your registration for K.A.M.I. Kudus - Close Contact with Jesus. We will verify your registration and will send you a follow-up email about K.A.M.I. Kudus via <a href='mailto:kamikudus@asayokl.my'>kamikudus@asayokl.my</a></p>",
+            "<p>Do ensure your information below is correct. Any clarification or enquire, you may contact via <a href='mailto:kamikudus@asayokl.my'>kamikudus@asayokl.my</a> or whatsapp us at <a href='https://wa.me/60185903889' target='_blank'>+60185903889</a></p>",
+        ]);
+
+        switch($request->language){
+            case "BM":$session="BM (30/04/2022 - 01/05/2022)"; break;
+            case "Tamil":$session="Tamil (14/05/2022 - 15/05/2022)"; break;
+            case "Mandarin":$session="Mandarin (28/09/2022 - 29/05/2022)"; break;
+            case "English":$session="English (11/06/2022 - 12/06/2022)"; break;
+        }
+
+        $content=[
+            "Sesi (Session)"=>$session,
+            "Nama (Name)"=>$request->name,
+            "No. Kad Pengenalan / Pasport (IC / Passport Number)"=>$request->ic,
+            "No. Telefon (Mobile No.)"=>$this->phone($request->phone),
+            "E-mel (Email)"=>$request->email,
+            "Perlukan Pengangkutan (Need Transportation)"=>$request->transportation
+        ];
+
+        Mail::to($request->email)->send(new RegistrationMail($subject= "K.A.M.I Kudus Registration", $main_heading=$header, $intro_message= $main_message, $content=$content, $outro_message=""));
+
+        return redirect()->route("kami.kudus.registration.form")->with([
+            'modal'    => implode("<br>",[
+                "Thank you for registering for K.A.M.I. Kudus - Close Contact with Jesus.",
+                "Do ensure you have received a reply email (check your spam / junk folder) about your registration."
+            ]),
+            'title'    => "Successful!"
+        ]);
     }
 }

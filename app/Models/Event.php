@@ -9,7 +9,8 @@
             'name',
             'date',
             'time',
-            'sheet'
+            'sheet',
+            "url"
         ];
 
         public function registrations()
