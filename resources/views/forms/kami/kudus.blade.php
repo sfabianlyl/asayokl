@@ -4,12 +4,19 @@
 
 @section("content")
 
+    <div class="row mb-3">
+        <div class="col-lg-5 col-11">
+            <img src="{{asset("Images/")}}" alt="" class="w-100">
+        </div>
+    </div>
     <div class="mb-5">
         <h3 class="text-center">K.A.M.I. Kudus 2022</h3>
         <p class="text-center"><i>Join us according to your preferred language</i></p>
     </div>
 
-
+    <div class="mb-5">
+        <h5 class="text-center"><a href="{{route("kami.kudus.faq")}}">Click here for FAQ</a></h5>
+    </div>
     <div class="row justify-content-center">
         <div class="col-lg-8 col-12">
             <form action="{{ route('kami.kudus.registration.submit') }}" id="myform" method="POST" enctype="multipart/form-data">
