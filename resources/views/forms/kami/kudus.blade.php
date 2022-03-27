@@ -12,7 +12,7 @@
 
     <div class="row justify-content-center">
         <div class="col-lg-8 col-12">
-            <form action="{{ route('kami.kudus.registration.submit') }}" id="myform" method="POST">
+            <form action="{{ route('kami.kudus.registration.submit') }}" id="myform" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div id="hangout-registration-form">
