@@ -386,7 +386,7 @@ class RegistrationController extends BaseController
             "Perlukan Pengangkutan (Need Transportation)"=>$request->transportation
         ];
 
-        Mail::to($request->email)->send(new RegistrationMail($subject= "K.A.M.I Kudus Registration", $main_heading=$header, $intro_message= $main_message, $content=$content, $outro_message="", $meets=false));
+        Mail::to($request->email)->send(new RegistrationMail($subject= "K.A.M.I. Kudus Registration", $main_heading=$header, $intro_message= $main_message, $content=$content, $outro_message="", $meets=false));
 
         return redirect()->route("kami.kudus.registration.form")->with([
             'modal'    => implode("<br>",[

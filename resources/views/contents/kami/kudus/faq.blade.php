@@ -11,7 +11,9 @@
             <img src="{{asset("Images/kamikudus-logo.png")}}" alt="" class="w-100">
         </div>
     </div>
-
+    <div class="mb-3">
+        <h5><a href="{{route("kami.kudus.registration.form")}}">< Back</a></h5>
+    </div>
     <h2>FAQ</h2>
 
     <h4>General Info:</h4>
@@ -123,6 +125,10 @@
             We pray that you are in good health and free from sickness always, especially the few days before the programme begins. In case of unforeseen circumstances, you are required to inform us immediately. During your registration, you are required to agree to the clause to not participate if you are projecting any symptoms of COVID-19 or close contact.
         </li>
     </ol>
+
+    <div class="my-5">
+        <h5><a href="{{route("kami.kudus.registration.form")}}">< Back</a></h5>
+    </div>
 @stop
 
 @section("js")

@@ -1,12 +1,12 @@
 @extends("layouts.master")
 
-@section("title", "K.A.M.I Kudus Registration")
+@section("title", "K.A.M.I. Kudus Registration")
 
 @section("content")
 
     <div class="row mb-3">
         <div class="col-lg-5 col-11">
-            <img src="{{asset("Images/")}}" alt="" class="w-100">
+            <img src="{{asset("Images/kamikudus-poster.png")}}" alt="" class="w-100">
         </div>
     </div>
     <div class="mb-5">
@@ -56,7 +56,7 @@
                     ])
 
                     <div class="my-5">
-                        <p>Check out last year's K.A.M.I. KUDUS Prayer Congerence (virtual)!</p>
+                        <p>Check out last year's K.A.M.I. KUDUS Prayer Conference (virtual)!</p>
                         <div class="video-container">
                             <iframe width="100%" height="auto" src="https://www.youtube.com/embed/videoseries?list=PL1GEZHjLaCL1n6AGarqLozYFAApa7kl1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
