@@ -337,7 +337,7 @@ class RegistrationController extends BaseController
             $request->diocese,
             $request->transportation,
             $request->input("allergy","N/A"),
-            $request->vaccination_status,
+            $request->vaccination,
             asset("storage/$payment_file"),
         ]);
 
