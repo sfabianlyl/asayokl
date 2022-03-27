@@ -33,6 +33,7 @@
                         
                         </div>
                     </div>
+                    @include("res.forms.identification")
                     @include("res.forms.basic_info", [
                         "includes" => [
                             "res.forms.transportation",
