@@ -62,8 +62,8 @@
                         <button type="button" class="close" data-dismiss="modal" style="color:lightgrey;">×</button>
                     </div>
                     <div class="modal-body">
-                         <a href="{{session('link')}}" target="_blank">
-                            <img src="{{session('popup')}}" class="w-100">
+                         <a href=" {{session('link')}} " target="_blank">
+                            <img src="{{ session('popup')}} " class="w-100">
                          </a>               
                     </div>
                 </div>
@@ -77,4 +77,5 @@
     @endif
     
     @yield("js")
+</body>
 </html>
