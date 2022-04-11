@@ -53,7 +53,7 @@
         </script>
     @endif
 
-    @if(session('popup'))
+    @if( isset($popup))
         
         <div class="modal fade" id="popupModal" style="padding-right: 17px; display: block;">-->
             <div class="modal-dialog modal-lg">
@@ -62,8 +62,8 @@
                         <button type="button" class="close" data-dismiss="modal" style="color:lightgrey;">×</button>
                     </div>
                     <div class="modal-body">
-                         <a href=" {{session('link')}} " target="_blank">
-                            <img src="{{ session('popup')}} " class="w-100">
+                         <a href=" {{ $link }} " target="_blank">
+                            <img src="{!! $popup !!} " class="w-100">
                          </a>               
                     </div>
                 </div>
