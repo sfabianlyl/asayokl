@@ -52,6 +52,29 @@
             });
         </script>
     @endif
+
+    @if(session('popup'))
+        
+        <div class="modal fade" id="popupModal" style="padding-right: 17px; display: block;">-->
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background-color: transparent; border:none;">
+                    <div class="modal-header" style="border-bottom:none;">
+                        <button type="button" class="close" data-dismiss="modal" style="color:lightgrey;">×</button>
+                    </div>
+                    <div class="modal-body">
+                         <a href="{{session('link')}}" target="_blank">
+                            <img src="{{session('popup')}}" class="w-100">
+                         </a>               
+                    </div>
+                </div>
+            </div>
+         </div>
+        <script>
+            $(document).ready(function(){
+                $("#popupModal").modal("show");
+            });
+        </script>
+    @endif
     
     @yield("js")
 </html>
