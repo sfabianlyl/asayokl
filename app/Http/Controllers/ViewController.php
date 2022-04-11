@@ -20,14 +20,24 @@ class ViewController extends BaseController
         $mand=Event::where("name","K.A.M.I Kudus Mandarin")->with("registrations")->first();
         $tamil=Event::where("name","K.A.M.I Kudus Tamil")->with("registrations")->first();
 
+        $bmDeadline=strtotime("17th April 2022");
+        $engDeadline=strtotime("29th May 2022");
+        $mandDeadline=strtotime("15th May 2022");
+        $tamilDeadline=strtotime("1st May 2022");
         
+        $curtime=time();
         
 
         return view("forms.kami.kudus")->with(compact(
             "eng",
             "bm",
             "mand",
-            "tamil"
+            "tamil",
+            "bmDeadline",
+            "engDeadline",
+            "mandDeadline",
+            "tamilDeadline",
+            "curtime"
         ));
     }
 }
