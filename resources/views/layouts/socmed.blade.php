@@ -35,8 +35,8 @@
         <div class="social-nav-block">
             <div class="social-nav-details">
                 <img src="Images/icon_Whatsapp.png">
-                <a href="https://wa.me/60185903889" target="_blank">
-                    +60185903889
+                <a href="{{config("contact.whatsapp")}}" target="_blank">
+                    {{config("contact.phone")}}
                 </a>
             </div>
         </div>
