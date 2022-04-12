@@ -30,10 +30,10 @@
                             <div>
                                 <div class="row">
                                     <div class="col-12">
-                                        @if(count($bm->registrations) < 80 && $curtime < $bmDeadline )
+                                        @if(count($bm->registrations) < 40 && $curtime < $bmDeadline )
                                             <label><input type="radio" name="language" value="BM"> BM, 30th April 2022 - 1st May 2022 </label><br>
                                         @endif
-                                        @if(count($tamil->registrations) < 80 && $curtime < $tamilDeadline )
+                                        @if(count($tamil->registrations) < 50 && $curtime < $tamilDeadline )
                                             <label><input type="radio" name="language" value="Tamil"> Tamil, 14th - 15th May 2022 </label><br>
                                         @endif
                                         @if(count($mand->registrations) < 80 && $curtime < $mandDeadline )
