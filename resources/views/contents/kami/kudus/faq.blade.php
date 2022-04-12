@@ -74,11 +74,11 @@
             How can I make a contribution for the programme? <br><br>
             Contributions can be made to <b>ASAYO (Archdiocesan Single Adults and Youth Office)<br>
             Public Bank: 3180569004<br></b>
-            You are required to upload the proof of transfer during registration. If you have any enquiries about the payment or are in need of assistance, feel free to contact us at <a href="mailto:kamikudus@asayokl.my" target="_blank">kamikudus@asayokl.my</a> or Whatsapp us at <a href="https://wa.me/60185903889" target="_blank" rel="noopener noreferrer">+60185903889</a>.
+            You are required to upload the proof of transfer during registration. If you have any enquiries about the payment or are in need of assistance, feel free to contact us at <a href="mailto:{{config("contact.kamikudus")}}" target="_blank">{{config("contact.kamikudus")}}</a> or Whatsapp us at <a href="{{config("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{config("contact.phone")}}</a>.
         </li>
         <li>
             What if I can’t make the indicated contribution during registration? <br><br>
-            You may make an initial contribution of RM20 and contact us at <a href="mailto:kamikudus@asayokl.my" target="_blank">kamikudus@asayokl.my</a> or Whatsapp us at <a href="https://wa.me/60185903889" target="_blank" rel="noopener noreferrer">+60185903889</a> for further arrangements.
+            You may make an initial contribution of RM20 and contact us at <a href="mailto:{{ config("contact.kamikudus") }}" target="_blank">{{ config("contact.kamikudus") }}</a> or Whatsapp us at <a href="{{ config("contact.whatsapp") }}" target="_blank" rel="noopener noreferrer">{{ config("contact.phone") }}</a> for further arrangements.
 
         </li>
         <li>

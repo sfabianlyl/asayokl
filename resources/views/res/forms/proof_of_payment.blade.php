@@ -9,10 +9,10 @@
                 </i>
             </p>
             <p class="mb-3">
-                **Jika anda menghadapi masalah dalam  membuat pembayaran, anda boleh hubungi <a href='mailto:kamikudus@asayokl.my' target="_blank">kamikudus@asayokl.my</a> atau WhatsApp kami <a href="https://wa.me/60185903889" target="_blank" rel="noopener noreferrer">+60185903889</a>
+                **Jika anda menghadapi masalah dalam  membuat pembayaran, anda boleh hubungi <a href='mailto:{{config("contact.kamikudus")}}' target="_blank">{{config("contact.kamikudus")}}</a> atau WhatsApp kami <a href="{{config("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{config("contact.phone")}}</a>
                 <br>
                 <i>
-                    (If you have any difficulty in making payment, contact us <a href='mailto:kamikudus@asayokl.my' target="_blank">kamikudus@asayokl.my</a> or WhatsApp us <a href="https://wa.me/60185903889" target="_blank" rel="noopener noreferrer">+60185903889</a>) 
+                    (If you have any difficulty in making payment, contact us <a href='mailto:{{config("contact.kamikudus")}}' target="_blank">{{config("contact.kamikudus")}}</a> or WhatsApp us <a href="{{config("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{config("contact.phone")}}</a>) 
                 </i>
             </p>
             <div class="mb-3">
