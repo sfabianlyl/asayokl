@@ -373,7 +373,7 @@ class RegistrationController extends BaseController
         switch($request->language){
             case "BM":$session="BM (30/04/2022 - 01/05/2022)"; break;
             case "Tamil":$session="Tamil (14/05/2022 - 15/05/2022)"; break;
-            case "Mandarin":$session="Mandarin (28/09/2022 - 29/05/2022)"; break;
+            case "Mandarin":$session="Mandarin (28/05/2022 - 29/05/2022)"; break;
             case "English":$session="English (11/06/2022 - 12/06/2022)"; break;
         }
 
