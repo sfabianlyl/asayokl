@@ -35,7 +35,7 @@
         return $os_platform;
     }
     $os=getOS($agent);
-    switch($user_os){
+    switch($os){
         case "iPhone":
         case "iPad":
         case "iPod": $type="iOS"; break;
