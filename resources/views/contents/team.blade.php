@@ -26,7 +26,7 @@
             <h4 class="eng" style="display:none">Director / Ecclesiastical Assistant</h4>
         </div>
         <div class="col-lg-8 col-12 text-center">
-            <h5>Rev Father Jude Gregory Chan</h5>
+            <h5>Rev Father Simon Lau</h5>
         </div>
         <div class="col-lg-8 col-12 text-center">
             <a href="mailto:asayo@archkl.org"><h6><i>asayo@archkl.org</i></h6></a>
@@ -40,7 +40,7 @@
             <h4 class="eng" style="display:none">Assistant Director / Ecclesiastical Assistant</h4>
         </div>
         <div class="col-lg-8 col-12 text-center">
-            <h5>Rev Father Simon Lau</h5>
+            <h5>Rev Father Michel Dass</h5>
         </div>
         <div class="col-lg-8 col-12 text-center">
             <a href="mailto:asayo@archkl.org"><h6><i>asayo@archkl.org</i></h6></a>
