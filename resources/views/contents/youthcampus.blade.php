@@ -1,7 +1,7 @@
 @extends("layouts.master")
 
 
-@section("hero",asset("without ArchKL_Y_CS.png"))
+@section("hero",asset("Images/without ArchKL_Y_CS.png"))
 
 @section("content")
     <div class="eng" style="display:none">
