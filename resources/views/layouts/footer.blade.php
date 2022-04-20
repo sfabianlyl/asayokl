@@ -21,26 +21,26 @@
                 </p>
 
                 <!-- <a id="contact">Contact Us</a> -->
-                <p>Email: <a href="mailto:{{config("contact.email")}}">{{config("contact.email")}}</a></p>
+                <p>Email: <a href="mailto:{{setting("contact.email")}}">{{setting("contact.email")}}</a></p>
                 
                 <div class="row justify-content-around">
                     <div class="col-2">
-                        <a href="{{config("contact.facebook")}}" target="_blank"><img src="{{asset("Images/icon_Facebook.png")}}" class="w-100"></a>
+                        <a href="{{setting("contact.facebook")}}" target="_blank"><img src="{{asset("Images/icon_Facebook.png")}}" class="w-100"></a>
                     </div>
                     <div class="col-2">
-                        <a href="{{config("contact.instagram")}}" target="_blank"><img src="{{asset("Images/icon_Instagram.png")}}" class="w-100"></a>
+                        <a href="{{setting("contact.instagram")}}" target="_blank"><img src="{{asset("Images/icon_Instagram.png")}}" class="w-100"></a>
                     </div>
                     <div class="col-2">
-                        <a href="{{config("contact.twitter")}}" target="_blank"><img src="{{asset("Images/icon_Twitter.png")}}" class="w-100"></a>
+                        <a href="{{setting("contact.twitter")}}" target="_blank"><img src="{{asset("Images/icon_Twitter.png")}}" class="w-100"></a>
                     </div>
                     <div class="col-2">
-                        <a href="{{config("contact.youtube")}}" target="_blank"><img src="{{asset("Images/icon_Youtube.png")}}" class="w-100"></a>
+                        <a href="{{setting("contact.youtube")}}" target="_blank"><img src="{{asset("Images/icon_Youtube.png")}}" class="w-100"></a>
                     </div>
                     <div class="col-2">
-                        <a href="{{config("contact.whatsapp")}}" target="_blank"><img src="{{asset("Images/icon_Whatsapp.png")}}" class="w-100"></a>
+                        <a href="{{setting("contact.whatsapp")}}" target="_blank"><img src="{{asset("Images/icon_Whatsapp.png")}}" class="w-100"></a>
                     </div>
                     <div class="col-2">
-                        <a href="{{config("contact.telegram")}}" target="_blank"><img src="{{asset("Images/icon_Telegram.png")}}" class="w-100"></a>
+                        <a href="{{setting("contact.telegram")}}" target="_blank"><img src="{{asset("Images/icon_Telegram.png")}}" class="w-100"></a>
                     </div>
                 </div>
             </div>

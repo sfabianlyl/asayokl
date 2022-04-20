@@ -35,8 +35,8 @@
         <div class="social-nav-block">
             <div class="social-nav-details">
                 <img src="Images/icon_Whatsapp.png">
-                <a href="{{config("contact.whatsapp")}}" target="_blank">
-                    {{config("contact.phone")}}
+                <a href="{{setting("contact.whatsapp")}}" target="_blank">
+                    {{setting("contact.phone")}}
                 </a>
             </div>
         </div>

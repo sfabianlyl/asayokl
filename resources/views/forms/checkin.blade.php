@@ -72,11 +72,11 @@
                 <li>
                     Harap maklum, kami mungkin menerima banyak e-mel setiap hari, dan kemungkinan email anda 
                     terlepas pandangan kami. Sekiranya anda tidak dihubungi dalam tempoh masa yang dinyatakan, 
-                    anda boleh menghubungi ASAYO KL di <a href="{{config("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{config("contact.phone")}}</a>.<br>
+                    anda boleh menghubungi ASAYO KL di <a href="{{setting("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{setting("contact.phone")}}</a>.<br>
                     <span>
                         Please note, as we may receive many emails daily, it is possible that your email may 
                         be overlooked. In the event, you are not contacted within the stated time frame, 
-                        you may contact ASAYO KL at <a href="{{config("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{config("contact.phone")}}</a>.
+                        you may contact ASAYO KL at <a href="{{setting("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{setting("contact.phone")}}</a>.
                     </span>
                 </li>
                 
