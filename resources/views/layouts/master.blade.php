@@ -17,7 +17,7 @@
     @include("layouts.nav")
     <div class="hero-banner">
         @hasSection("hero")
-            <div class="@yield("hero-size","hero-logo hero-logo-full")">
+            <div class="@yield("hero-size","hero-logo")">
                 <img src="@yield("hero")"/>
             </div>
         @endif
