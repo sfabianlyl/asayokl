@@ -63,7 +63,7 @@ Route::post('/cyan',"App\Http\Controllers\RegistrationController@cyan")->name("c
 // Route::get('/kamiberdoa', function () { return redirect('https://www.youtube.com/playlist?list=PL1GEZHjLaCL3wnDiZkXS-WbzCbEP-4t2A'); });
 // Route::get('/quiz', function () { return redirect("https://docs.google.com/forms/d/e/1FAIpQLScBe6BS4kf0Do74gGKliJHWHcOOIlPtxXex3oDuTb8GSBXp4g/viewform?usp=sf_link"); });
 // Route::get('/quiz1', function () { return redirect('https://docs.google.com/forms/d/e/1FAIpQLSe5_f3CvQypw7UTBo1YL6jWjzumkl5lHpX_yprkDq7FuKXbbw/viewform?usp=sf_link'); });
-
+Route::get("/kkres", function(){ return redirect("https://drive.google.com/drive/folders/1LfjokRZPr81_j-YO6Slnugo39Jojhcgz?usp=sharing"); });
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
