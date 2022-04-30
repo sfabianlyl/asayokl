@@ -48,7 +48,7 @@
     </div>
 
     <!-- Secretary -->
-    <div class="row justify-content-center pad-btm-50">
+    {{-- <div class="row justify-content-center pad-btm-50">
         <div class="col-lg-8 col-12 post-title text-center pad-btm-15">
             <h4 class="bm" style="display:none">Setiausaha</h4>
             <h4 class="eng" style="display:none">Secretary</h4>
@@ -59,7 +59,7 @@
         <div class="col-lg-8 col-12 text-center">
             <a href="mailto:asayo@archkl.org"><h6><i>asayo@archkl.org</i></h6></a>
         </div>
-    </div>
+    </div> --}}
 
 
     <!-- Pastoral Workers -->
@@ -87,14 +87,6 @@
                     </div>
                     <div class="col-lg-12 col-12 text-center">
                         <a href="mailto:agnes@asayokl.my"><h6><i>agnes@asayokl.my</i></h6></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center pad-btm-15">
-                    <div class="col-lg-12 col-12 text-center">
-                        <h5>Chermaine Denise Raj</h5>
-                    </div>
-                    <div class="col-lg-12 col-12 text-center">
-                        <a href="mailto:chermaine@asayokl.my"><h6><i>chermaine@asayokl.my</i></h6></a>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center pad-btm-15">
