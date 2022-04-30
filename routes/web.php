@@ -55,7 +55,7 @@ Route::post('/lnl',"App\Http\Controllers\RegistrationController@lnl")->name("lnl
 Route::post('/s2s',"App\Http\Controllers\RegistrationController@s2s")->name("s2s.registration.submit");
 Route::post('/cyan',"App\Http\Controllers\RegistrationController@cyan")->name("cyan.registration.submit");
 
-
+Route::get("/youtube", function(){ return redirect("https://www.youtube.com/channel/UCYYMs6KKetfDXo2HNOaiyMg"); });
 
 
 //redirects
