@@ -136,7 +136,7 @@
 
 
     <!-- Hotline -->
-    <div class="row justify-content-center pad-btm-50">
+    {{-- <div class="row justify-content-center pad-btm-50">
         <div class="col-12 text-center pad-btm-15">
             <h4 class="bm" style="display:none">Kawasan Pastoral dan Hubungan Pastoral yang Ditugaskan</h4>
             <h4 class="eng" style="display:none">Pastoral Areas and Assigned Pastoral Workers</h4>
@@ -156,7 +156,7 @@
                 <li>Terengganu: Fabian Lee (<a href="mailto:fabian@asayokl.my">fabian@asayokl.my</a>)</li>
             </ul>
         </div>
-    </div>
+    </div> --}}
 @stop
 
 @section("js")
