@@ -39,7 +39,7 @@
                                         @if(count($mand->registrations) < 80 && $curtime < $mandDeadline )
                                             <label><input type="radio" name="language" value="Mandarin"> Mandarin, 28th - 29th May 2022 </label><br>
                                         @endif
-                                        @if(count($eng->registrations) < 80 && $curtime < $engDeadline )
+                                        @if(count($eng->registrations) < 104 && $curtime < $engDeadline )
                                             <label><input type="radio" name="language" value="English"> English, 11th - 12th June 2022 </label><br>
                                         @endif
                                     </div>
