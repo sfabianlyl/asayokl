@@ -70,7 +70,6 @@ foreach($shortlinks as $shortlink){
     Route::get("/$link",function(){ return redirect($shortlink->url); });
 }
 
-Route::get("/kkres", function(){ return redirect("https://drive.google.com/drive/folders/1LfjokRZPr81_j-YO6Slnugo39Jojhcgz?usp=sharing"); });
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
