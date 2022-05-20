@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Models\Shortlink;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +64,12 @@ Route::get("/youtube", function(){ return redirect("https://www.youtube.com/chan
 // Route::get('/kamiberdoa', function () { return redirect('https://www.youtube.com/playlist?list=PL1GEZHjLaCL3wnDiZkXS-WbzCbEP-4t2A'); });
 // Route::get('/quiz', function () { return redirect("https://docs.google.com/forms/d/e/1FAIpQLScBe6BS4kf0Do74gGKliJHWHcOOIlPtxXex3oDuTb8GSBXp4g/viewform?usp=sf_link"); });
 // Route::get('/quiz1', function () { return redirect('https://docs.google.com/forms/d/e/1FAIpQLSe5_f3CvQypw7UTBo1YL6jWjzumkl5lHpX_yprkDq7FuKXbbw/viewform?usp=sf_link'); });
+$shortlinks=Shortlink::where("status","active")->get();
+foreach($shortlinks as $shortlink){
+    $link=$shortlink->shortlink;
+    Route::get("/$link",function(){ return redirect($shortlink->url); });
+}
+
 Route::get("/kkres", function(){ return redirect("https://drive.google.com/drive/folders/1LfjokRZPr81_j-YO6Slnugo39Jojhcgz?usp=sharing"); });
 
 Route::group(['prefix' => 'admin'], function () {
