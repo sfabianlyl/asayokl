@@ -64,10 +64,10 @@
                     <div class="modal-body">
                         @if(setting("site.popup_link",false))
                             <a href="{!! setting("site.popup_link") !!}" target="_blank">
-                                <img src="{!! setting("site.popup_image") !!} " class="w-100">
+                                <img src="{!! Storage::disk(config('voyager.storage.disk'))->url(setting("site.popup_image")) !!} " class="w-100">
                             </a>               
                         @else
-                            <img src="{!! setting("site.popup_image") !!} " class="w-100">
+                            <img src="{!! Storage::disk(config('voyager.storage.disk'))->url(setting("site.popup_image")) !!} " class="w-100">
                         @endif
                     </div>
                 </div>

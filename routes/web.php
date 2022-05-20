@@ -15,10 +15,7 @@ use App\Models\Shortlink;
 */
 
 // Static contents
-Route::get('/', function () { return view('contents.home',[
-    'popup'    => asset('Images/K.A.M.I. Kudus2-01.png'),
-    'link'    => route("kami.kudus.registration.form")
-]); })->name("home");
+Route::get('/', function () { return view('contents.home'); })->name("home");
 Route::get('/archive', function () { return view('contents.archive'); })->name("archive");
 Route::get('/aypa', function () { return view('contents.aypa'); })->name("aypa");
 Route::get('/calendar', function () { return view('contents.calendar'); })->name("calendar");
