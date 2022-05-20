@@ -67,7 +67,7 @@ Route::get("/youtube", function(){ return redirect("https://www.youtube.com/chan
 $shortlinks=Shortlink::where("status","active")->get();
 foreach($shortlinks as $shortlink){
     $link=$shortlink->shortlink;
-    Route::get("/$link",function(){ return redirect($shortlink->url); });
+    Route::get("/$link",function() use($shortlink) { return redirect($shortlink->url); });
 }
 
 
