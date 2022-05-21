@@ -53,7 +53,7 @@
         </script>
     @endif
 
-    @if( isset($popup))
+    @if( setting("site.popup_image",false) && Request::is("/"))
         
         <div class="modal fade" id="popupModal" style="padding-right: 17px; display: block;">-->
             <div class="modal-dialog modal-lg">
@@ -62,9 +62,13 @@
                         <button type="button" class="close" data-dismiss="modal" style="color:lightgrey;">×</button>
                     </div>
                     <div class="modal-body">
-                         <a href=" {{ $link }} " target="_blank">
-                            <img src="{!! $popup !!} " class="w-100">
-                         </a>               
+                        @if(setting("site.popup_link",false))
+                            <a href="{!! setting("site.popup_link") !!}" target="_blank">
+                                <img src="{!! Storage::disk(config('voyager.storage.disk'))->url(setting("site.popup_image")) !!} " class="w-100">
+                            </a>               
+                        @else
+                            <img src="{!! Storage::disk(config('voyager.storage.disk'))->url(setting("site.popup_image")) !!} " class="w-100">
+                        @endif
                     </div>
                 </div>
             </div>

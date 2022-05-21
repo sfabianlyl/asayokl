@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Models\Shortlink;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +15,7 @@ use Illuminate\Http\Request;
 */
 
 // Static contents
-Route::get('/', function () { return view('contents.home',[
-    'popup'    => asset('Images/K.A.M.I. Kudus2-01.png'),
-    'link'    => route("kami.kudus.registration.form")
-]); })->name("home");
+Route::get('/', function () { return view('contents.home'); })->name("home");
 Route::get('/archive', function () { return view('contents.archive'); })->name("archive");
 Route::get('/aypa', function () { return view('contents.aypa'); })->name("aypa");
 Route::get('/calendar', function () { return view('contents.calendar'); })->name("calendar");
@@ -63,7 +61,12 @@ Route::get("/youtube", function(){ return redirect("https://www.youtube.com/chan
 // Route::get('/kamiberdoa', function () { return redirect('https://www.youtube.com/playlist?list=PL1GEZHjLaCL3wnDiZkXS-WbzCbEP-4t2A'); });
 // Route::get('/quiz', function () { return redirect("https://docs.google.com/forms/d/e/1FAIpQLScBe6BS4kf0Do74gGKliJHWHcOOIlPtxXex3oDuTb8GSBXp4g/viewform?usp=sf_link"); });
 // Route::get('/quiz1', function () { return redirect('https://docs.google.com/forms/d/e/1FAIpQLSe5_f3CvQypw7UTBo1YL6jWjzumkl5lHpX_yprkDq7FuKXbbw/viewform?usp=sf_link'); });
-Route::get("/kkres", function(){ return redirect("https://drive.google.com/drive/folders/1LfjokRZPr81_j-YO6Slnugo39Jojhcgz?usp=sharing"); });
+$shortlinks=Shortlink::where("status","active")->get();
+foreach($shortlinks as $shortlink){
+    $link=$shortlink->shortlink;
+    Route::get("/$link",function() use($shortlink) { return redirect($shortlink->url); });
+}
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
