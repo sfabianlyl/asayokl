@@ -22,7 +22,7 @@ class ViewController extends BaseController
 
         $bmDeadline=strtotime("17th April 2022");
         $engDeadline=strtotime("29th May 2022");
-        $mandDeadline=strtotime("23rd May 2022");
+        $mandDeadline=strtotime("24th May 2022");
         $tamilDeadline=strtotime("12:00pm 7th May 2022");
         
         $curtime=time();
