@@ -11,7 +11,9 @@
     </div>
     <div class="mb-5">
         <h3 class="text-center">K.A.M.I. Kudus 2022</h3>
-        <p class="text-center"><i>Join us according to your preferred language</i></p>
+        @if($curtime < $engDeadline)
+            <p class="text-center"><i>Join us according to your preferred language</i></p>
+        @endif
     </div>
 
     <div class="mb-5">
@@ -19,58 +21,53 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-8 col-12">
-            <form action="{{ route('kami.kudus.registration.submit') }}" id="myform" method="POST" enctype="multipart/form-data">
-                @csrf
+            @if($curtime < $engDeadline)
+                <form action="{{ route('kami.kudus.registration.submit') }}" id="myform" method="POST" enctype="multipart/form-data">
+                    @csrf
 
-                <div id="hangout-registration-form">
-                    <div class="row mb-5">
-                        <div class="col-3 col-lg-4">Sesi (Session)</div>
-                        <div class="col-9 col-lg-8">
-                            
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        @if(count($bm->registrations) < 45 && $curtime < $bmDeadline )
-                                            <label><input type="radio" name="language" value="BM"> BM, 30th April 2022 - 1st May 2022 </label><br>
-                                        @endif
-                                        @if(count($tamil->registrations) < 25 && $curtime < $tamilDeadline )
-                                            <label><input type="radio" name="language" value="Tamil"> Tamil, 14th - 15th May 2022 </label><br>
-                                        @endif
-                                        @if(count($mand->registrations) < 80 && $curtime < $mandDeadline )
-                                            <label><input type="radio" name="language" value="Mandarin"> Mandarin, 28th - 29th May 2022 </label><br>
-                                        @endif
-                                        @if(count($eng->registrations) < 104 && $curtime < $engDeadline )
-                                            <label><input type="radio" name="language" value="English"> English, 11th - 12th June 2022 </label><br>
-                                        @endif
+                    <div id="hangout-registration-form">
+                        <div class="row mb-5">
+                            <div class="col-3 col-lg-4">Sesi (Session)</div>
+                            <div class="col-9 col-lg-8">
+                                
+                                <div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            @if($curtime < $engDeadline)
+                                                <label><input type="radio" name="language" value="English"> English, 11th - 12th June 2022 </label><br>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
+                            
                             </div>
-                        
                         </div>
-                    </div>
-                    @include("res.forms.identification")
-                    @include("res.forms.basic_info", [
-                        "includes" => [
-                            "res.forms.transportation",
-                            "res.forms.allergy",
-                            "res.forms.vaccination_status",
-                            "res.forms.health_declaration",
-                            "res.forms.proof_of_payment",
-                            "res.forms.payment_terms"
-                        ],
-                        "context" => [
-                            "payment_details"=>"<p>RM65 per person (with transportation) <br>RM55 per person (own transportation)</p>"
-                        ]
-                    ])
+                        @include("res.forms.identification")
+                        @include("res.forms.basic_info", [
+                            "includes" => [
+                                "res.forms.transportation",
+                                "res.forms.allergy",
+                                "res.forms.vaccination_status",
+                                "res.forms.health_declaration",
+                                "res.forms.proof_of_payment",
+                                "res.forms.payment_terms"
+                            ],
+                            "context" => [
+                                "payment_details"=>"<p>RM65 per person (with transportation) <br>RM55 per person (own transportation)</p>"
+                            ]
+                        ])
 
-                    <div class="my-5">
-                        <p>Check out last year's K.A.M.I. KUDUS Prayer Conference (virtual)!</p>
-                        <div class="video-container">
-                            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/videoseries?list=PL1GEZHjLaCL1n6AGarqLozYFAApa7kl1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="my-5">
+                            <p>Check out last year's K.A.M.I. KUDUS Prayer Conference (virtual)!</p>
+                            <div class="video-container">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/videoseries?list=PL1GEZHjLaCL1n6AGarqLozYFAApa7kl1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            @else
+                <p class="text-center"><i>The registrations for K.A.M.I. Kudus has officially been closed. Do reach out to us at <a href="mailto:{{ setting("contact.kamikudus") }}" target="_blank">{{ setting("contact.kamikudus") }}</a> or Whatsapp us at <a href="{{ setting("contact.whatsapp") }}" target="_blank" rel="noopener noreferrer">{{ setting("contact.phone") }}</a> if you have any questions</i></p>
+            @endif
         </div>
     </div>
 
