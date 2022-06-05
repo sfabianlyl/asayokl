@@ -34,7 +34,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             @if($curtime < $engDeadline)
-                                                <label><input type="radio" name="language" value="English"> English, 11th - 12th June 2022 </label><br>
+                                                <label><input type="radio" name="language" translate="no" value="English"> English, 11th - 12th June 2022 </label><br>
                                             @endif
                                         </div>
                                     </div>
