@@ -57,7 +57,7 @@
             <h5>Ms Brenda Ng</h5>
         </div>
         <div class="col-lg-8 col-12 text-center">
-            <a href="mailto:asayo@archkl.org"><h6><i>asayo@archkl.org</i></h6></a>
+            <a href="mailto:brenda@archkl.org"><h6><i>brenda@asayokl.my</i></h6></a>
         </div>
     </div>
 
