@@ -50,11 +50,11 @@
     {{-- Secretary --}}
     <div class="row justify-content-center pad-btm-50">
         <div class="col-lg-8 col-12 post-title text-center pad-btm-15">
-            <h4 class="bm" style="display:none">Setiausaha</h4>
-            <h4 class="eng" style="display:none">Secretary</h4>
+            <h4 class="bm" style="display:none">Pentadbir</h4>
+            <h4 class="eng" style="display:none">Administrator</h4>
         </div>
         <div class="col-lg-8 col-12 text-center">
-            <h5>Ms Brenda Ng</h5>
+            <h5>Ms Brenda Ong</h5>
         </div>
         <div class="col-lg-8 col-12 text-center">
             <a href="mailto:brenda@archkl.org"><h6><i>brenda@asayokl.my</i></h6></a>
