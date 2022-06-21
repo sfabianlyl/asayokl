@@ -50,8 +50,8 @@
     {{-- Secretary --}}
     <div class="row justify-content-center pad-btm-50">
         <div class="col-lg-8 col-12 post-title text-center pad-btm-15">
-            <h4 class="bm" style="display:none">Administrator</h4>
-            <h4 class="eng" style="display:none">Administrator</h4>
+            <h4 class="bm" style="display:none">Admin</h4>
+            <h4 class="eng" style="display:none">Admin</h4>
         </div>
         <div class="col-lg-8 col-12 text-center">
             <h5>Ms Brenda Ong</h5>
