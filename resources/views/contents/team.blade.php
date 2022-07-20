@@ -143,28 +143,7 @@
 
 
 
-    <!-- Hotline -->
-    {{-- <div class="row justify-content-center pad-btm-50">
-        <div class="col-12 text-center pad-btm-15">
-            <h4 class="bm" style="display:none">Kawasan Pastoral dan Hubungan Pastoral yang Ditugaskan</h4>
-            <h4 class="eng" style="display:none">Pastoral Areas and Assigned Pastoral Workers</h4>
-            
-        </div>
-        <div class="col-12 col-lg-8 text-left">
-            <ul>
-                <li>KL Central District: Agnes Ling (<a href="mailto:agnes@asayokl.my">agnes@asayokl.my</a>)</li>
-                <li>KL North District: Chermaine Denise Raj (<a href="mailto:chermaine@asayokl.my">chermaine@asayokl.my</a>)</li>
-                <li>KL South District: Gregory Pravin Rajah (<a href="mailto:gregpravin@asayokl.my">gregpravin@asayokl.my</a>)</li>
-                <li>Klang District: Josephine Magadalyn Tan (<a href="mailto:josephine@asayokl.my">josephine@asayokl.my</a>)</li>
-                <li>North West District: Laura Joseph (<a href="mailto:laura@asayokl.my">laura@asayokl.my</a>)</li>
-                <li>Petaling District: Jacinta Claire Fernandez (<a href="mailto:jacinta@asayokl.my">jacinta@asayokl.my</a>)</li>
-                <li>Negeri District: Fabian Lee (<a href="mailto:fabian@asayokl.my">fabian@asayokl.my</a>)</li>
-                <li>Pahang West: Jacinta Claire Fernandez (<a href="mailto:jacinta@asayokl.my">jacinta@asayokl.my</a>)</li>
-                <li>Pahang East: Fabian Lee (<a href="mailto:fabian@asayokl.my">fabian@asayokl.my</a>)</li>
-                <li>Terengganu: Fabian Lee (<a href="mailto:fabian@asayokl.my">fabian@asayokl.my</a>)</li>
-            </ul>
-        </div>
-    </div> --}}
+    
 @stop
 
 @section("js")
