@@ -83,26 +83,10 @@
                 </div>
                 <div class="col-lg-6 text-center pad-btm-15">
                     <div class="col-lg-12 col-12 text-center">
-                        <h5>Agnes Ling Shwu En</h5>
-                    </div>
-                    <div class="col-lg-12 col-12 text-center">
-                        <a href="mailto:agnes@asayokl.my"><h6><i>agnes@asayokl.my</i></h6></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center pad-btm-15">
-                    <div class="col-lg-12 col-12 text-center">
                         <h5>Edmund Raymond</h5>
                     </div>
                     <div class="col-lg-12 col-12 text-center">
                         <a href="mailto:edmundray@asayokl.my"><h6><i>edmundray@asayokl.my</i></h6></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center pad-btm-15">
-                    <div class="col-lg-12 col-12 text-center">
-                        <h5>Fabian Lee Yun Lee</h5>
-                    </div>
-                    <div class="col-lg-12 col-12 text-center">
-                        <a href="mailto:fabian@asayokl.my"><h6><i>fabian@asayokl.my</i></h6></a>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center pad-btm-15">
