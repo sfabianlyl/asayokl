@@ -51,8 +51,6 @@
                 <br>
                 <a href="team">Team</a>
                 <a href="calendar">Calendar</a>
-                <a href="hangout">Hangout</a>
-                <a href="reachout">Reachout</a>
                 <a href="checkin">Checkin</a>
                 <a href="aypa">AYPA 2019</a>
                 <a href="archive">Archive</a>

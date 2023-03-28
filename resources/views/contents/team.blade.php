@@ -54,10 +54,10 @@
             <h4 class="eng" style="display:none">Admin</h4>
         </div>
         <div class="col-lg-8 col-12 text-center">
-            <h5>Ms Brenda Ong</h5>
+            <h5>Ms Katherine John</h5>
         </div>
         <div class="col-lg-8 col-12 text-center">
-            <a href="mailto:brenda@archkl.org"><h6><i>brenda@asayokl.my</i></h6></a>
+            <a href="mailto:katherine@archkl.org"><h6><i>katherine@asayokl.my</i></h6></a>
         </div>
     </div>
 
@@ -81,14 +81,7 @@
                         <a href="mailto:michaelina@asayokl.my"><h6><i>michaelina@asayokl.my</i></h6></a>
                     </div>
                 </div>
-                <div class="col-lg-6 text-center pad-btm-15">
-                    <div class="col-lg-12 col-12 text-center">
-                        <h5>Edmund Raymond</h5>
-                    </div>
-                    <div class="col-lg-12 col-12 text-center">
-                        <a href="mailto:edmundray@asayokl.my"><h6><i>edmundray@asayokl.my</i></h6></a>
-                    </div>
-                </div>
+                
                 <div class="col-lg-6 text-center pad-btm-15">
                     <div class="col-lg-12 col-12 text-center">
                         <h5>Gregory Pravin Rajah</h5>
@@ -107,6 +100,14 @@
                 </div>
                 <div class="col-lg-6 text-center pad-btm-15">
                     <div class="col-lg-12 col-12 text-center">
+                        <h5>Jacinta Pauline John</h5>
+                    </div>
+                    <div class="col-lg-12 col-12 text-center">
+                        <a href="mailto:jacintajohn@asayokl.my"><h6><i>jacintajohn@asayokl.my</i></h6></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center pad-btm-15">
+                    <div class="col-lg-12 col-12 text-center">
                         <h5>Josephine Magdalyn Tan</h5>
                     </div>
                     <div class="col-lg-12 col-12 text-center">
@@ -119,6 +120,14 @@
                     </div>
                     <div class="col-lg-12 col-12 text-center">
                         <a href="mailto:laura@asayokl.my"><h6><i>laura@asayokl.my</i></h6></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center pad-btm-15">
+                    <div class="col-lg-12 col-12 text-center">
+                        <h5>Sabrina Marie Smith</h5>
+                    </div>
+                    <div class="col-lg-12 col-12 text-center">
+                        <a href="mailto:sabrina@asayokl.my"><h6><i>sabrina@asayokl.my</i></h6></a>
                     </div>
                 </div>
             </div>

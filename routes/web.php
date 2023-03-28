@@ -26,10 +26,7 @@ Route::get('/teens', function () { return view('contents.teens'); })->name("teen
 Route::get('/young-adult', function () { return view('contents.youngadult'); })->name("young.adult");
 Route::get('/youth-campus', function () { return view('contents.youthcampus'); })->name("youth.campus");
 Route::get("/kamikudusfaq", function() { return view("contents.kami.kudus.faq"); })->name("kami.kudus.faq");
-//rog
-Route::get('/reachout', function () { return view('contents.home'); });
-Route::get('/rog-admin', function () { return view('contents.home'); });
-Route::get('/rog-user', function () { return view('contents.home'); });
+Route::get('/cyan', function () { return view('contents.cyan'); })->name("cyan.page");
 
 //kami
     //kamikudus
@@ -45,7 +42,7 @@ Route::get('/ciptass', function () { return view('forms.ciptass'); })->name("cip
 Route::get('/hangout', function () { return view('forms.hangout'); })->name("hangout.registration.form");
 Route::get('/lnl', function () { return view('forms.lnl'); })->name("lnl.registration.form");;
 Route::get('/s2s', function () { return view('forms.s2s'); })->name("s2s.registration.form");;
-Route::get('/cyan', function () { return view('forms.cyan'); })->name("cyan.registration.form");;
+
 
 Route::post('/ciptass',"App\Http\Controllers\RegistrationController@ciptass")->name("ciptass.registration.submit");
 Route::post('/hangout',"App\Http\Controllers\RegistrationController@hangout")->name("hangout.registration.submit");
