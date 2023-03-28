@@ -2,7 +2,7 @@
 
 
 @section("content")
-    <div style="min-height:80vh">
+    <div style="min-height:60vh">
         <h2 class="text-center mb-5">Catholic Young Adults Network (CYAN)</h2>
         <h4 class="mb-5">Are you a young adult who is searching for community and support? Subscribe to  Catholic Young Adults Network (CYAN) Telegram’s Channel for upcoming gatherings / events!</h4>
         <div class="text-center">
