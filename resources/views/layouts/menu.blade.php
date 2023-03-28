@@ -10,7 +10,7 @@
         <br>
         <a href="youth-campus">Butiran <i>(Details)</i></a>
         <a href="checkin">Check In</a>
-        <a href="lnl" disabled>Love & Life (Coming soon!)</a>
+        <a href="lnl" style="pointer-events: none">Love & Life (Coming soon!)</a>
         <a href="ciptass">CIPTASS</a>
     </div>
     <div class="col-12 col-lg-6 mb-4">
