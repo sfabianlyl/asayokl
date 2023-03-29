@@ -25,7 +25,7 @@
         </div>
     
         <div id="pestaKAMIContent21" class="pesta-kami-content">
-            <div class="row justify-content-center justify-content-lg-between mb-5">
+            <div class="row justify-content-center justify-content-lg-between align-items-center mb-5">
                 <div class="col-8 col-lg-4 mb-5">
                     <img src="{{asset("Images/pesta-kami-21.png")}}" alt="Pesta K.A.M.I. 2021" class="w-100">
                 </div>
