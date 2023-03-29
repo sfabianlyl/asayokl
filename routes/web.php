@@ -27,11 +27,12 @@ Route::get('/young-adult', function () { return view('contents.youngadult'); })-
 Route::get('/youth-campus', function () { return view('contents.youthcampus'); })->name("youth.campus");
 Route::get("/kamikudusfaq", function() { return view("contents.kami.kudus.faq"); })->name("kami.kudus.faq");
 Route::get('/cyan', function () { return view('contents.cyan'); })->name("cyan.page");
+Route::get("/kamikudus", function () { return view('contents.kami.kudus.page'); })->name("kamikudus.page");
 
 //kami
     //kamikudus
-    Route::get("/kamikudus", "App\Http\Controllers\ViewController@kamikudus" )->name('kami.kudus.registration.form');
-    Route::post('/kamikudus',"App\Http\Controllers\RegistrationController@kamikudus")->name("kami.kudus.registration.submit");
+    // Route::get("/kamikudus", "App\Http\Controllers\ViewController@kamikudus" )->name('kami.kudus.registration.form');
+    // Route::post('/kamikudus',"App\Http\Controllers\RegistrationController@kamikudus")->name("kami.kudus.registration.submit");
 
 //forms
 Route::get('/checkin', function () { return view('forms.checkin'); })->name("checkin");
