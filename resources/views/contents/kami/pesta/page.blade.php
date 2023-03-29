@@ -30,7 +30,7 @@
                     <img src="{{asset("Images/pesta-kami-21.png")}}" alt="Pesta K.A.M.I. 2021" class="w-100">
                 </div>
                 <div class="col-12 col-lg-6 mb-5">
-                    <p>Pesta K.A.M.I. ArchKL 2021 (Sambutan Hari Orang Muda) began on the18 Nov until 16 Dec 2021 with the theme of 36th World Youth Day 2021 - <span class="blue">“Stand up. I appoint you as a witness of what you have seen."</span> (cf. Acts 26:16). It was celebrated in Archdiocesan (virtual) and Parish level.</p>
+                    <p>Pesta K.A.M.I. ArchKL 2021 (Sambutan Hari Orang Muda) began on the 18 Nov until 16 Dec 2021 with the theme of 36th World Youth Day 2021 - <span class="blue">“Stand up. I appoint you as a witness of what you have seen."</span> (cf. Acts 26:16). It was celebrated in Archdiocesan (virtual) and Parish level.</p>
                 </div>
             </div>
             
