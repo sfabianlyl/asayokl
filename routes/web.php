@@ -28,6 +28,7 @@ Route::get('/youth-campus', function () { return view('contents.youthcampus'); }
 Route::get("/kamikudusfaq", function() { return view("contents.kami.kudus.faq"); })->name("kami.kudus.faq");
 Route::get('/cyan', function () { return view('contents.cyan'); })->name("cyan.page");
 Route::get("/kamikudus", function () { return view('contents.kami.kudus.page'); })->name("kamikudus.page");
+Route::get("/pestakami", function () { return view('contents.kami.pesta.page'); })->name("pestakami.page");
 
 //kami
     //kamikudus

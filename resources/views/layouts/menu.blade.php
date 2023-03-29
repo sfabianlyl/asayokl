@@ -31,6 +31,7 @@
         <h4>Programmes & Events For All<i>(Program & Acara Untuk Semua)</i></h4>
         <br>
         <a href="{{route('kamikudus.page')}}">K.A.M.I. Kudus</a>
+        <a href="{{route('pestakami.page')}}">Pesta K.A.M.I.</a>
         <a href="aypa">AYPA 2019</a>
     </div>
 </div>
