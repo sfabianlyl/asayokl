@@ -30,7 +30,7 @@
     <div class="col-12 col-lg-6 mb-4">
         <h4>Programmes & Events For All<i>(Program & Acara Untuk Semua)</i></h4>
         <br>
-        <a href="{{route('kami.kudus.registration.form')}}">K.A.M.I. Kudus 2022</a>
+        <a href="{{route('kamikudus.page')}}">K.A.M.I. Kudus</a>
         <a href="aypa">AYPA 2019</a>
     </div>
 </div>
