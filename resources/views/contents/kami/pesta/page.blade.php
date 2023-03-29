@@ -72,7 +72,7 @@
             color:black !important;
         }
         .container a{
-            color:#f1c232 !important;
+            color:#00447a !important;
         }
         .yellow{
             color: #f1c232!important;
