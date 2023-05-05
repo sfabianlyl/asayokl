@@ -43,11 +43,11 @@ class ViewController extends BaseController
     }
 
     public function team(){
-        $archbishop=Team::where("role","Archbishop of Kuala Lumpur")->first();
-        $director=Team::where("role","Director / Ecclesiastical Assistant")->first();
-        $assistant_director=Team::where("role","Assistant Director / Ecclesiastical Assistant")->first();
-        $admin=Team::where("role","Admin")->first();
-        $staffs=Team::where("role","Youth Pastoral Workers")->orderBy("name")->get();
+        $archbishop=Team::where("role","archbishop")->first();
+        $director=Team::where("role","director")->first();
+        $assistant_director=Team::where("role","asst_director")->first();
+        $admin=Team::where("role","admin")->first();
+        $staffs=Team::where("role","staff")->orderBy("name")->get();
 
         return view("contents.team")->with(compact(
             "archbishop",
