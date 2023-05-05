@@ -40,4 +40,20 @@ class ViewController extends BaseController
             "curtime"
         ));
     }
+
+    public function team(){
+        $archbishop=Team::where("role","Archbishop of Kuala Lumpur")->first();
+        $director=Team::where("role","Director / Ecclesiastical Assistant")->first();
+        $assistant_director=Team::where("role","Assistant Director / Ecclesiastical Assistant")->first();
+        $admin=Team::where("role","Admin")->first();
+        $staffs=Team::where("role","Youth Pastoral Workers")->sortBy("name")->all();
+
+        return view("contents.team")->with(compact(
+            "archbishop",
+            "director",
+            "assistant_director",
+            "admin",
+            "staffs",
+        ));
+    }
 }

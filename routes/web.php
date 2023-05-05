@@ -20,7 +20,7 @@ Route::get('/archive', function () { return view('contents.archive'); })->name("
 Route::get('/aypa', function () { return view('contents.aypa'); })->name("aypa");
 Route::get('/calendar', function () { return view('contents.calendar'); })->name("calendar");
 Route::get('/lay-singles', function () { return view('contents.laysingles'); })->name("lay.singles");
-Route::get('/team', function () { return view('contents.team'); })->name("team");
+Route::get('/team', "App\Http\Controllers\ViewController@team")->name("team");
 Route::get('/resources', function (Request $request) { return view('contents.resources',["agent"=>$request->server("HTTP_USER_AGENT")]); })->name("resources");
 Route::get('/teens', function () { return view('contents.teens'); })->name("teens");
 Route::get('/young-adult', function () { return view('contents.youngadult'); })->name("young.adult");
