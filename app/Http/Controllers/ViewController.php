@@ -47,7 +47,7 @@ class ViewController extends BaseController
         $director=Team::where("role","Director / Ecclesiastical Assistant")->first();
         $assistant_director=Team::where("role","Assistant Director / Ecclesiastical Assistant")->first();
         $admin=Team::where("role","Admin")->first();
-        $staffs=Team::where("role","Youth Pastoral Workers")->sortBy("name")->all();
+        $staffs=Team::where("role","Youth Pastoral Workers")->orderBy("name")->get();
 
         return view("contents.team")->with(compact(
             "archbishop",
