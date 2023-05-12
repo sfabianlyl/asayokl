@@ -11,11 +11,12 @@
             'url',
             'fields',
             'google_sheet_url',
+            "google_sheet_sheet_name",
             "body",
             "email_to",
             "email_applicant",
             "response",
-            "email_body"
+            "email_body",
         ];
 
         public function registrations()
