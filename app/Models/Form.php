@@ -17,6 +17,7 @@
             "email_applicant",
             "response",
             "email_body",
+            "status"
         ];
 
         public function registrations()
