@@ -33,7 +33,7 @@
                     Pembayaran boleh dibuat kepada (Payment can be made to):<br>
                     ASAYO (Archdiocesan Single Adults and Youth Office)<br>
                     Public Bank: 3180569004<br>
-                    Reference: Include name of participant & language group [eg. Jane Tan - Kudus M] KUDUS BM, KUDUS E, KUDUS T, KUDUS M in transaction details.
+                    Reference: Include name of participant & programme [eg. Jane Tan - Love&Life2023]  in transaction details.
                 </p>
                 <div>{!! $payment_details ?? "" !!}</div>
             </div>

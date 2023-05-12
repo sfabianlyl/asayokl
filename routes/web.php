@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Shortlink;
+use App\Models\Form;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,6 +67,8 @@ foreach($shortlinks as $shortlink){
     Route::get("/$link",function() use($shortlink) { return redirect($shortlink->url); });
 }
 
+Route::get("/forms/{url}","App\Http\Controllers\FormController@view_form")->name("forms.view");
+Route::post("/forms","App\Http\Controllers\FormController@submit_form")->name("forms.submit");
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
