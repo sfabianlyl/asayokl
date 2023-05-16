@@ -71,7 +71,7 @@
                                     {{ $row->slugify }}
                                     <label class="control-label" for="name">{{ $row->getTranslatedAttribute('display_name') }}</label>
                                     @if(isset($row->details->subtitle))
-                                        <div style="font-size:90%">
+                                        <div style="font-size:90%; font-style:italic;">
                                             {!! $row->details->subtitle !!}
                                         </div>
                                     @endif
