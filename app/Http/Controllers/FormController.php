@@ -63,6 +63,15 @@ class FormController extends BaseController
             $headers[]="Timestamp";
             $conn->add($headers,$timestamp=false, $count=false);
         }
+        if(isset($fields["proof_of_payment"])){
+            $imgExt=["jpg","tiff","png","raw","pdf","jpeg","gif","heic"];
+            foreach($imgExt as $ext) $imgExt[]=strtoupper($ext);
+            if($request->hasFile("payment")) 
+            if($request->payment->isValid()) 
+            if($this->strposa($request->payment->extension(),$imgExt)!==false)
+            $payment_file=$request->payment->store("payments","public");
+        }
+
         $add=[];
         if(isset($fields["nationality"])) $add[]=$request->nationality;
         if(isset($fields["name"])) $add[]=$request->name;
@@ -77,7 +86,7 @@ class FormController extends BaseController
         if(isset($fields["allergy"])) $add[]=$request->allergy;
         if(isset($fields["transportation"])) $add[]=$request->transportation;
         if(isset($fields["vaccination_status"])) $add[]=$request->vaccination;
-        if(isset($fields["proof_of_payment"])) $add[]=$request->payment;
+        if(isset($fields["proof_of_payment"])) $add[]= isset($payment_file)? asset("storage/$payment_file") : "invalid upload";
         $conn->add($add);
 
        
@@ -86,7 +95,7 @@ class FormController extends BaseController
         
         $content=["Program (Programme)"=>$form->title];
         if(isset($fields["name"])) $content["Nama (Name)"]=$request->name;
-        if(isset($fields["phone"])) $content["No. Telefon (Mobile No.)"]=$this->phone($request->phone);
+        if(isset($fields["phone"])) $content["No. Telefon (Mobile No.)"]=$request->phone;
         if(isset($fields["email"])) $content["E-mel (Email)"]=$request->email;
 
         $emails=array_map('trim',explode(",",$form->email_to));
