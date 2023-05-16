@@ -71,7 +71,9 @@
                                     {{ $row->slugify }}
                                     <label class="control-label" for="name">{{ $row->getTranslatedAttribute('display_name') }}</label>
                                     @if(isset($row->details->subtitle))
-                                        {!! $row->details->subtitle !!}
+                                        <div style="font-size:90%">
+                                            {!! $row->details->subtitle !!}
+                                        </div>
                                     @endif
                                     @include('voyager::multilingual.input-hidden-bread-edit-add')
                                     @if (isset($row->details->view))
