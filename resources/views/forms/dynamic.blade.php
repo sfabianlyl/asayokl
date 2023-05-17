@@ -17,6 +17,7 @@
 
 <div class="row justify-content-center">
     <div class="col-lg-8 col-12">
+        <h3 class="text-center">Registration</h3>
         <form action="{{ route('forms.submit') }}" id="myform" method="POST">
             @csrf
              @foreach($inputs as $input)
