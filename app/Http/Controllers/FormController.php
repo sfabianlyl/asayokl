@@ -39,8 +39,8 @@ class FormController extends BaseController
     public function submit_form(Request $request){
         $conn=new GoogleSheetConnection();
         $inputs=["nationality","name","identification","year-of-birth","age","gender","email","phone","diocese","parish-full","allergy","transportation","vaccination_status","payment_terms","proof_of_payment"];
-        $fields=json_decode($form->fields,true);
         $form=Form::where("id",$request->formID)->first();
+        $fields=json_decode($form->fields,true);
         $conn->connect($form->google_sheet_url, $form->google_sheet_sheet_name);
 
         if(!$conn->count_rows()){
