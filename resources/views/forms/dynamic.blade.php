@@ -22,7 +22,7 @@
              @foreach($inputs as $input)
                 @if(isset($fields[$input])) @include("res.forms.$input") @endif
              @endforeach
-             <input type="hidden" name="formID" value="{{$$form->id}}">
+             <input type="hidden" name="formID" value="{{$form->id}}">
         </form>
     </div>
 </div>
