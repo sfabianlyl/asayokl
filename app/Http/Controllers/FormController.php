@@ -89,7 +89,7 @@ class FormController extends BaseController
         if(isset($fields["proof_of_payment"])) $add[]= isset($payment_file)? asset("storage/$payment_file") : "invalid upload";
         $conn->add($add);
 
-        $registrationArray=[];
+        $registrationArray=["form_id"=>$form->id];
         $other_details=[];
         if(isset($fields["nationality"])) $registrationArray["nationality"]=$request->nationality;
         if(isset($fields["name"])) $registrationArray["name"]=$request->name;
