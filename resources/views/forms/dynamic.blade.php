@@ -23,6 +23,7 @@
                 @if(isset($fields[$input])) @include("res.forms.$input") @endif
              @endforeach
              <input type="hidden" name="formID" value="{{$form->id}}">
+             @include("res.forms.submit")
         </form>
     </div>
 </div>
