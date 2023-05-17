@@ -89,6 +89,25 @@ class FormController extends BaseController
         if(isset($fields["proof_of_payment"])) $add[]= isset($payment_file)? asset("storage/$payment_file") : "invalid upload";
         $conn->add($add);
 
+        $registrationArray=[];
+        $other_details=[];
+        if(isset($fields["nationality"])) $registrationArray["nationality"]=$request->nationality;
+        if(isset($fields["name"])) $registrationArray["name"]=$request->name;
+        if(isset($fields["year-of-birth"])) $registrationArray["age"]=$request->year_of_birth;
+        if(isset($fields["age"])) $registrationArray["age"]=$request->age;
+        if(isset($fields["gender"])) $registrationArray["gender"]=$request->gender;
+        if(isset($fields["email"])) $registrationArray["email"]=$request->email;
+        if(isset($fields["phone"])) $registrationArray["phone"]=$this->phone($request->phone);
+        if(isset($fields["diocese"])) $registrationArray["diocese"]=$request->diocese;
+        if(isset($fields["parish-full"])) $registrationArray["parish"]=$request->parish;
+        if(isset($fields["vaccination_status"])) $registrationArray["vaccination"]=$request->vaccination;
+        if(isset($fields["proof_of_payment"])) $registrationArray["payment"]= $payment_file ?? "invalid upload";
+        if(isset($fields["identification"])) $other_details["identification"]=$request->ic;
+        if(isset($fields["allergy"])) $other_details["allergy"]=$request->allergy;
+        if(isset($fields["transportation"])) $other_details["transportation"]=$request->transportation;
+        $registrationArray["other_details"]=json_encode($other_details);
+        $registration=Registration::create($registrationArray);
+
        
         $header="Thank You for Registering!";
         $main_message=$form->email_body;

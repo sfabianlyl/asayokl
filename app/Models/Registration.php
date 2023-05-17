@@ -8,6 +8,7 @@
         use SoftDeletes;
         protected $fillable = [
             'event_id',
+            'form_id',
             'name',
             'age',
             'gender',
@@ -24,5 +25,10 @@
         public function event()
         {
             return $this->belongsTo(Event::class);
+        }
+
+        public function form()
+        {
+            return $this->belongsTo(Form::class);
         }
     }
