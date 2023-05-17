@@ -29,7 +29,7 @@ class GoogleSheetConnection{
     
     public function count_rows(){
         $rows = $this->sheets->spreadsheets_values->get($this->id, $this->range, ['majorDimension' => 'ROWS']);
-        return count($rows['values']);
+        return count($rows['values']??[]);
     }
     
     public function add($data, $timestamp=true, $count=true){
