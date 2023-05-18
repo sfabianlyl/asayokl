@@ -9,10 +9,10 @@
                 </i>
             </p>
             <p class="mb-3">
-                **Jika anda menghadapi masalah dalam  membuat pembayaran, anda boleh hubungi <a href='mailto:{{setting("contact.kamikudus")}}' target="_blank">{{setting("contact.kamikudus")}}</a> atau WhatsApp kami <a href="{{setting("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{setting("contact.phone")}}</a>
+                **Jika anda menghadapi masalah dalam  membuat pembayaran, anda boleh hubungi <a href='mailto:{{setting("contact.email")}}' target="_blank">{{setting("contact.email")}}</a> atau WhatsApp kami <a href="{{setting("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{setting("contact.phone")}}</a>
                 <br>
                 <i>
-                    (If you have any difficulty in making payment, contact us <a href='mailto:{{setting("contact.kamikudus")}}' target="_blank">{{setting("contact.kamikudus")}}</a> or WhatsApp us <a href="{{setting("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{setting("contact.phone")}}</a>) 
+                    (If you have any difficulty in making payment, contact us <a href='mailto:{{setting("contact.email")}}' target="_blank">{{setting("contact.email")}}</a> or WhatsApp us <a href="{{setting("contact.whatsapp")}}" target="_blank" rel="noopener noreferrer">{{setting("contact.phone")}}</a>) 
                 </i>
             </p>
             <div class="mb-3">

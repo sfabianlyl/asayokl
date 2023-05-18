@@ -18,7 +18,7 @@
 <div class="row justify-content-center">
     <div class="col-lg-8 col-12">
         <h3 class="text-center">Registration</h3>
-        <form action="{{ route('forms.submit') }}" id="myform" method="POST">
+        <form action="{{ route('forms.submit') }}" id="myform" method="POST" enctype="multipart/form-data">
             @csrf
              @foreach($inputs as $input)
                 @if(isset($fields[$input])) @include("res.forms.$input") @endif
