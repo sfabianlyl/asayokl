@@ -38,7 +38,6 @@ class FormController extends BaseController
 
     public function submit_form(Request $request){
         $conn=new GoogleSheetConnection();
-        $inputs=["nationality","name","identification","year-of-birth","age","gender","email","phone","diocese","parish-full","allergy","transportation","vaccination_status","payment_terms","proof_of_payment"];
         $form=Form::where("id",$request->formID)->first();
         $fields=json_decode($form->fields,true);
         $conn->connect($form->google_sheet_url, $form->google_sheet_sheet_name);
@@ -93,7 +92,7 @@ class FormController extends BaseController
         $other_details=[];
         if(isset($fields["nationality"])) $registrationArray["nationality"]=$request->nationality;
         if(isset($fields["name"])) $registrationArray["name"]=$request->name;
-        if(isset($fields["year-of-birth"])) $registrationArray["age"]=$request->year_of_birth;
+        if(isset($fields["year-of-birth"])) $other_details["year_of_birth"]=$request->year_of_birth;
         if(isset($fields["age"])) $registrationArray["age"]=$request->age;
         if(isset($fields["gender"])) $registrationArray["gender"]=$request->gender;
         if(isset($fields["email"])) $registrationArray["email"]=$request->email;
