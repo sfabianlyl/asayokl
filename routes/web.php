@@ -55,7 +55,7 @@ Route::post('/cyan',"App\Http\Controllers\RegistrationController@cyan")->name("c
 
 Route::get("/youtube", function(){ return redirect("https://www.youtube.com/channel/UCYYMs6KKetfDXo2HNOaiyMg"); });
 
-
+Route::get("/ig_oauth", "App\Http\Conrollers\MiscController@ig_oauth")->name("ig.oauth");
 //redirects
 // Route::get('/easter', function () { return redirect("https://www.youtube.com/playlist?list=PL1GEZHjLaCL2Z01gOjPk4B_5ZqhAyNv_M"); });
 // Route::get('/kamiberdoa', function () { return redirect('https://www.youtube.com/playlist?list=PL1GEZHjLaCL3wnDiZkXS-WbzCbEP-4t2A'); });
