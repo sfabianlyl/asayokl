@@ -14,9 +14,12 @@ function get_posts(hashtag){
 function display_posts(hashtag,posts){
     var ig=$("#instagramContainer");
     ig.html("");
+    var counter=0;
     posts.filter(post=>post.caption.includes(hashtag)).forEach(post => {
         //post.media_url;
         //post.permalink;
+        if(counter>8) return;
+        counter++;
         var container=$("<div></div>").addClass("instagram-img-container");
         var anchor=$("<a></a>").attr({
             href:post.permalink,
@@ -35,9 +38,7 @@ function display_posts(hashtag,posts){
         });
         ig.append(container.append(anchor.append(img)));
     });
-    $.each(ig.find("video"),function(index,video){
-        video.load();
-    });
+    
 
 }
 
