@@ -5,7 +5,7 @@
 
 @section("content")
     
-    @include("contents.elements.instagram", ["title"=>"ArchKL Pilgrims' Updates from World Youth Day 2023", "hashtag","#wydarchkl"])
+    @include("contents.elements.instagram", ["title"=>"ArchKL Pilgrims' Updates from World Youth Day 2023", "hashtag"=>"#wydarchkl"])
 
     <div class="row justify-content-around my-5">
         <!-- <div class="col-lg-3 col-12 mb-5 category-nav">
