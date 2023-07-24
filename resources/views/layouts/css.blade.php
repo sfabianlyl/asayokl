@@ -5,3 +5,5 @@
 <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
 <link rel="stylesheet" href="{{asset("css/toastr.min.css")}}" type="text/css">
 <link rel="stylesheet" href="{{asset("css/myStyle.css")}}" type="text/css">
+<link rel="stylesheet" href="{{asset("css/loader.css")}}" type="text/css">
+<link rel="stylesheet" href="{{asset("css/ig.css")}}" type="text/css">

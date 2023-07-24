@@ -1,0 +1,17 @@
+.instagram-container{
+    display:flex;
+    justify-content:space-between;
+
+}
+
+.instagram-img-container{
+    flex:0 0 calc(33%-2px);
+    aspect-ratio:1;
+}
+
+.instagram-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}

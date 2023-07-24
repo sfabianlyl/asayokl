@@ -5,3 +5,4 @@
 <script src="{{asset("js/js.cookie.min.js")}}"></script>
 <script src="{{asset("js/nav.js")}}"></script>
 <script src="{{asset("js/menu.js")}}"></script>
+<script src="{{asset("js/ig.js")}}"></script>
