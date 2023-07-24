@@ -1,7 +1,7 @@
 function get_posts(hashtag){
     $.ajax({
         type:"GET",
-        url:"/get_posts",
+        url:"/ig_get_posts",
         success:function(data){
             display_posts(hashtag,data.data);
         },
