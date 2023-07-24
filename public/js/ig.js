@@ -22,11 +22,11 @@ function display_posts(hashtag,posts){
             href:post.permalink,
             target:"_blank"
         });
-        var img=post.media_type=="VIDEO"?$("<video></video>").addClass("instagram-img").attr({
-            autoplay:"",
-            muted:"",
-            playsinline:"",
-            loop:""
+        var img=post.media_type=="VIDEO"?$("<video></video>").addClass("instagram-img").prop({
+            autoplay:true,
+            muted:true,
+            playsinline:true,
+            loop:true
         }).append($("<source>").attr({
             src:post.media_url,
             type:"video/mp4"
