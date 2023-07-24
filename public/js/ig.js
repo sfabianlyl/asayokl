@@ -35,6 +35,9 @@ function display_posts(hashtag,posts){
         });
         ig.append(container.append(anchor.append(img)));
     });
+    $.each(ig.find("video"),function(index,video){
+        video.play();
+    });
 
 }
 
