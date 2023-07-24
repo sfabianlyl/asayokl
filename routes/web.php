@@ -21,6 +21,7 @@ Route::get('/archive', function () { return view('contents.archive'); })->name("
 Route::get('/aypa', function () { return view('contents.aypa'); })->name("aypa");
 Route::get('/calendar', function () { return view('contents.calendar'); })->name("calendar");
 Route::get('/lay-singles', function () { return view('contents.laysingles'); })->name("lay.singles");
+Route::get("/about", function () { return view('contents.about'); })->name("about");
 Route::get('/team', "App\Http\Controllers\ViewController@team")->name("team");
 Route::get('/resources', function (Request $request) { return view('contents.resources',["agent"=>$request->server("HTTP_USER_AGENT")]); })->name("resources");
 Route::get('/teens', function () { return view('contents.teens'); })->name("teens");
@@ -30,7 +31,7 @@ Route::get("/kamikudusfaq", function() { return view("contents.kami.kudus.faq");
 Route::get('/cyan', function () { return view('contents.cyan'); })->name("cyan.page");
 Route::get("/kamikudus", function () { return view('contents.kami.kudus.page'); })->name("kamikudus.page");
 Route::get("/pestakami", function () { return view('contents.kami.pesta.page'); })->name("pestakami.page");
-Route::get("/wydarchkl", function () { return view('contents.wydarchkl'); })->name("wydarchkl");
+Route::get("/about", function () { return view('contents.about'); })->name("about");
 
 
 //kami

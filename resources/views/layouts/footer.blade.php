@@ -49,6 +49,7 @@
             <div class="web-map text-center text-lg-left">
                 <p>About Us:</p>
                 <br>
+                <a href="about">About</a>
                 <a href="team">Team</a>
                 <a href="calendar">Calendar</a>
                 <a href="checkin">Checkin</a>
