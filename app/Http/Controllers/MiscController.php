@@ -23,7 +23,7 @@ class MiscController extends BaseController
         $endpoint="https://graph.instagram.com/6745609365520116/media";
         $client= new \GuzzleHttp\Client();
         $token=InstagramToken::orderBy('created_at','DESC')->first()->token;
-        $fields="media_url,permalink,caption";
+        $fields="media_url,media_type,permalink,caption";
         do{
             $response=$client->request('GET',$endpoint,['query'=>[
                 'access_token'=>$token,

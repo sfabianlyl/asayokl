@@ -22,7 +22,15 @@ function display_posts(hashtag,posts){
             href:post.permalink,
             target:"_blank"
         });
-        var img=$("<img>").addClass("instagram-img").attr({
+        var img=post.media_type=="VIDEO"?$("<video></video>").addClass("instagram-img").attr({
+            autoplay:"true",
+            playsinline:"true",
+            muted:"true",
+            loop:"true"
+        }).append($("<source>").attr({
+            src:post.media_url,
+            type:"video/mp4"
+        })):$("<img>").addClass("instagram-img").attr({
             src:post.media_url
         });
         ig.append(container.append(anchor.append(img)));
