@@ -6,7 +6,11 @@
 
 .instagram-img-container{
     flex:0 0 calc(33% - 2px);
+    margin-bottom:2px;
     aspect-ratio:1;
+}
+.instagram-img-container:not(:last-child){
+    margin-right:2px;
 }
 
 .instagram-img{
