@@ -71,13 +71,7 @@
         </div>
     </div>
 
-    <div>
-        <h4 class="text-center mb-5">ArchKL Pilgrims' Updates from World Youth Day 2023</h4>
-        <div id="instagramContainer" hashtag="#wydarchkl" class="d-flex flex-wrap mb-5"></div>
-        <div class="text-center">
-            <a href="https://www.instagram.com/asayo_kl/" class="btn btn-primary" target="_blank">See More</a>
-        </div>
-    </div>
+    
 
     <div class="row justify-content-around my-5">
         <!-- <div class="col-lg-3 col-12 mb-5 category-nav">

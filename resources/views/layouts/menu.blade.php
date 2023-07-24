@@ -33,5 +33,6 @@
         <a href="{{route('kamikudus.page')}}">K.A.M.I. Kudus</a>
         <a href="{{route('pestakami.page')}}">Pesta K.A.M.I.</a>
         <a href="aypa">AYPA 2019</a>
+        <a href="{{route('wydarchkl')}}">World Youth Day 2023 Updates</a>
     </div>
 </div>
