@@ -24,8 +24,8 @@ function display_posts(hashtag,posts){
         });
         var img=post.media_type=="VIDEO"?$("<video></video>").addClass("instagram-img").attr({
             autoplay:"",
-            playsinline:"",
             muted:"",
+            playsinline:"",
             loop:""
         }).append($("<source>").attr({
             src:post.media_url,
@@ -37,7 +37,6 @@ function display_posts(hashtag,posts){
     });
     $.each(ig.find("video"),function(index,video){
         video.load();
-        video.play();
     });
 
 }
