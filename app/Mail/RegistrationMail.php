@@ -19,7 +19,7 @@ class RegistrationMail extends Mailable
      *
      * @return void
      */
-    public function __construct($subject, $main_message, $intro_message, $content, $outro_message="", $meets=true)
+    public function __construct($subject, $main_message, $intro_message, $content, $outro_message="", $meets=false)
     {
         $this->subject=$subject;
         $this->main_message=$main_message;

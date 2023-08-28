@@ -18,7 +18,9 @@
             "response",
             "email_body",
             "status",
-            'age_range'
+            'age_range',
+            "background_color",
+            "text_color"
         ];
 
         public function registrations()
