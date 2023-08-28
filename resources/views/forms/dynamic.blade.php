@@ -60,4 +60,10 @@
 @stop
 
 @section("css")
+    <style>
+        body{
+            @if($form->background_color) background-color:{{$form->background_color}}; @endif
+            @if($form->text_color) color: {{$form->text_color}}; @endif
+        }
+    </style>
 @stop
