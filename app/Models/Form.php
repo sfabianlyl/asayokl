@@ -17,7 +17,8 @@
             "email_applicant",
             "response",
             "email_body",
-            "status"
+            "status",
+            'age_range'
         ];
 
         public function registrations()
