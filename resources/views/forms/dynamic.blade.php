@@ -21,7 +21,7 @@
         <form action="{{ route('forms.submit') }}" id="myform" method="POST" enctype="multipart/form-data">
             @csrf
              @foreach($inputs as $input)
-                @if(isset($fields[$input])) @include("res.forms.$input") @endif
+                @if(isset($fields[$input])) @include("res.forms.$input", ["form"=>$form]) @endif
              @endforeach
              <input type="hidden" name="formID" value="{{$form->id}}">
              @include("res.forms.submit")
