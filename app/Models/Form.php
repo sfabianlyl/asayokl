@@ -20,7 +20,9 @@
             "status",
             'age_range',
             "background_color",
-            "text_color"
+            "text_color",
+            "link_color",
+            "payment_amount",
         ];
 
         public function registrations()

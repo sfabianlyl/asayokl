@@ -61,9 +61,20 @@
 
 @section("css")
     <style>
-        body{
-            @if($form->background_color) background-color:{{$form->background_color}}; @endif
-            @if($form->text_color) color: {{$form->text_color}}; @endif
-        }
+        @if($form->text_color)
+            .container{
+                color: {{$form->text_color}};
+            }
+        @endif
+        @if($form->background_color)
+            body{
+                background-color:{{$form->background_color}}; 
+            }
+        @endif
+        @if($form->link_color)
+            .container a, .container a:hover{
+                color: {{$form->link_color}};
+            }
+        @endif
     </style>
 @stop
