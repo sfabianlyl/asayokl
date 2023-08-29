@@ -76,5 +76,14 @@
                 color: {{$form->link_color}};
             }
         @endif
+        @if($form->button_color)
+            #formSubmit:hover, #payment-details-button:hover {
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)) {{$form->button_color}};
+            }
+            #formSubmit, #payment-details-button {
+                background-color: {{$form->button_color}};
+                border-color: rgba(0,0,0,0);
+            }
+        @endif
     </style>
 @stop
