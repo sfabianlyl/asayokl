@@ -4,7 +4,7 @@
             <p class="text-center">Sponsored By:</p>
             <div class="row justify-content-center align-items-center">
                 <div class="col-3">
-                    <img class="w-100" src="Images/archkl.png">
+                    <img class="w-100" src="{{asset("Images/archkl.png")}}">
                 </div>
             </div>
             
