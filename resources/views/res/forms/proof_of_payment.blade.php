@@ -32,7 +32,7 @@
                 <p>
                     Pembayaran boleh dibuat kepada (Payment can be made to):
                 </p>
-                <p>
+                {{--<p>
                     <b>DuitNow</b><br>
                     Step 1: Login to any of your bank's online banking or eWallet's mobile app.<br>
                     Step 2: Search for the DuitNow logo under 'Funds Transfer' or 'Send Money'.<br>
@@ -43,7 +43,7 @@
                     Step 7: Payment Details - (Your Name) {{strtoupper($form->url)}}<br>
                     Step 8: Complete transaction<br>
                     Step 9: Share your payment receipt with us by uploading<br>
-                </p>
+                </p>--}}
                 <p> 
                     <b>Bank Transfer</b><br>
                     ASAYO (Archdiocesan Single Adults and Youth Office)<br>
