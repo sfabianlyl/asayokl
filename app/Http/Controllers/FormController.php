@@ -46,9 +46,9 @@ class FormController extends BaseController
             $headers=["No"];
             $fields=json_decode($form->fields,true);
             if(isset($fields["nationality"])) $headers[]="Nationality";
-            if(isset($fields["name"])) $headers[]="Name";
+            if(isset($fields["name"])) {$headers[]="Name";$headers[]="Baptismal Name";}
             if(isset($fields["identification"])) $headers[]="IC/Passport";
-            if(isset($fields["year-of-birth"])) $headers[]="Year of Birth";
+            if(isset($fields["year-of-birth"])) $headers[]="Date of Birth";
             if(isset($fields["age"])) $headers[]="Age Range";
             if(isset($fields["gender"])) $headers[]="Gender";
             if(isset($fields["email"])) $headers[]="Email";
@@ -73,7 +73,7 @@ class FormController extends BaseController
 
         $add=[];
         if(isset($fields["nationality"])) $add[]=$request->nationality;
-        if(isset($fields["name"])) $add[]=$request->name;
+        if(isset($fields["name"])) {$add[]=$request->name; $add[]=$request->baptismal_name;}
         if(isset($fields["identification"])) $add[]=$request->ic;
         if(isset($fields["year-of-birth"])) $add[]=$request->year_of_birth;
         if(isset($fields["age"])) $add[]=$request->age;
@@ -91,7 +91,7 @@ class FormController extends BaseController
         $registrationArray=["form_id"=>$form->id];
         $other_details=[];
         if(isset($fields["nationality"])) $registrationArray["nationality"]=$request->nationality;
-        if(isset($fields["name"])) $registrationArray["name"]=$request->name;
+        if(isset($fields["name"])) {$registrationArray["name"]=$request->name; $other_details["baptismal_name"]=$request->baptismal_name;}
         if(isset($fields["year-of-birth"])) $other_details["year_of_birth"]=$request->year_of_birth;
         if(isset($fields["age"])) $registrationArray["age"]=$request->age;
         if(isset($fields["gender"])) $registrationArray["gender"]=$request->gender;
