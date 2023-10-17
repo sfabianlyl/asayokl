@@ -118,7 +118,7 @@ class FormController extends BaseController
 
         $emails=array_map('trim',explode(",",$form->email_to));
         if($form->email_applicant) $emails[]=$request->email;
-        
+        if(!empty($emails))
         Mail::to($emails)->send(new RegistrationMail($form->title, $header, $main_message, $content));
         
         return redirect("/forms/$form->url")->with([
