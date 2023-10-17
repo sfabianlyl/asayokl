@@ -117,10 +117,11 @@ class FormController extends BaseController
         if(isset($fields["phone"])) $content["No. Telefon (Mobile No.)"]=$request->phone;
         if(isset($fields["email"])) $content["E-mel (Email)"]=$request->email;
 
-        $emails=array_map('trim',explode(",",$form->email_to));
+        
+        if($form->email_to) $emails=array_map('trim',explode(",",$form->email_to));
         if($form->email_applicant) $emails[]=$request->email;
         if(!empty($emails))
-        Log::info(print_r($emails, true));
+
         Mail::to($emails)->send(new RegistrationMail($form->title, $header, $main_message, $content));
         
         return redirect("/forms/$form->url")->with([
