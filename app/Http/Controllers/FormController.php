@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Form;
+use Illuminate\Support\Facades\Log;
 use App\Models\Registration;
 use App\Mail\RegistrationMail;
 use App\Helpers\GoogleSheetConnection;
@@ -119,6 +120,7 @@ class FormController extends BaseController
         $emails=array_map('trim',explode(",",$form->email_to));
         if($form->email_applicant) $emails[]=$request->email;
         if(!empty($emails))
+        Log::info(print_r($emails, true));
         Mail::to($emails)->send(new RegistrationMail($form->title, $header, $main_message, $content));
         
         return redirect("/forms/$form->url")->with([
