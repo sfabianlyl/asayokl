@@ -57,6 +57,7 @@ class FormController extends BaseController
             if(isset($fields["diocese"])) $headers[]="Diocese";
             if(isset($fields["parish-full"])) $headers[]="Parish";
             if(isset($fields["allergy"])) $headers[]="Allergy/Medical Info";
+            if(isset($fields["diet"])) $headers[]="Dietary Requirements";
             if(isset($fields["transportation"])) $headers[]="Transportation";
             if(isset($fields["vaccination_status"])) $headers[]="Vaccination Status";
             if(isset($fields["proof_of_payment"])) $headers[]="Payment";
@@ -84,6 +85,7 @@ class FormController extends BaseController
         if(isset($fields["diocese"])) $add[]=$request->diocese;
         if(isset($fields["parish-full"])) $add[]=$request->parish;
         if(isset($fields["allergy"])) $add[]=$request->allergy;
+        if(isset($fields["diet"])) $add[]=$request->diet;
         if(isset($fields["transportation"])) $add[]=$request->transportation;
         if(isset($fields["vaccination_status"])) $add[]=$request->vaccination;
         if(isset($fields["proof_of_payment"])) $add[]= isset($payment_file)? asset("storage/$payment_file") : "invalid upload";
@@ -104,6 +106,7 @@ class FormController extends BaseController
         if(isset($fields["proof_of_payment"])) $registrationArray["payment"]= $payment_file ?? "invalid upload";
         if(isset($fields["identification"])) $other_details["identification"]=$request->ic;
         if(isset($fields["allergy"])) $other_details["allergy"]=$request->allergy;
+        if(isset($fields["diet"])) $other_details["diet"]=$request->diet;
         if(isset($fields["transportation"])) $other_details["transportation"]=$request->transportation;
         $registrationArray["other_details"]=json_encode($other_details);
         $registration=Registration::create($registrationArray);

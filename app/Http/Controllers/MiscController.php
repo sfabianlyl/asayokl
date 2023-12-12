@@ -14,9 +14,21 @@ class MiscController extends BaseController
     
 
     public function ig_oauth(Request $request){
-        
+        $endpoint="https://graph.instagram.com/refresh_access_token";
+        $client= new \GuzzleHttp\Client();
+        $token=InstagramToken::orderBy('created_at','DESC')->first()->token;
+        do{
+            $response=$client->request('GET',$endpoint,['query'=>[
+                'grant_type'=>'ig_refresh_token',
+                'access_token'=>$token
+            ]]);
+            $statusCode = $response->getStatusCode();
+        }while($statusCode!=200);
 
-        return response()->json($request);
+        $result=json_decode($response->getBody());
+        InstagramToken::create(['token'=>$result->access_token]);
+
+        return response()->json(['status'=>"success"]);
     }
 
     public function get_posts(){
