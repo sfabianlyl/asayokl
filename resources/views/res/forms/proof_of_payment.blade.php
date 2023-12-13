@@ -46,6 +46,7 @@
                 </p>--}}
                 <p> 
                     <b>Bank Transfer</b><br>
+                    Amount: RM{{$form->payment_amount}}<br>
                     ASAYO (Archdiocesan Single Adults and Youth Office)<br>
                     Public Bank: 3180569004<br>
                     Reference: Include name of participant & programme [eg. Jane Tan - {{strtoupper($form->url)}}]  in transaction details.
