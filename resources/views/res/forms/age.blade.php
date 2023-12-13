@@ -3,8 +3,8 @@
 @endphp
 
 <div class="row mb-5 align-items-center">
-    <div class="col-4">Umur (Age)</div>
-    <div class="col-8">
+    <div class="col-12 col-lg-4 mb-3 mb-lg-0">Umur (Age)</div>
+    <div class="col-12 col-lg-8 mb-3 mb-lg-0">
         @if(isset($range["17 and below"]))<label><input type="radio" name="age" value="17 and below">17 tahun dan kebawah (17 years old and below)</label><br>@endif
         @if(isset($range["18 - 21"]))<label><input type="radio" name="age" value="18 - 21" checked>18 - 21 tahun (18 - 21 years old)</label><br>@endif
         @if(isset($range["22 - 24"]))<label><input type="radio" name="age" value="22 - 24">22 - 24 tahun (22 - 24 years old)</label><br>@endif

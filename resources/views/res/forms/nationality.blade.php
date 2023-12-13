@@ -1,6 +1,6 @@
 <div class="row mb-5 align-items-center">
-    <div class="col-4">Kewarganegaraan (Nationality)</div>
-    <div class="col-8">
+    <div class="col-12 col-lg-4 mb-3 mb-lg-0">Kewarganegaraan (Nationality)</div>
+    <div class="col-12 col-lg-8 mb-3 mb-lg-0">
         <label>
             <input type="radio" id="radioMalaysia" name="nationality" value="Malaysia" required checked> Malaysia
         </label><br>
