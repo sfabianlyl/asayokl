@@ -56,6 +56,7 @@ class FormController extends BaseController
             if(isset($fields["phone"])) $headers[]="Phone";
             if(isset($fields["diocese"])) $headers[]="Diocese";
             if(isset($fields["parish-full"])) $headers[]="Parish";
+            if(isset($fields["size"])) $headers[]="T-shirt Size";
             if(isset($fields["allergy"])) $headers[]="Allergy/Medical Info";
             if(isset($fields["diet"])) $headers[]="Dietary Requirements";
             if(isset($fields["transportation"])) $headers[]="Transportation";
@@ -84,6 +85,7 @@ class FormController extends BaseController
         if(isset($fields["phone"])) $add[]=$this->phone($request->phone);
         if(isset($fields["diocese"])) $add[]=$request->diocese;
         if(isset($fields["parish-full"])) $add[]=$request->parish;
+        if(isset($fields["size"])) $add[]=$request->size;
         if(isset($fields["allergy"])) $add[]=$request->allergy;
         if(isset($fields["diet"])) $add[]=$request->diet;
         if(isset($fields["transportation"])) $add[]=$request->transportation;
@@ -107,6 +109,7 @@ class FormController extends BaseController
         if(isset($fields["identification"])) $other_details["identification"]=$request->ic;
         if(isset($fields["allergy"])) $other_details["allergy"]=$request->allergy;
         if(isset($fields["diet"])) $other_details["diet"]=$request->diet;
+        if(isset($fields["size"])) $other_details["size"]=$request->size;
         if(isset($fields["transportation"])) $other_details["transportation"]=$request->transportation;
         $registrationArray["other_details"]=json_encode($other_details);
         $registration=Registration::create($registrationArray);

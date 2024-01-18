@@ -23,7 +23,8 @@
             "text_color",
             "link_color",
             "payment_amount",
-            "button_color"
+            "button_color",
+            "tshirt_sizes"
         ];
 
         public function registrations()
