@@ -10,7 +10,7 @@
         @if(isset($range["M"]))<label><input type="radio" name="size" value="M" checked>M</label><br>@endif
         @if(isset($range["L"]))<label><input type="radio" name="size" value="L">L</label><br>@endif
         @if(isset($range["XL"]))<label><input type="radio" name="size" value="XL">XL</label><br>@endif
-        @if(isset($range["2XL"]))<label><input type="radio" name="size" value="2XL">2XL</label>@endif
+        @if(isset($range["2XL"]))<label><input type="radio" name="size" value="2XL">2XL</label><br>@endif
         @if(isset($range["3XL"]))<label><input type="radio" name="size" value="3XL">3XL</label><br>@endif
     </div>
 </div>
