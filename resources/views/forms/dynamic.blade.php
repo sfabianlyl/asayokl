@@ -5,7 +5,7 @@
 
 @php
     $fields=json_decode($form->fields,true);
-    $inputs=["nationality","name","identification","year-of-birth","age","gender","email","phone","diocese","parish-full","tshirt","allergy","diet","transportation","vaccination_status","payment_terms","proof_of_payment"];
+    $inputs=["nationality","name","identification","year-of-birth","age","gender","email","phone","diocese","parish-full","tshirt","allergy","diet","transportation","vaccination_status","parent_info","payment_terms","proof_of_payment"];
 @endphp
 
 @section("content")

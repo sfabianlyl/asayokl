@@ -61,6 +61,7 @@ class FormController extends BaseController
             if(isset($fields["diet"])) $headers[]="Dietary Requirements";
             if(isset($fields["transportation"])) $headers[]="Transportation";
             if(isset($fields["vaccination_status"])) $headers[]="Vaccination Status";
+            if(isset($fields["parent_info"])) {$headers[]="Parent/Guardian/Emergency Name"; $headers[]="Relationship";$headers[]="Parent/Guardian/Emergency Contact";}
             if(isset($fields["proof_of_payment"])) $headers[]="Payment";
             $headers[]="Timestamp";
             $conn->add($headers,$timestamp=false, $count=false);
@@ -90,6 +91,7 @@ class FormController extends BaseController
         if(isset($fields["diet"])) $add[]=$request->diet;
         if(isset($fields["transportation"])) $add[]=$request->transportation;
         if(isset($fields["vaccination_status"])) $add[]=$request->vaccination;
+        if(isset($fields["parent_info"])) {$add[]=$request->emergency_name; $add[]=$request->emergency_relationship; $add[]=$request->emergency_contact;}
         if(isset($fields["proof_of_payment"])) $add[]= isset($payment_file)? asset("storage/$payment_file") : "invalid upload";
         $conn->add($add);
 
@@ -110,6 +112,11 @@ class FormController extends BaseController
         if(isset($fields["allergy"])) $other_details["allergy"]=$request->allergy;
         if(isset($fields["diet"])) $other_details["diet"]=$request->diet;
         if(isset($fields["tshirt"])) $other_details["size"]=$request->size;
+        if(isset($fields["parent_info"])) $other_details["parent_info"]=[
+            "name"=>$request->emergency_name,
+            "relationship"=>$request->emergency_relationship,
+            "contact"=>$request->emergency_contact,
+        ];
         if(isset($fields["transportation"])) $other_details["transportation"]=$request->transportation;
         $registrationArray["other_details"]=json_encode($other_details);
         $registration=Registration::create($registrationArray);
