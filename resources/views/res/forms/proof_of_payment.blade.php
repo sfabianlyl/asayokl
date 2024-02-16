@@ -47,6 +47,7 @@
                 <p> 
                     <b>Bank Transfer</b><br>
                     Amount: RM{{$form->payment_amount}}<br>
+                    @if($form->deposit) <i>To secure your spot, you may also contribute a minimum of RM{{$form->deposit}} deposit first, and paying the remainder later.</i><br> @endif
                     ASAYO (Archdiocesan Single Adults and Youth Office)<br>
                     Public Bank: 3180569004<br>
                     Reference: Include name of participant & programme [eg. Jane Tan - {{strtoupper($form->url)}}]  in transaction details.

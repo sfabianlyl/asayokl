@@ -24,7 +24,8 @@
             "link_color",
             "payment_amount",
             "button_color",
-            "tshirt_sizes"
+            "tshirt_sizes",
+            "deposit"
         ];
 
         public function registrations()
