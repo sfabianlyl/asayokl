@@ -88,21 +88,21 @@
                 <div class="col-lg-6 mb-5 col-12 text-center">
                     <h5>AYPA Day 1</h5>
                     <div class="video-container">
-                        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAsayoKualaLumpur%2Fvideos%2F1037711893226586%2F&show_text=0&width=560&mute=0" width="100%" height="auto" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/-vebenGWlkc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
 
                 <div class="col-lg-6 mb-5 col-12 text-center">
                     <h5>AYPA Day 2</h5>
                     <div class="video-container">
-                        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAsayoKualaLumpur%2Fvideos%2F2377420469013966%2F&show_text=0&width=560&mute=0" width="100%" height="auto" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/WKAj3PKF6RY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
 
                 <div class="col-lg-6 mb-5 col-12 text-center">
                     <h5>AYPA Day 3</h5>
                     <div class="video-container">
-                        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAsayoKualaLumpur%2Fvideos%2F2394526870793183%2F&show_text=0&width=560&mute=0" width="100%" height="auto" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/0GYNe3017lU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
 
