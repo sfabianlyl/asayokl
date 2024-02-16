@@ -2,36 +2,36 @@
     <!-- <div class="col-12 col-lg-8 mb-4">
         <h4>Teens <i>(Remaja)</i></h4>
         <br>
-        <a href="teens">Butiran <i>(Details)</i></a>
-        <a href="checkin">Check In</a>
+        <a href="/teens">Butiran <i>(Details)</i></a>
+        <a href="/checkin">Check In</a>
     </div> -->
     <div class="col-12 col-lg-6 mb-4">
         <h4>Youth & Campus Students <i>(Belia dan Pelajar Kampus)</i></h4>
         <br>
-        <a href="youth-campus">Butiran <i>(Details)</i></a>
-        <a href="checkin">Check In</a>
-        <a href="forms/lnl2024">Love & Life 2024</a>
-        <a href="ciptass">CIPTASS</a>
+        <a href="/youth-campus">Butiran <i>(Details)</i></a>
+        <a href="/checkin">Check In</a>
+        <a href="/forms/lnl2024">Love & Life 2024</a>
+        <a href="/ciptass">CIPTASS</a>
     </div>
     <div class="col-12 col-lg-6 mb-4">
         <h4>Young Adults <i>(Belia Dewasa)</i></h4>
         <br>
-        <a href="young-adult">Butiran <i>(Details)</i></a>
-        <a href="checkin">Check In</a>
-        <a href="cyan">Catholic Young Adults Network (CYAN)</a>
-        <a href="s2s">Sinners 2 Saints</a>
+        <a href="/young-adult">Butiran <i>(Details)</i></a>
+        <a href="/checkin">Check In</a>
+        <a href="/cyan">Catholic Young Adults Network (CYAN)</a>
+        <a href="/s2s">Sinners 2 Saints</a>
     </div>
     <div class="col-12 col-lg-6 mb-4">
         <h4>Lay Singles <i>(Kekal Bujang)</i></h4>
         <br>
-        <a href="lay-singles">Butiran <i>(Details)</i></a>
-        <a href="checkin">Check In</a>
+        <a href="/lay-singles">Butiran <i>(Details)</i></a>
+        <a href="/checkin">Check In</a>
     </div>
     <div class="col-12 col-lg-6 mb-4">
         <h4>Programmes & Events For All<i>(Program & Acara Untuk Semua)</i></h4>
         <br>
         <a href="{{route('kamikudus.page')}}">K.A.M.I. Kudus</a>
         <a href="{{route('pestakami.page')}}">Pesta K.A.M.I.</a>
-        <a href="aypa">AYPA 2019</a>
+        <a href="/aypa">AYPA 2019</a>
     </div>
 </div>
