@@ -41,31 +41,6 @@ class FormController extends BaseController
         $conn=new GoogleSheetConnection();
         $form=Form::where("id",$request->formID)->first();
         $fields=json_decode($form->fields,true);
-        $conn->connect($form->google_sheet_url, $form->google_sheet_sheet_name);
-
-        if(!$conn->count_rows()){
-            $headers=["No"];
-            $fields=json_decode($form->fields,true);
-            if(isset($fields["nationality"])) $headers[]="Nationality";
-            if(isset($fields["name"])) {$headers[]="Name";$headers[]="Baptismal Name";}
-            if(isset($fields["identification"])) $headers[]="IC/Passport";
-            if(isset($fields["year-of-birth"])) $headers[]="Date of Birth";
-            if(isset($fields["age"])) $headers[]="Age Range";
-            if(isset($fields["gender"])) $headers[]="Gender";
-            if(isset($fields["email"])) $headers[]="Email";
-            if(isset($fields["phone"])) $headers[]="Phone";
-            if(isset($fields["diocese"])) $headers[]="Diocese";
-            if(isset($fields["parish-full"])) $headers[]="Parish";
-            if(isset($fields["tshirt"])) $headers[]="T-shirt Size";
-            if(isset($fields["allergy"])) $headers[]="Allergy/Medical Info";
-            if(isset($fields["diet"])) $headers[]="Dietary Requirements";
-            if(isset($fields["transportation"])) $headers[]="Transportation";
-            if(isset($fields["vaccination_status"])) $headers[]="Vaccination Status";
-            if(isset($fields["parent_info"])) {$headers[]="Parent/Guardian/Emergency Name"; $headers[]="Relationship";$headers[]="Parent/Guardian/Emergency Contact";}
-            if(isset($fields["proof_of_payment"])) $headers[]="Payment";
-            $headers[]="Timestamp";
-            $conn->add($headers,$timestamp=false, $count=false);
-        }
         if(isset($fields["proof_of_payment"])){
             $imgExt=["jpg","tiff","png","raw","pdf","jpeg","gif","heic"];
             foreach($imgExt as $ext) $imgExt[]=strtoupper($ext);
@@ -74,26 +49,6 @@ class FormController extends BaseController
             if($this->strposa($request->payment->extension(),$imgExt)!==false)
             $payment_file=$request->payment->store("payments","public");
         }
-
-        $add=[];
-        if(isset($fields["nationality"])) $add[]=$request->nationality;
-        if(isset($fields["name"])) {$add[]=$request->name; $add[]=$request->baptismal_name;}
-        if(isset($fields["identification"])) $add[]=$request->ic;
-        if(isset($fields["year-of-birth"])) $add[]=$request->year_of_birth;
-        if(isset($fields["age"])) $add[]=$request->age;
-        if(isset($fields["gender"])) $add[]=$request->gender;
-        if(isset($fields["email"])) $add[]=$request->email;
-        if(isset($fields["phone"])) $add[]=$this->phone($request->phone);
-        if(isset($fields["diocese"])) $add[]=$request->diocese;
-        if(isset($fields["parish-full"])) $add[]=$request->parish;
-        if(isset($fields["tshirt"])) $add[]=$request->size;
-        if(isset($fields["allergy"])) $add[]=$request->allergy;
-        if(isset($fields["diet"])) $add[]=$request->diet;
-        if(isset($fields["transportation"])) $add[]=$request->transportation;
-        if(isset($fields["vaccination_status"])) $add[]=$request->vaccination;
-        if(isset($fields["parent_info"])) {$add[]=$request->emergency_name; $add[]=$request->emergency_relationship; $add[]=$request->emergency_contact;}
-        if(isset($fields["proof_of_payment"])) $add[]= isset($payment_file)? asset("storage/$payment_file") : "invalid upload";
-        $conn->add($add);
 
         $registrationArray=["form_id"=>$form->id];
         $other_details=[];
@@ -121,7 +76,54 @@ class FormController extends BaseController
         $registrationArray["other_details"]=json_encode($other_details);
         $registration=Registration::create($registrationArray);
 
-       
+        // google sheet connection
+        $conn->connect($form->google_sheet_url, $form->google_sheet_sheet_name);
+
+        if(!$conn->count_rows()){
+            $headers=["No"];
+            $fields=json_decode($form->fields,true);
+            if(isset($fields["nationality"])) $headers[]="Nationality";
+            if(isset($fields["name"])) {$headers[]="Name";$headers[]="Baptismal Name";}
+            if(isset($fields["identification"])) $headers[]="IC/Passport";
+            if(isset($fields["year-of-birth"])) $headers[]="Date of Birth";
+            if(isset($fields["age"])) $headers[]="Age Range";
+            if(isset($fields["gender"])) $headers[]="Gender";
+            if(isset($fields["email"])) $headers[]="Email";
+            if(isset($fields["phone"])) $headers[]="Phone";
+            if(isset($fields["diocese"])) $headers[]="Diocese";
+            if(isset($fields["parish-full"])) $headers[]="Parish";
+            if(isset($fields["tshirt"])) $headers[]="T-shirt Size";
+            if(isset($fields["allergy"])) $headers[]="Allergy/Medical Info";
+            if(isset($fields["diet"])) $headers[]="Dietary Requirements";
+            if(isset($fields["transportation"])) $headers[]="Transportation";
+            if(isset($fields["vaccination_status"])) $headers[]="Vaccination Status";
+            if(isset($fields["parent_info"])) {$headers[]="Parent/Guardian/Emergency Name"; $headers[]="Relationship";$headers[]="Parent/Guardian/Emergency Contact";}
+            if(isset($fields["proof_of_payment"])) $headers[]="Payment";
+            $headers[]="Timestamp";
+            $conn->add($headers,$timestamp=false, $count=false);
+        }
+        
+        $add=[];
+        if(isset($fields["nationality"])) $add[]=$request->nationality;
+        if(isset($fields["name"])) {$add[]=$request->name; $add[]=$request->baptismal_name;}
+        if(isset($fields["identification"])) $add[]=$request->ic;
+        if(isset($fields["year-of-birth"])) $add[]=$request->year_of_birth;
+        if(isset($fields["age"])) $add[]=$request->age;
+        if(isset($fields["gender"])) $add[]=$request->gender;
+        if(isset($fields["email"])) $add[]=$request->email;
+        if(isset($fields["phone"])) $add[]=$this->phone($request->phone);
+        if(isset($fields["diocese"])) $add[]=$request->diocese;
+        if(isset($fields["parish-full"])) $add[]=$request->parish;
+        if(isset($fields["tshirt"])) $add[]=$request->size;
+        if(isset($fields["allergy"])) $add[]=$request->allergy;
+        if(isset($fields["diet"])) $add[]=$request->diet;
+        if(isset($fields["transportation"])) $add[]=$request->transportation;
+        if(isset($fields["vaccination_status"])) $add[]=$request->vaccination;
+        if(isset($fields["parent_info"])) {$add[]=$request->emergency_name; $add[]=$request->emergency_relationship; $add[]=$request->emergency_contact;}
+        if(isset($fields["proof_of_payment"])) $add[]= isset($payment_file)? asset("storage/$payment_file") : "invalid upload";
+        $conn->add($add);
+
+        //email
         $header="Thank You for Registering!";
         $main_message=$form->email_body;
         
