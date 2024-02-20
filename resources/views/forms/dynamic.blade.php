@@ -5,7 +5,7 @@
 
 @php
     $fields=json_decode($form->fields,true);
-    $inputs=["nationality","name","identification","year-of-birth","age","gender","email","phone","diocese","parish-full","tshirt","allergy","diet","transportation","vaccination_status","parent_info","payment_terms","proof_of_payment"];
+    $inputs=["nationality","name","identification","year-of-birth","age","gender","email","phone","diocese","parish-full","tshirt","allergy","diet","transportation","vaccination_status","parent_info"];
 @endphp
 
 @section("content")
@@ -23,6 +23,16 @@
              @foreach($inputs as $input)
                 @if(isset($fields[$input])) @include("res.forms.$input", ["form"=>$form]) @endif
              @endforeach
+             @if(isset($fields["payment_terms"])) @include("res.forms.payment_terms", ["form"=>$form]) @endif
+             @if(isset($fields["proof_of_payment"])) 
+                @include("res.forms.proof_of_payment", ["form"=>$form]) 
+             @else
+                @if(isset($fields["payment_details"])) 
+                    @include("res.forms.payment_details", ["form"=>$form])              
+                @endif
+             @endif
+
+             ,"payment_terms","proof_of_payment"
              <input type="hidden" name="formID" value="{{$form->id}}">
              @include("res.forms.submit")
         </form>
