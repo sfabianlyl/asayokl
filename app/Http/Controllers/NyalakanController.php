@@ -14,7 +14,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
-class FormController extends BaseController
+class NyalakanController extends BaseController
 {
     public function phone($phone){
         if(!$phone) return ""; 
@@ -26,6 +26,32 @@ class FormController extends BaseController
             if(strpos($str, $need)!==false) return true;
         }
         return false;
+    }
+
+    public function registration_form(Request $request){
+        //check if logged in, 
+        //if no, redirect log in form, else return registration form
+    }
+
+    public function login_form(Request $request){
+        //check if logged in, 
+        //if no, return log in form, else, redirect registration form
+    }
+
+    public function check_username(Request $request){
+        //AJAX?
+        //check if username exists and first time log in? 
+        //create password, else ask for password
+    }
+
+    public function create_password(Request $request){
+        //create password
+    }
+    public function login(Request $request){
+        //authenticate, redirect to registration form
+    }
+    public function submit(Request $request){
+        //save form, AJAX
     }
 
     public function view_form(Request $request,$url){
@@ -70,7 +96,7 @@ class FormController extends BaseController
         if(isset($fields["parent_info"])) $other_details["parent_info"]=[
             "name"=>$request->emergency_name,
             "relationship"=>$request->emergency_relationship,
-            "contact"=>$this->phone($request->emergency_contact),
+            "contact"=>$request->emergency_contact,
         ];
         if(isset($fields["transportation"])) $other_details["transportation"]=$request->transportation;
         $registrationArray["other_details"]=json_encode($other_details);
@@ -119,7 +145,7 @@ class FormController extends BaseController
         if(isset($fields["diet"])) $add[]=$request->diet;
         if(isset($fields["transportation"])) $add[]=$request->transportation;
         if(isset($fields["vaccination_status"])) $add[]=$request->vaccination;
-        if(isset($fields["parent_info"])) {$add[]=$request->emergency_name; $add[]=$request->emergency_relationship; $add[]=$this->phone($request->emergency_contact);}
+        if(isset($fields["parent_info"])) {$add[]=$request->emergency_name; $add[]=$request->emergency_relationship; $add[]=$request->emergency_contact;}
         if(isset($fields["proof_of_payment"])) $add[]= isset($payment_file)? asset("storage/$payment_file") : "invalid upload";
         $conn->add($add);
 
@@ -129,7 +155,7 @@ class FormController extends BaseController
         
         $content=["Program (Programme)"=>$form->title];
         if(isset($fields["name"])) $content["Nama (Name)"]=$request->name;
-        if(isset($fields["phone"])) $content["No. Telefon (Mobile No.)"]=$this->phone($request->phone);
+        if(isset($fields["phone"])) $content["No. Telefon (Mobile No.)"]=$request->phone;
         if(isset($fields["email"])) $content["E-mel (Email)"]=$request->email;
 
         
