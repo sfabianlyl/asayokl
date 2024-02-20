@@ -32,7 +32,6 @@
                 @endif
              @endif
 
-             ,"payment_terms","proof_of_payment"
              <input type="hidden" name="formID" value="{{$form->id}}">
              @include("res.forms.submit")
         </form>
