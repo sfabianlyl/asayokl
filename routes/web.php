@@ -33,12 +33,6 @@ Route::get("/kamikudus", function () { return view('contents.kami.kudus.page'); 
 Route::get("/pestakami", function () { return view('contents.kami.pesta.page'); })->name("pestakami.page");
 Route::get("/about", function () { return view('contents.about'); })->name("about");
 
-
-//kami
-    //kamikudus
-    // Route::get("/kamikudus", "App\Http\Controllers\ViewController@kamikudus" )->name('kami.kudus.registration.form');
-    // Route::post('/kamikudus',"App\Http\Controllers\RegistrationController@kamikudus")->name("kami.kudus.registration.submit");
-
 //forms
 Route::get('/checkin', function () { return view('forms.checkin'); })->name("checkin");
 Route::post('/checkin', "App\Http\Controllers\CheckinController@checkin_self")->name("checkin.self.submit");
@@ -61,10 +55,7 @@ Route::get("/youtube", function(){ return redirect("https://www.youtube.com/chan
 Route::get("/ig_oauth", "App\Http\Controllers\MiscController@ig_oauth")->name("ig.oauth");
 Route::get("/ig_get_posts","App\Http\Controllers\MiscController@get_posts")->name("ig.get.posts");
 //redirects
-// Route::get('/easter', function () { return redirect("https://www.youtube.com/playlist?list=PL1GEZHjLaCL2Z01gOjPk4B_5ZqhAyNv_M"); });
-// Route::get('/kamiberdoa', function () { return redirect('https://www.youtube.com/playlist?list=PL1GEZHjLaCL3wnDiZkXS-WbzCbEP-4t2A'); });
-// Route::get('/quiz', function () { return redirect("https://docs.google.com/forms/d/e/1FAIpQLScBe6BS4kf0Do74gGKliJHWHcOOIlPtxXex3oDuTb8GSBXp4g/viewform?usp=sf_link"); });
-// Route::get('/quiz1', function () { return redirect('https://docs.google.com/forms/d/e/1FAIpQLSe5_f3CvQypw7UTBo1YL6jWjzumkl5lHpX_yprkDq7FuKXbbw/viewform?usp=sf_link'); });
+
 $shortlinks=Shortlink::where("status","active")->get();
 foreach($shortlinks as $shortlink){
     $link=$shortlink->shortlink;
