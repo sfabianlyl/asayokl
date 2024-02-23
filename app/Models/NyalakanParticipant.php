@@ -29,4 +29,8 @@
         {
             return $this->hasOne(User::class);
         }
+
+        public function weekend(){
+            return $this->hasOne(NyalakanWeekend::class);
+        }
     }

@@ -21,6 +21,7 @@ class User extends \TCG\Voyager\Models\User
         'name',
         'email',
         'password',
+        'first_logged_in'
     ];
 
     /**
@@ -44,6 +45,6 @@ class User extends \TCG\Voyager\Models\User
 
     public function nyalakan_participants()
     {
-        return $this->hasMany(NayalakanParticipant::class);
+        return $this->hasMany(NyalakanParticipant::class);
     }
 }
