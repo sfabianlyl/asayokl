@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\Form;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Registration;
 use App\Models\User;
 use App\Mail\RegistrationMail;
 use App\Helpers\GoogleSheetConnection;
+use App\Models\NyalakanWeekend;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -34,10 +36,12 @@ class NyalakanController extends BaseController
         //check if logged in, 
         //if no, redirect log in form, else return registration form
         if(!Auth::check()) return redirect()->route("nyalakan.login.form");
-        $user=auth()->user()->with("nyalakan_participants")->get();
+        $user=User::where('id',auth()->user()->id)->with("participants")->get();
+        $weekends=NyalakanWeekend::get();
         return view("nyalakan.form")->with(compact(
-            "user"
-        ));;
+            "user",
+            'weekends'
+        ));
         
     }
 
