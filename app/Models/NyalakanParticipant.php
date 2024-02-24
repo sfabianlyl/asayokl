@@ -8,7 +8,7 @@
         use SoftDeletes;
         protected $fillable = [
             'senator_id',
-            'weekend',
+            'weekend_id',
             'nationality',
             'name',
             "baptismal_name",

@@ -12,7 +12,9 @@ use App\Models\Registration;
 use App\Models\User;
 use App\Mail\RegistrationMail;
 use App\Helpers\GoogleSheetConnection;
+use App\Models\NyalakanParticipant;
 use App\Models\NyalakanWeekend;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -58,21 +60,40 @@ class NyalakanController extends BaseController
         //check if username exists and first time log in? 
         //create password, else ask for password
 
-        $user=User::where("username",$request->username)->get();
-        $status=["username"=>(bool)$user, "first_logged_in"=>(bool)$user->first_logged_in];
+        $user=User::where("email",$request->email)->get();
+        $status=["email"=>(bool)$user, "first_logged_in"=>(bool)$user->first_logged_in];
         return response()->json($status);
     }
 
     public function create_password(Request $request){
         //create password
-        $user=User::where("username",$request->username)->get();
+        $user=User::where("email",$request->email)->get();
         if($user->first_logged_in) return response()->json(["status"=>"create password unsuccessful."]);
         $user->password=Hash::make($request->new_password);
+        $user->first_logged_in=Carbon::now();
         $user->save();
 
-        $request->authenticate();
-        $request->session()->regenerate();
-        return redirect()->route("nyalakan.registration.form");
+        //create 10 participants for each weekend.
+
+        foreach(NyalakanWeekend::get() as $weekend){
+            for($i=0;$i<10;$i++){
+                $temp = NyalakanParticipant::create([
+                    'weekend_id' => $weekend->id,
+                    'senator_id' => $user->id
+                ]);
+            }
+        }
+        
+        
+ 
+        if (Auth::attempt(["email"=>$request->email, "password"=>$request->new_password])) {
+            $request->session()->regenerate();
+ 
+            return redirect()->route("nyalakan.registration.form");
+        }
+
+        
+        return redirect()->route("nyalakan.login.form");
 
     }
     public function login(Request $request)
@@ -96,6 +117,18 @@ class NyalakanController extends BaseController
     }
     public function submit(Request $request){
         //save form, AJAX
+
+        $participants=$request->participant;
+        foreach($participants as $weekend_id=>$weekend){
+            foreach($weekend as $no=>$participant){
+                $id=$participant["id"];
+                $temp=$participant;
+                unset($temp["id"]);
+                NyalakanParticipant::where("id",$id)->update($temp);
+            }
+        }
+
+        return response()->json(["status"=>"success"]);
     }
 
     
