@@ -36,6 +36,7 @@
                     <div class="mb-5">
                         <h5>You may create a password. Do remember it and save it!</h5>
                         <form action="{{route("nyalakan.password.create")}}" method="post" id="passwordCreate">
+                            @csrf
                             <input type="password" class="form-control mb-3" name="new_password" required>
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </form>
@@ -45,6 +46,7 @@
                     <div class="mb-5">
                         <h5>Please enter your password:</h5>
                         <form action="{{route("nyalakan.login.authenticate")}}" method="post" id="loginAuthenticate">
+                            @csrf
                             <input type="password" class="form-control mb-3" name="password" required>
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </form>
@@ -82,8 +84,8 @@
                             return;
                         }
                         toastr.success("Email found!");
-                        var email=$("#emailCheck input[name='email']").clone(true).css("display","none");
-                        $("#createPassword, #loginAuthenticate").prepend(email);
+                        $("#createPassword").prepend($("#emailCheck input[name='email']").clone(true).css("display","none"));
+                        $("#loginAuthenticate").prepend($("#emailCheck input[name='email']").clone(true).css("display","none"));
                         if(data.first_logged_in) $("#password-tab").tab("show");
                         else $("#create-password-tab").tab("show");
                         
