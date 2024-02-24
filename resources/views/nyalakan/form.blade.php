@@ -57,7 +57,14 @@
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][nationality]" value="{{$participants[$i]->nationality??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][identification]" value="{{$participants[$i]->identification??""}}"></td>
 
-                                            <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][age]" value="{{$participants[$i]->age}}"></td>
+                                            <td>
+                                                <select name="participant[{{$weekend->id}}][{{$i}}][age]">
+                                                    <option value="18-20" {{ ($participants[$i]->age??"18-20")=="18-20"?"selected":""}} >18-20</option>
+                                                    <option value="21-23" {{ ($participants[$i]->age??"18-20")=="21-23"?"selected":""}} >21-23</option>
+                                                    <option value="24-26" {{ ($participants[$i]->age??"18-20")=="24-26"?"selected":""}} >24-26</option>
+                                                    <option value="27-29" {{ ($participants[$i]->age??"18-20")=="27-29"?"selected":""}} >27-29</option>
+                                                    <option value="30-35" {{ ($participants[$i]->age??"18-20")=="30-35"?"selected":""}} >30-35</option>
+                                                </select>
 
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][parish]" value="{{$participants[$i]->parish??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][email]" value="{{$participants[$i]->email??""}}"></td>
@@ -143,8 +150,10 @@
 
 @section("css")
     <style>
-        table { border-collapse: collapse; }
+        /* table { border-collapse: collapse; }
         tr { display: block; float: left; }
-        th, td { display: block; border: 1px solid white; }
+        th, td { display: block; border: 1px solid white; } */
+
+        th, td{ border: 1px solid white;}
     </style>
 @stop
