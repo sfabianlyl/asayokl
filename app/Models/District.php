@@ -11,9 +11,9 @@
             'name',
         ];
         public function parishes(){
-            $this->hasMany(Entity::class);
+            return $this->hasMany(Entity::class);
         }
         public function senator(){
-            $this->hasOne(User::class);
+            return $this->hasOne(User::class);
         }
     }
