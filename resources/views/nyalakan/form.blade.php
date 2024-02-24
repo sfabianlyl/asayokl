@@ -10,9 +10,9 @@
                 <a href="{{route("nyalakan.logout")}}" class="btn btn-info">Log Out</a>
             </div>
             {{-- Display the weekends as tab buttons --}}
-            <ul class="nav">
+            <ul class="nav flex-column">
                 @foreach($weekends as $weekend)
-                    <li class="nav-item">
+                    <li class="nav-item" style="text-align:left !important;">
                         <a class="nav-link" id="weekend-{{$weekend->id}}-tab" data-toggle="tab" href="#weekend-{{$weekend->id}}" role="tab" aria-controls="weekend-{{$weekend->id}}" aria-selected="false">{{$weekend->name}}</a>
                     </li>
                 @endforeach
@@ -20,7 +20,7 @@
 
             {{-- Display the tabs --}}
             <form action="{{route("nyalakan.registration.submit")}}" method="POST" id="submitForm">
-                <div class="tab-content" id="formsContent">
+                <div class="tab-content mb-3" id="formsContent">
                     @foreach($weekends as $weekend)
                         <div class="tab-pane fade" id="weekend-{{$weekend->id}}" role="tabpanel" aria-labelledby="weekend-{{$weekend->id}}-tab">
                             <table>
@@ -109,7 +109,7 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="row">
+                <div class="row mb-5 ml-3">
                     <button type="submit" class="btn btn-success">Save</button>
                 </div>
             </form>
