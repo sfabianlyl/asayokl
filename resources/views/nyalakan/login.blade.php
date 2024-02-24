@@ -84,8 +84,8 @@
                         toastr.success("Email found!");
                         var email=$("#emailCheck input[name='email']").clone(true).css("display","none");
                         $("#createPassword, #loginAuthenticate").prepend(email);
-                        if(data.first_logged_in) $("#password").tab("show");
-                        else $("#create-password").tab("show");
+                        if(data.first_logged_in) $("#password-tab").tab("show");
+                        else $("#create-password-tab").tab("show");
                         
                     },
                     error:function(data){
