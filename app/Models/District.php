@@ -13,4 +13,7 @@
         public function parishes(){
             $this->hasMany(Entity::class);
         }
+        public function senator(){
+            $this->hasOne(User::class);
+        }
     }

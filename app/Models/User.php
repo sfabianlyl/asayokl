@@ -22,7 +22,8 @@ class User extends \TCG\Voyager\Models\User
         'name',
         'email',
         'password',
-        'first_logged_in'
+        'first_logged_in',
+        'district_id'
     ];
 
     /**
@@ -47,5 +48,9 @@ class User extends \TCG\Voyager\Models\User
     public function nyalakan_participants() :HasMany
     {
         return $this->hasMany(NyalakanParticipant::class, "senator_id");
+    }
+    public function district()
+    {
+        return $this->belongsTo(District::class);
     }
 }
