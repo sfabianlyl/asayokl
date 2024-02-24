@@ -6,7 +6,7 @@
 @section("content")
     <div class="row justify-content-center pad-btm-50">
         <div class="col-lg-10 col-12">
-            <div class="row justify-content-end">
+            <div class="row justify-content-end mb-3">
                 <a href="{{route("nyalakan.logout")}}" class="btn btn-info">Log Out</a>
             </div>
             {{-- Display the weekends as tab buttons --}}
