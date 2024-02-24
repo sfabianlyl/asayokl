@@ -24,7 +24,7 @@
             <div class="tab-content" id="loginContent">
                 <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
                     <div class="row mb-5">
-                        <h3>Please enter the provided email:</h3>
+                        <h5>Please enter the provided email:</h5><br>
                         <form action="{{route("nyalakan.email.check")}}" method="POST" id="emailCheck">
                             <input type="text" class="form-control mb-3" name="email" required>
                             <button class="btn btn-primary" type="submit">Submit</button>
