@@ -8,7 +8,7 @@
         <div class="col-lg-10 col-12">
 
             {{-- Display the weekends as tab buttons --}}
-            <ul class="nav">
+            <ul class="nav" style="display:none !important;">
                 <li class="nav-item">
                     <a class="nav-link active" id="email-tab" data-toggle="tab" href="#email" role="tab" aria-controls="email" aria-selected="true">Email</a>
                 </li>
@@ -22,7 +22,7 @@
 
             {{-- Display the tabs --}}
             <div class="tab-content" id="loginContent">
-                <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
                     <div class="row mb-5">
                         <h3>Please enter the provided email:</h3>
                         <form action="{{route("nyalakan.email.check")}}" method="POST" id="emailCheck">

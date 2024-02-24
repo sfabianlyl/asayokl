@@ -10,7 +10,7 @@
                 <a href="{{route("nyalakan.logout")}}" class="btn btn-info">Log Out</a>
             </div>
             {{-- Display the weekends as tab buttons --}}
-            <ul class="nav" style="display:none">
+            <ul class="nav">
                 @foreach($weekends as $weekend)
                     <li class="nav-item">
                         <a class="nav-link" id="weekend-{{$weekend->id}}-tab" data-toggle="tab" href="#weekend-{{$weekend->id}}" role="tab" aria-controls="weekend-{{$weekend->id}}" aria-selected="false">{{$weekend->name}}</a>
