@@ -91,7 +91,7 @@
                                             </td>
 
                                         </tr>
-                                    @endforeach
+                                    @endfor
                                 </tbody>
                             </table>                            
                         </div>
