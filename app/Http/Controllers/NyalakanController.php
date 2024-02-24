@@ -73,7 +73,7 @@ class NyalakanController extends BaseController
         //check if username exists and first time log in? 
         //create password, else ask for password
 
-        $user=User::where("email",$request->email)->get();
+        $user=User::where("email",$request->email)->first();
         // return response()->json($user);
         $status=["email"=>(bool)$user&&($user->role_id==4), "first_logged_in"=>(bool)$user->first_logged_in];
         return response()->json($status);
@@ -81,7 +81,7 @@ class NyalakanController extends BaseController
 
     public function create_password(Request $request){
         //create password
-        $user=User::where("email",$request->email)->get();
+        $user=User::where("email",$request->email)->first();
         if($user->first_logged_in) return response()->json(["status"=>"create password unsuccessful."]);
         $user->password=Hash::make($request->new_password);
         $user->first_logged_in=Carbon::now();
