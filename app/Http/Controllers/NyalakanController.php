@@ -38,6 +38,10 @@ class NyalakanController extends BaseController
         //check if logged in, 
         //if no, redirect log in form, else return registration form
         if(!Auth::check()) return redirect()->route("nyalakan.login.form");
+        if(auth()->user()->role_id!=4){
+            Auth::logout();
+            return redirect()->route("nyalakan.login.form");
+        }
         $user=User::where('id',auth()->user()->id)->with("participants")->get();
         $weekends=NyalakanWeekend::get();
         return view("nyalakan.form")->with(compact(
@@ -50,12 +54,21 @@ class NyalakanController extends BaseController
     public function login_form(Request $request){
         //check if logged in, 
         //if no, return log in form, else, redirect registration form
-        if(Auth::check()) return redirect()->route("nyalakan.registration.form");
-
-        return view("nyalakan.login");
+        if(!Auth::check()) return view("nyalakan.login");
+        if(auth()->user()->role_id!=4){
+            Auth::logout();
+            return view("nyalakan.login");
+        }
+        return redirect()->route("nyalakan.registration.form");
+        
     }
 
-    public function check_username(Request $request){
+    public function logout(Request $request){
+        Auth::logout();
+        return redirect()->route("nyalakan.login.form");
+    }
+
+    public function check_email(Request $request){
         //AJAX?
         //check if username exists and first time log in? 
         //create password, else ask for password
