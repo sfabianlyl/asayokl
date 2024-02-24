@@ -38,6 +38,7 @@
                         <form action="{{route("nyalakan.password.create")}}" method="post" id="passwordCreate">
                             @csrf
                             <input type="password" class="form-control mb-3" name="new_password" required>
+                            <input type="checkbox" name="remember" id=""> Remember Me <br>
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </form>
                     </div>                          
@@ -48,6 +49,7 @@
                         <form action="{{route("nyalakan.login.authenticate")}}" method="post" id="loginAuthenticate">
                             @csrf
                             <input type="password" class="form-control mb-3" name="password" required>
+                            <input type="checkbox" name="remember" id=""> Remember Me<br>
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </form>
                     </div>                          
