@@ -42,7 +42,7 @@ class NyalakanController extends BaseController
             Auth::logout();
             return redirect()->route("nyalakan.login.form");
         }
-        $user=User::where('id',auth()->user()->id)->get();
+        $user=auth()->user();
         $weekends=NyalakanWeekend::get();
         return view("nyalakan.form")->with(compact(
             "user",
