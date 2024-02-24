@@ -42,9 +42,8 @@ class NyalakanController extends BaseController
             Auth::logout();
             return redirect()->route("nyalakan.login.form");
         }
-        $user=User::where("id",auth()->user()->id)->with("district.parishes")->first();
+        $user=User::where("id",auth()->user()->id)->first();
         $weekends=NyalakanWeekend::get();
-        $parishes=$user->district->parishes;
         return view("nyalakan.form")->with(compact(
             "user",
             'weekends'
