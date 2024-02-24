@@ -73,7 +73,7 @@ Route::group(['prefix'=>'nyalakan'], function(){
     Route::get("/","App\Http\Controllers\NyalakanController@registration_form")->name("nyalakan.registration.form");
     
     Route::get("/login","App\Http\Controllers\NyalakanController@login_form")->name("nyalakan.login.form");
-    Route::post("/check_username","App\Http\Controllers\NyalakanController@check_username")->name("nyalakan.username.check");
+    Route::post("/check_email","App\Http\Controllers\NyalakanController@check_email")->name("nyalakan.email.check");
     Route::post("/password","App\Http\Controllers\NyalakanController@create_password")->name("nyalakan.password.create");
     Route::post("/login","App\Http\Controllers\NyalakanController@login")->name("nyalakan.login.authenticate");
     

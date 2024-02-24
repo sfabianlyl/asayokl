@@ -96,7 +96,7 @@
                     @endforeach
                 </div>
                 <div class="row">
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-success">Save</button>
                 </div>
             </form>
         </div>
@@ -104,13 +104,39 @@
 @stop
 
 @section("js")
-    <script>
-        $(document).ready(function(){
-            $("#submitForm").on("submit",function(e){
-                e.preventDefault();
+<script>
+    toastr.options={
+        "preventDuplicates":true,
+        "timeOut":"3000"
+    }
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $(document).ready(function(){
+        $("#submitForm").on("submit",function(e){
+            e.preventDefault();
+            $.ajax({
+                type:"POST",
+                url:$(this).attr("action"),
+                data:$(this).serialize(),
+                success:function(data){
+                    if(data.status=="success"){
+                        toastr.success("Saved!");
+                        return;
+                    }                
+                    toastr.warning("Something went wrong, please refresh page.");
+                },
+                error:function(data){
+                    toastr.warning("Something went wrong, please refresh page.");
+                    console.log(data);
+                }
             });
         });
-    </script>
+    });
+</script>
 @stop
 
 @section("css")
