@@ -76,13 +76,13 @@
                     url:$(this).attr("action"),
                     data:$(this).serialize(),
                     success:function(data){
-                        if(data.status!="success"){
+                        if(!data.email){
                             toastr.warning("Please check your email again.");
                             $("#emailCheck input").prop("readonly",false);
                             return;
                         }
                         toastr.success("Email found!");
-                        var email=$("#emailCheck input[name='email']").clone().css("display","none");
+                        var email=$("#emailCheck input[name='email']").clone(true).css("display","none");
                         $("#createPassword, #loginAuthenticate").prepend(email);
                         if(data.first_logged_in) $("#password").tab("show");
                         else $("#create-password").tab("show");
