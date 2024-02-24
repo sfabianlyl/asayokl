@@ -27,10 +27,10 @@
 
         public function senator()
         {
-            return $this->hasOne(User::class);
+            return $this->belongsTo(User::class);
         }
 
         public function weekend(){
-            return $this->hasOne(NyalakanWeekend::class);
+            return $this->belongsTo(NyalakanWeekend::class);
         }
     }

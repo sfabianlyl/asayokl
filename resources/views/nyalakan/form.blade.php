@@ -43,7 +43,7 @@
                                         <th>Payment Acknowledgement</th>
                                     </tr>
                                     @php
-                                        $participants=$user->participants->where("weekend_id",$weekend->id)->get();
+                                        $participants=$user->nyalakan_participants->where("weekend_id",$weekend->id)->get();
                                     @endphp
                                     @for($i=0;$i<10;$i++)
                                         <tr>
