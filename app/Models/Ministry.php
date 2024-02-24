@@ -3,18 +3,16 @@
 
     use Illuminate\Database\Eloquent\Model;
     use Illuminate\Database\Eloquent\SoftDeletes;
-
-    class Entity extends Model
+    class Ministry extends Model
     {
         use SoftDeletes;
         protected $fillable = [
             'category',
             'name',
-            'district_id'
         ];
 
-        public function district()
-        {
-            return $this->belongsTo(District::class);
-        }
+        // public function user()
+        // {
+        //     return $this->belongsTo(User::class);
+        // }
     }
