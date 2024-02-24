@@ -84,7 +84,7 @@
                             return;
                         }
                         toastr.success("Email found!");
-                        $("#createPassword").prepend($("#emailCheck input[name='email']").clone(true).css("display","none"));
+                        $("#passwordCreate").prepend($("#emailCheck input[name='email']").clone(true).css("display","none"));
                         $("#loginAuthenticate").prepend($("#emailCheck input[name='email']").clone(true).css("display","none"));
                         if(data.first_logged_in) $("#password-tab").tab("show");
                         else $("#create-password-tab").tab("show");
