@@ -74,7 +74,7 @@ class NyalakanController extends BaseController
         //create password, else ask for password
 
         $user=User::where("email",$request->email)->get();
-        return response()->json($user);
+        // return response()->json($user);
         $status=["email"=>(bool)$user&&($user->role_id==4), "first_logged_in"=>(bool)$user->first_logged_in];
         return response()->json($status);
     }
