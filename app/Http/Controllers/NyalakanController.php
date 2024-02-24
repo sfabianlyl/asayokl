@@ -101,7 +101,7 @@ class NyalakanController extends BaseController
         
         
  
-        if (Auth::attempt(["email"=>$request->email, "password"=>$request->new_password],isset($request->remember))) {
+        if (Auth::attempt(["email"=>$request->email, "password"=>$request->new_password],$request->remember??false)) {
             $request->session()->regenerate();
  
             return redirect()->route("nyalakan.registration.form");
@@ -118,7 +118,7 @@ class NyalakanController extends BaseController
             'password' => ['required'],
         ]);
  
-        if (Auth::attempt($credentials,isset($request->remember))) {
+        if (Auth::attempt($credentials,$request->remember??false)) {
             $request->session()->regenerate();
  
             return redirect()->route("nyalakan.registration.form");
