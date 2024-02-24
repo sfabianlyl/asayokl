@@ -23,7 +23,7 @@
             {{-- Display the tabs --}}
             <div class="tab-content" id="loginContent">
                 <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                    <div class="row mb-5">
+                    <div class="mb-5">
                         <h5>Please enter the provided email:</h5><br>
                         <form action="{{route("nyalakan.email.check")}}" method="POST" id="emailCheck">
                             <input type="text" class="form-control mb-3" name="email" required>
@@ -33,8 +33,8 @@
                     </div>                          
                 </div>
                 <div class="tab-pane fade" id="create-password" role="tabpanel" aria-labelledby="create-password-tab">
-                    <div class="row mb-5">
-                        <h3>You may create a password. Do remember it and save it!</h3>
+                    <div class="mb-5">
+                        <h5>You may create a password. Do remember it and save it!</h5>
                         <form action="{{route("nyalakan.password.create")}}" method="post" id="passwordCreate">
                             <input type="password" class="form-control mb-3" name="new_password" required>
                             <button class="btn btn-primary" type="submit">Submit</button>
@@ -42,8 +42,8 @@
                     </div>                          
                 </div>
                 <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
-                    <div class="row mb-5">
-                        <h3>Please enter your password:</h3>
+                    <div class="mb-5">
+                        <h5>Please enter your password:</h5>
                         <form action="{{route("nyalakan.login.authenticate")}}" method="post" id="loginAuthenticate">
                             <input type="password" class="form-control mb-3" name="password" required>
                             <button class="btn btn-primary" type="submit">Submit</button>
