@@ -27,10 +27,10 @@
 
         public function senator()
         {
-            return $this->belongsTo(User::class);
+            return $this->belongsTo(User::class, "senator_id");
         }
 
         public function weekend(){
-            return $this->belongsTo(NyalakanWeekend::class);
+            return $this->belongsTo(NyalakanWeekend::class, "weekend_id");
         }
     }

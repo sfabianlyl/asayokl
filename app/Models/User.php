@@ -45,6 +45,6 @@ class User extends \TCG\Voyager\Models\User
 
     public function nyalakan_participants()
     {
-        return $this->hasMany(NyalakanParticipant::class);
+        return $this->hasMany(NyalakanParticipant::class, "senator_id");
     }
 }

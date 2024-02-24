@@ -12,6 +12,6 @@
 
         public function participants()
         {
-            return $this->hasMany(NyalakanParticipant::class);
+            return $this->hasMany(NyalakanParticipant::class, "weekend_id");
         }
     }
