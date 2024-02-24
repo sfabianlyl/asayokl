@@ -6,9 +6,11 @@
 @section("content")
     <div class="row justify-content-center pad-btm-50">
         <div class="col-lg-10 col-12">
-
+            <div class="row justify-content-end">
+                <a href="{{route("nyalakan.logout")}}" class="btn btn-info">Log Out</a>
+            </div>
             {{-- Display the weekends as tab buttons --}}
-            <ul class="nav">
+            <ul class="nav" style="display:none">
                 @foreach($weekends as $weekend)
                     <li class="nav-item">
                         <a class="nav-link" id="weekend-{{$weekend->id}}-tab" data-toggle="tab" href="#weekend-{{$weekend->id}}" role="tab" aria-controls="weekend-{{$weekend->id}}" aria-selected="false">{{$weekend->name}}</a>
