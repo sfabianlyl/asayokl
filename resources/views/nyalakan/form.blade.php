@@ -66,7 +66,12 @@
                                                     <option value="30-35" {{ ($participants[$i]->age??"18-20")=="30-35"?"selected":""}} >30-35</option>
                                                 </select>
 
-                                            <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][parish]" value="{{$participants[$i]->parish??""}}"></td>
+                                            <td>
+                                                <select name="participant[{{$weekend->id}}][{{$i}}][parish]">
+                                                    @foreach($user->district->parishes as $parish)
+                                                        <option value="{{$parish->name}}" {{ ($participants[$i]->parish??"")==$parish->name?"selected":""}} >{{$parish->name}}</option>
+                                                    @endforeach
+                                                </select>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][email]" value="{{$participants[$i]->email??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][allergy]" value="{{$participants[$i]->allergy??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][next_of_kin]" value="{{$participants[$i]->next_of_kin??""}}"></td>
