@@ -22,7 +22,9 @@
             'parish',
             'bus',
             'accomodation_before',
-            'accomodation_after'
+            'accomodation_after',
+            'phone',
+            'gender'
         ];
 
         public function senator()

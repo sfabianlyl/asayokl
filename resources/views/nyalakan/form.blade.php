@@ -31,9 +31,11 @@
                                         <th>Baptismal Name</th>
                                         <th>Nationality</th>
                                         <th>IC / Passport</th>
+                                        <th>Gender</th>
                                         <th>Age Group</th>
                                         <th>Parish</th>
                                         <th>Email</th>
+                                        <th>Phone</th>
                                         <th>Allergy or Medical Info</th>
                                         <th>Next of Kin</th>
                                         <th>Next of Kin Contact Number</th>
@@ -56,7 +58,12 @@
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][baptismal_name]" value="{{$participants[$i]->baptismal_name??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][nationality]" value="{{$participants[$i]->nationality??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][identification]" value="{{$participants[$i]->identification??""}}"></td>
-
+                                            <td>
+                                                <select name="participant[{{$weekend->id}}][{{$i}}][gender]">
+                                                    <option value="Male" {{ ($participants[$i]->gender??"")=="Male"?"selected":""}} >Male</option>
+                                                    <option value="Female" {{ ($participants[$i]->gender??"")=="Female"?"selected":""}} >Female</option>
+                                                </select>
+                                            </td>
                                             <td>
                                                 <select name="participant[{{$weekend->id}}][{{$i}}][age]">
                                                     <option value="18-20" {{ ($participants[$i]->age??"18-20")=="18-20"?"selected":""}} >18-20</option>
@@ -73,6 +80,7 @@
                                                     @endforeach
                                                 </select>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][email]" value="{{$participants[$i]->email??""}}"></td>
+                                            <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][phone]" value="{{$participants[$i]->phone??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][allergy]" value="{{$participants[$i]->allergy??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][next_of_kin]" value="{{$participants[$i]->next_of_kin??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][contact_next_of_kin]" value="{{$participants[$i]->contact_next_of_kin??""}}"></td>
