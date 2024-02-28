@@ -41,8 +41,9 @@
                                         <th>Next of Kin Contact Number</th>
                                         <th>Accomodation before</th>
                                         <th>Accomodation after</th>
+                                        @if($weekend->id==1 || $weekend->id==4)
                                         <th>Transportation needed (bus)</th>
-                                        <th>Payment Acknowledgement</th>
+                                        @endif
                                     </tr>
                                     @php
                                         $participants=$user->nyalakan_participants()->where("weekend_id",$weekend->id)->get();
@@ -54,7 +55,7 @@
                                                 <input type="hidden" name="participant[{{$weekend->id}}][{{$i}}][weekend_id]" value="{{$weekend->id}}">
                                                 <input type="hidden" name="participant[{{$weekend->id}}][{{$i}}][id]" value="{{$participants[$i]->id}}">
                                             </td>
-                                            <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][name]" value="{{$participants[$i]->name??""}}"></td>
+                                            <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][name]" value="{{$participants[$i]->name??""}}" class="name-marker"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][baptismal_name]" value="{{$participants[$i]->baptismal_name??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][nationality]" value="{{$participants[$i]->nationality??""}}"></td>
                                             <td><input type="text" name="participant[{{$weekend->id}}][{{$i}}][identification]" value="{{$participants[$i]->identification??""}}"></td>
@@ -97,24 +98,32 @@
                                                     <option value="Yes" {{ ($participants[$i]->accomodation_after??"No")=="Yes"?"selected":""}} >Yes</option>
                                                 </select>
                                             </td>
+                                            @if($weekend->id==1 || $weekend->id==4)
                                             <td>
-                                                <select name="participant[{{$weekend->id}}][{{$i}}][bus]">
+                                                <select name="participant[{{$weekend->id}}][{{$i}}][bus]" class="bus-marker">
                                                     <option value="No" {{ ($participants[$i]->bus??"No")=="No"?"selected":""}} >No</option>
                                                     <option value="Yes" {{ ($participants[$i]->bus??"No")=="Yes"?"selected":""}} >Yes</option>
                                                 </select>
                                             </td>
-                                            <td>
-                                                <select name="participant[{{$weekend->id}}][{{$i}}][payment_acknowledgement]">
-                                                    <option value="No" {{$participants[$i]->payment_acknowledgement??"No"=="No"?"selected":""}} >No</option>
-                                                    <option value="Yes" {{$participants[$i]->payment_acknowledgement??"No"=="Yes"?"selected":""}} >Yes</option>
-                                                </select>
-                                            </td>
-
+                                            @endif
                                         </tr>
                                     @endfor
                                 </tbody>
                             </table>                            
                         </div>
+                        <p class="mb-5">Fees: RM100/pax, with an extra of RM50 for bus.</p>
+                        <h5>Non-Refundable Registration Fee Agreement Notice</h5>
+                        <p>By submitting, I acknowledge that all fees paid under this program are: <br>(i) FULLY PROCESSED UPON THE DATE WHICH THEY ARE MADE, and <br>(ii) ALL PROCESSED PAID FEES ARE NON-REFUNDABLE (SITUATIONAL EXCEPTION APPLIES IF OCCURRENCES SUCH AS "DOUBLE PAYMENT" AND OTHER ERRORS SURFACES)</p><br><br>
+                        <p>Payment can be made to:</p>
+                        <p> 
+                            <b>Bank Transfer</b><br>
+                            Total Amount: RM <span id="total-{{$weekend->id}}"></span><br>
+                            ASAYO (Archdiocesan Single Adults and Youth Office)<br>
+                            Public Bank: 3180569004<br>
+                            Reference: Nyalakan - {{$weekend->language}}<br>
+                            Details: {{$user->district->name}}
+                        </p>
+                        <p>Do email the proof of payment to <a href="mailto:katherine@asayokl.my" target="_blank" rel="noopener noreferrer">katherine@asayokl.my</a>.</p>
                     @endforeach
                 </div>
                 <div class="row mb-5 ml-3">
@@ -155,6 +164,19 @@
                     toastr.warning("Something went wrong, please refresh page.");
                     console.log(data);
                 }
+            });
+        });
+
+        $("select, input").on("change",function(e){
+            $("form div.tab-pane").each(function(index){
+                var id=$(this).attr("id").split("-")[1];
+                var price=0;
+                $(this).find("tr").each(function(index){
+                    if($(this).find(".name-marker").val()) price+=100;
+                    if($(this).find(".bus-marker").val()=="Yes") price+=50;
+                });
+
+                $("#total-"+id).text(price);
             });
         });
     });

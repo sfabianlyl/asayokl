@@ -17,7 +17,6 @@
             'allergy',
             'next_of_kin',
             'contact_next_of_kin',
-            'payment_acknowledgement',
             'age',
             'parish',
             'bus',

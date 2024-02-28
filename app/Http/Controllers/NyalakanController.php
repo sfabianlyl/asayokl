@@ -86,6 +86,8 @@ class NyalakanController extends BaseController
         if($user->first_logged_in) return response()->json(["status"=>"create password unsuccessful."]);
         $user->password=Hash::make($request->new_password);
         $user->first_logged_in=Carbon::now();
+        $user->phone=$this->phone($request->phone);
+        $user->name=$request->name;
         $user->save();
 
         //create 10 participants for each weekend.

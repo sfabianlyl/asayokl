@@ -8,6 +8,7 @@
         use SoftDeletes;
         protected $fillable = [
             'name',
+            'language'
         ];
 
         public function participants()
