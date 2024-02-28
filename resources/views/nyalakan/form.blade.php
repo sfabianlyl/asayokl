@@ -179,7 +179,7 @@
 
                 $("#total-"+id).text(price);
             });
-        });
+        }).trigger("change");
     });
 </script>
 @stop
