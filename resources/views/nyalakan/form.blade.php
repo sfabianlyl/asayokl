@@ -27,10 +27,10 @@
                                 <tbody>
                                     <tr>
                                         <th>Participants</th>
-                                        <th>Full Name as in IC/Passport</th>
+                                        <th>Full Name as in MyKad/Passport</th>
                                         <th>Baptismal Name</th>
                                         <th>Nationality</th>
-                                        <th>IC / Passport</th>
+                                        <th>MyKad / Passport</th>
                                         <th>Gender</th>
                                         <th>Age Group</th>
                                         <th>Parish</th>
