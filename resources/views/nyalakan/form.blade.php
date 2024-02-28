@@ -110,7 +110,7 @@
                                     @endfor
                                 </tbody>
                             </table>
-                            <div class="row mb-3 ml-2">
+                            <div class="row my-2 ml-1">
                                 <button type="submit" class="btn btn-success">Save</button>
                             </div>
                             <p class="mt-3">Fees: RM100/pax, with an extra of RM50 for bus.</p>
@@ -130,9 +130,7 @@
                         
                     @endforeach
                 </div>
-                <div class="row mb-5 ml-3">
-                    <button type="submit" class="btn btn-success">Save</button>
-                </div>
+                
             </form>
         </div>
     </div>
