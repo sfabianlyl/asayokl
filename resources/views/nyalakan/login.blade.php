@@ -37,13 +37,13 @@
                         <h5>Fill up your details and create a password. Do remember it and save it!</h5>
                         <form action="{{route("nyalakan.password.create")}}" method="post" id="passwordCreate">
                             @csrf
-                            <p><b>Name</b></p>
+                            <p class="mb-0"><b>Name</b></p>
                             <input type="text" class="form-control mb-3" name="name" required><br>
 
-                            <p><b>Phone</b></p>
+                            <p class="mb-0"><b>Phone</b></p>
                             <input type="text" class="form-control mb-3" name="phone" required><br>
 
-                            <p><b>Create Password</b></p>
+                            <p class="mb-0"><b>Create Password</b></p>
                             <input type="password" class="form-control mb-3" name="new_password" required>
                             <div class="mb-3">
                                 <input type="checkbox" name="remember" id=""> Remember Me
