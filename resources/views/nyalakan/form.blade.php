@@ -110,7 +110,10 @@
                                     @endfor
                                 </tbody>
                             </table>
-                            <p class="mb-5">Fees: RM100/pax, with an extra of RM50 for bus.</p>
+                            <div class="row mb-3 ml-2">
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                            <p class="mt-3">Fees: RM100/pax, with an extra of RM50 for bus.</p>
                             <h5>Non-Refundable Registration Fee Agreement Notice</h5>
                             <p>By submitting, I acknowledge that all fees paid under this program are: <br>(i) FULLY PROCESSED UPON THE DATE WHICH THEY ARE MADE, and <br>(ii) ALL PROCESSED PAID FEES ARE NON-REFUNDABLE (SITUATIONAL EXCEPTION APPLIES IF OCCURRENCES SUCH AS "DOUBLE PAYMENT" AND OTHER ERRORS SURFACES)</p><br><br>
                             <p>Payment can be made to:</p>
