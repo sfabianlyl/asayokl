@@ -109,21 +109,22 @@
                                         </tr>
                                     @endfor
                                 </tbody>
-                            </table>                            
+                            </table>
+                            <p class="mb-5">Fees: RM100/pax, with an extra of RM50 for bus.</p>
+                            <h5>Non-Refundable Registration Fee Agreement Notice</h5>
+                            <p>By submitting, I acknowledge that all fees paid under this program are: <br>(i) FULLY PROCESSED UPON THE DATE WHICH THEY ARE MADE, and <br>(ii) ALL PROCESSED PAID FEES ARE NON-REFUNDABLE (SITUATIONAL EXCEPTION APPLIES IF OCCURRENCES SUCH AS "DOUBLE PAYMENT" AND OTHER ERRORS SURFACES)</p><br><br>
+                            <p>Payment can be made to:</p>
+                            <p> 
+                                <b>Bank Transfer</b><br>
+                                Total Amount: RM <span id="total-{{$weekend->id}}"></span><br>
+                                ASAYO (Archdiocesan Single Adults and Youth Office)<br>
+                                Public Bank: 3180569004<br>
+                                Reference: Nyalakan - {{$weekend->language}}<br>
+                                Details: {{$user->district->name}}
+                            </p>
+                            <p>Do email the proof of payment to <a href="mailto:katherine@asayokl.my" target="_blank" rel="noopener noreferrer">katherine@asayokl.my</a>.</p>                            
                         </div>
-                        <p class="mb-5">Fees: RM100/pax, with an extra of RM50 for bus.</p>
-                        <h5>Non-Refundable Registration Fee Agreement Notice</h5>
-                        <p>By submitting, I acknowledge that all fees paid under this program are: <br>(i) FULLY PROCESSED UPON THE DATE WHICH THEY ARE MADE, and <br>(ii) ALL PROCESSED PAID FEES ARE NON-REFUNDABLE (SITUATIONAL EXCEPTION APPLIES IF OCCURRENCES SUCH AS "DOUBLE PAYMENT" AND OTHER ERRORS SURFACES)</p><br><br>
-                        <p>Payment can be made to:</p>
-                        <p> 
-                            <b>Bank Transfer</b><br>
-                            Total Amount: RM <span id="total-{{$weekend->id}}"></span><br>
-                            ASAYO (Archdiocesan Single Adults and Youth Office)<br>
-                            Public Bank: 3180569004<br>
-                            Reference: Nyalakan - {{$weekend->language}}<br>
-                            Details: {{$user->district->name}}
-                        </p>
-                        <p>Do email the proof of payment to <a href="mailto:katherine@asayokl.my" target="_blank" rel="noopener noreferrer">katherine@asayokl.my</a>.</p>
+                        
                     @endforeach
                 </div>
                 <div class="row mb-5 ml-3">
