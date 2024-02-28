@@ -115,7 +115,7 @@
                             </div>
                             <p class="mt-3">Fees: RM100/pax, with an extra of RM50 for bus.</p>
                             <h5>Non-Refundable Registration Fee Agreement Notice</h5>
-                            <p>By submitting, I acknowledge that all fees paid under this program are: <br>(i) FULLY PROCESSED UPON THE DATE WHICH THEY ARE MADE, and <br>(ii) ALL PROCESSED PAID FEES ARE NON-REFUNDABLE (SITUATIONAL EXCEPTION APPLIES IF OCCURRENCES SUCH AS "DOUBLE PAYMENT" AND OTHER ERRORS SURFACES)</p><br><br>
+                            <p>By submitting, I acknowledge that all fees paid under this program are: <br>(i) FULLY PROCESSED UPON THE DATE WHICH THEY ARE MADE, and <br>(ii) ALL PROCESSED PAID FEES ARE NON-REFUNDABLE (SITUATIONAL EXCEPTION APPLIES IF OCCURRENCES SUCH AS "DOUBLE PAYMENT" AND OTHER ERRORS SURFACES)</p>
                             <p>Payment can be made to:</p>
                             <p> 
                                 <b>Bank Transfer</b><br>
