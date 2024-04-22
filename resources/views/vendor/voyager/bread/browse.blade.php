@@ -332,7 +332,7 @@
                         "columnDefs" => [
                             ['targets' => 'dt-not-orderable', 'searchable' =>  false, 'orderable' => false],
                         ],
-                        "lengthMenu" => [["label"=>"All", "value"=>-1],10,25,50,100 ]
+                        "lengthMenu" => [[-1,10,25,50,100 ],["All",10,25,50,100]]
                     ],
                     config('voyager.dashboard.data_tables', []))
                 , true) !!});
