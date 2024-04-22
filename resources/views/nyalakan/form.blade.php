@@ -123,7 +123,7 @@
                                 ASAYO (Archdiocesan Single Adults and Youth Office)<br>
                                 Public Bank: 3180569004<br>
                                 Reference: Nyalakan - {{$weekend->language}}<br>
-                                Details: {{ $user->id=!6 ? $user->district->name: "ASAYO" }}
+                                Details: {{ $user->id!=6 ? $user->district->name: "ASAYO" }}
                             </p>
                             <p>Do email the proof of payment to <a href="mailto:katherine@asayokl.my" target="_blank" rel="noopener noreferrer">katherine@asayokl.my</a>.</p>                            
                         </div>
