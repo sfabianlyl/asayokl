@@ -76,7 +76,7 @@
 
                                             <td>
                                                 <select name="participant[{{$weekend->id}}][{{$i}}][parish]">
-                                                    @foreach($user->district->parishes as $parish)
+                                                    @foreach($user->id!=6 ? $user->district->parishes : $entities as $parish)
                                                         <option value="{{$parish->name}}" {{ ($participants[$i]->parish??"")==$parish->name?"selected":""}} >{{$parish->name}}</option>
                                                     @endforeach
                                                 </select>

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Registration;
 use App\Models\User;
+use App\Models\Entity;
 use App\Mail\RegistrationMail;
 use App\Helpers\GoogleSheetConnection;
 use App\Models\NyalakanParticipant;
@@ -44,10 +45,11 @@ class NyalakanController extends BaseController
         }
         $user=User::where("id",auth()->user()->id)->with("district.parishes")->first();
         $weekends=NyalakanWeekend::get();
-        // $parishes=$user->district->parishes;
+        $entities=Entity::get();
         return view("nyalakan.form")->with(compact(
             "user",
-            'weekends'
+            'weekends',
+            'entities'
         ));
         
     }
