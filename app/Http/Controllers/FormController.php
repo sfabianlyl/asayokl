@@ -145,4 +145,26 @@ class FormController extends BaseController
         ]);
         
     }
+
+    public function submit_qna(Request $request){
+        $conn=new GoogleSheetConnection();
+        $question=$request->question??"";
+        
+
+        // google sheet connection
+        $conn->connect($form->google_sheet_url, $form->google_sheet_sheet_name);
+
+        if(!$conn->count_rows()){
+            $headers=["Timestamp","No","Question"];
+            $conn->add($headers,$timestamp=false, $count=false);
+        }
+        
+        $conn->add([$question]);
+
+        
+        return redirect()->route("qna.view")->with([
+            'status'    => "Submitted successfully!",
+        ]);
+        
+    }
 }

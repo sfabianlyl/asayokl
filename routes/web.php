@@ -33,6 +33,9 @@ Route::get("/kamikudus", function () { return view('contents.kami.kudus.page'); 
 Route::get("/pestakami", function () { return view('contents.kami.pesta.page'); })->name("pestakami.page");
 Route::get("/about", function () { return view('contents.about'); })->name("about");
 
+Route::get("/qna", function () { return view('forms.qna'); })->name("qna.view");
+Route::post("/qna", "App\Http\Controllers\FormController@submit_qna")->name("qna.submit");
+
 //forms
 Route::get('/checkin', function () { return view('forms.checkin'); })->name("checkin");
 Route::post('/checkin', "App\Http\Controllers\CheckinController@checkin_self")->name("checkin.self.submit");
