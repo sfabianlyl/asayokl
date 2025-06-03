@@ -22,11 +22,13 @@
     <nav class="navbar navbar-dark fixed-top" style="background-color:#006837">
         <a href="#" class="navbar-brand"><img src="{{ asset("Images/asayokl-banner.png") }}" height=70 width=auto/></a>
     </nav>
+    <div style="margin-top: 100px; padding: 10px;"></div>
     <div class="container pt-5">
         
-        <h4>Submit your questions here...</h4>
+        <h4 class="mb-3">Submit your questions here...</h4>
         <form action="{{route("qna.submit")}}" method="POST">
-            <textarea name="question" rows="10" class="form-control" required></textarea>
+            @csrf
+            <textarea name="question" rows="10" class="form-control mb-5" required></textarea>
             <button class="btn btn-success">Submit</button>
         </form>
     </div>
