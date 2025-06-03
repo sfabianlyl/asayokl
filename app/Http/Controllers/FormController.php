@@ -152,15 +152,15 @@ class FormController extends BaseController
         
 
         // google sheet connection
-        $conn->connect($form->google_sheet_url, $form->google_sheet_sheet_name);
-
-        if(!$conn->count_rows()){
+        $conn->connect("1HyGCJEUvRueCqfq9VpA_X6-2J5z_UarQ4Qx8tj1iJ_c", "Q&A - OLOG Confirmation");
+        $rows=$conn->count_rows();
+        if(!$rows){
             $headers=["Timestamp","No","Question"];
             $conn->add($headers,$timestamp=false, $count=false);
         }
         
-        $conn->add([$question]);
-
+        $conn->add([date("jS F Y, g:i a"),$rows+1,$question],$timestamp=false, $count=false);
+        Question::create(["question"=>$question]);
         
         return redirect()->route("qna.view")->with([
             'status'    => "Submitted successfully!",
