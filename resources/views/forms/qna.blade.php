@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("css/toastr.min.css")}}" type="text/css">
     <link rel="stylesheet" href="{{asset("css/myStyle.css")}}" type="text/css">
+    <script src="{{asset("js/jquery-3.5.1.js")}}"></script>
     <script src="{{asset("js/toastr.min.js")}}"></script>
         
 </head>
