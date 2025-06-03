@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\Form;
 use Illuminate\Support\Facades\Log;
 use App\Models\Registration;
+use App\Models\Question;
 use App\Mail\RegistrationMail;
 use App\Helpers\GoogleSheetConnection;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
