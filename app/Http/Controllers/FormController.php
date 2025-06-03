@@ -152,7 +152,7 @@ class FormController extends BaseController
         
 
         // google sheet connection
-        $conn->connect("1HyGCJEUvRueCqfq9VpA_X6-2J5z_UarQ4Qx8tj1iJ_c", "OLOG_Confirmation");
+        $conn->connect("1HyGCJEUvRueCqfq9VpA_X6-2J5z_UarQ4Qx8tj1iJ_c", "Sheet1");
         $rows=$conn->count_rows();
         if(!$rows){
             $headers=["Timestamp","No","Question"];
